@@ -53,10 +53,10 @@ module.exports = {
           {
             loader: 'url-loader',
             options: {
-              limit: false,
-            },
-          },
-        ],
+              limit: false
+            }
+          }
+        ]
       }
     ]
   }

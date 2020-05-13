@@ -1,24 +1,24 @@
-import React,{createContext, useState} from 'react'
+import React, { createContext, useState } from 'react'
 export const Context = createContext()
 
-const Provider = ({children}) => {
-  const [isLanguage, setIsLanguage] = useState(()=>{
-    return localStorage.getItem('language')
+const Provider = ({ children }) => {
+  const [isLanguage, setIsLanguage] = useState(() => {
+    return window.localStorage.getItem('language')
   })
 
-  const value ={
+  const value = {
     isLanguage,
-    setStorageLanguage: (language)=>{
-      localStorage.setItem('language',language)
+    setStorageLanguage: (language) => {
+      window.localStorage.setItem('language', language)
       setIsLanguage(language)
     },
-    removeStorageLanguage:()=>{
-      localStorage.removeItem('language')
+    removeStorageLanguage: () => {
+      window.localStorage.removeItem('language')
       setIsLanguage('')
     }
   }
 
-  return(
+  return (
     <Context.Provider value={value}>
       {children}
     </Context.Provider>

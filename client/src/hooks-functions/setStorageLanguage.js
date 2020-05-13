@@ -1,11 +1,10 @@
-function setStorageLanguage(language){
-  localStorage.setItem('language',language)
-  console.log(language)
-}
+// function setStorageLanguage (language) {
+//   localStorage.setItem('language', language)
+//   console.log(language)
+// }
 
-function removeStorageLanguage(){
-  localStorage.removeItem('language')
-}
+// function removeStorageLanguage () {
+//   localStorage.removeItem('language')
+// }
 
-
-export {setStorageLanguage, removeStorageLanguage}
+// export { setStorageLanguage, removeStorageLanguage }
