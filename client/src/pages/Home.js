@@ -1,8 +1,21 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Context } from '../Context'
 
+/// //////////////////Styles
+
+/// //////////////////Resources and Components
+
+/// //////////////////Self
+
+
 export const Home = () => {
-  const { removeStorageLanguage } = useContext(Context)
+  const { removeStorageLanguage, setLoader } = useContext(Context)
+  /// //////////////////
+  useEffect(() => {
+    setLoader(false)
+  }, [])
+  /// //////////////////
+
   return (
     <div>
       <h1>Home</h1>

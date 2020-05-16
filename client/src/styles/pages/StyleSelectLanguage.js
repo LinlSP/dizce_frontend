@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {Bounce, FadeIn, Slide} from '../global/Animations'
+import { Bounce, FadeIn, SlideLeft, SlideRight } from '../global/Animations'
 import bg from '../../assets/bg.svg'
 
 export const TotalContainer = styled.div`
@@ -19,7 +19,7 @@ export const Content = styled.div`
   width: 100%;
   justify-content: space-between;
 `
-export const Logo = styled.div`
+export const LogoSection = styled.div`
   width: 100%;
   height: 6%;
   display: flex;
@@ -30,6 +30,7 @@ export const Logo = styled.div`
 `
 export const Title = styled.h1`
   width: 100%;
+
   font-size: min(4vw,80px);
   color: white;
   font-family: 'Lato', sans-serif;
@@ -38,16 +39,17 @@ export const Title = styled.h1`
   &:hover{
     cursor: context-menu;
   }
-  ${props=>{if(props.slide){return Slide({time:'.5s'})}} }
+  ${props => props.slide ? SlideLeft({ time: '1s' }) : SlideRight({ time: '1s' })}
 `
 export const World = styled.div`
-  background: ${props=>`url(${props.sorc}) no-repeat center`};
+  background: ${props => `url(${props.sorc}) no-repeat center`};
   background-size: contain;
   height: 55%;
   width: 100%;
   display: flex;
   justify-content: center;
-  ${props=>{if(props.slide){return Slide({time:'1s'})}} }
+  ${props => props.slide ? SlideRight({ time: '1s' }) : SlideLeft({ time: '1s' })}
+
 
 `
 export const Languages = styled.div`
@@ -58,7 +60,7 @@ export const Languages = styled.div`
   align-items: flex-end;
 
 `
-export const Lng = styled.button`
+export const Lang = styled.button`
   font-family: 'Lato', sans-serif;
   border-radius: 5px;
   border: white solid 1px;
@@ -74,10 +76,9 @@ export const Lng = styled.button`
 export const GoButton = styled.img`
   height: 100%;
   background-color: transparent;
-  display: ${props=>props.seen};
+  display: ${props => props.seen};
   ${FadeIn}
   &:hover{
     cursor: pointer;
   }
 `
-

@@ -2,12 +2,13 @@ import React, { createContext, useState } from 'react'
 export const Context = createContext()
 
 const Provider = ({ children }) => {
-  const [isLanguage, setIsLanguage] = useState(() => {
-    return window.localStorage.getItem('language')
-  })
+  const [isLanguage, setIsLanguage] = useState(window.localStorage.getItem('language'))
+  const [loader, setLoader] = useState(false)
 
-  const value = {
+  const values = {
     isLanguage,
+    loader,
+    setLoader,
     setStorageLanguage: (language) => {
       window.localStorage.setItem('language', language)
       setIsLanguage(language)
@@ -19,7 +20,7 @@ const Provider = ({ children }) => {
   }
 
   return (
-    <Context.Provider value={value}>
+    <Context.Provider value={values}>
       {children}
     </Context.Provider>
   )

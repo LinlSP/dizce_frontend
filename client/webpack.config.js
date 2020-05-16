@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const WebpackPwaManifestPlugin = require('webpack-pwa-manifest')
 const path = require('path')
-const WorkboxWebpackPlugin = require('workbox-webpack-plugin')
+// const WorkboxWebpackPlugin = require('workbox-webpack-plugin')
 
 module.exports = {
   output: {
@@ -10,7 +10,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/index.html'
+      template: 'src/index.html',
+      favicon: 'src/assets/logo.png'
     }),
     new WebpackPwaManifestPlugin({
       name: 'Dizce',
@@ -28,12 +29,12 @@ module.exports = {
           sizes: [96, 128, 192, 256, 384, 512]
         }
       ]
-    }),
-    new WorkboxWebpackPlugin.GenerateSW(
-      {
-        cleanupOutdatedCaches: true
-      }
-    )
+    })
+    // new WorkboxWebpackPlugin.GenerateSW(
+    //   {
+    //     cleanupOutdatedCaches: true
+    //   }
+    // )
   ],
   module: {
     rules: [

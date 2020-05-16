@@ -1,29 +1,38 @@
 import React from 'react'
-import {BigContainerGlobal, ContentContainerGlobal} from '../styles/global/Globalstyles'
-import {SocialMedia, Copyright, Resources} from '../styles/components/Sfooter'
 
-export const Footer = () =>{
-  return(
-    <BigContainerGlobal bgcolor={'black'}>
+/// //////////////////Styles
+import { BigContainerGlobal, ContentContainerGlobal } from '../styles/global/Globalstyles'
+import { SocialMedia, Copyright, ResourcesText, LinkIcon } from '../styles/components/StyleFooter'
+
+/// //////////////////Resources and Components
+import facebook from '../assets/facebook.svg'
+import twitter from '../assets/twitter.svg'
+import instagram from '../assets/instagram.svg'
+
+/// //////////////////Self
+
+export const Footer = () => {
+  const socialLinks = ['twitter.com', 'instagram.com', 'facebook.com']
+  const socialSources = [twitter, instagram, facebook]
+  return (
+    <BigContainerGlobal bgcolor='black'>
       <div className='container'>
-        <ContentContainerGlobal bgcolor={'transparent'} height={'9vh'} flex>
+        <ContentContainerGlobal bgcolor='transparent' height='9vh' flex>
           <SocialMedia>
-            <p>
-              TWI
-            </p>
-            <p>
-              FCB
-            </p>
-            <p>
-              INS
-            </p>
+            {
+              socialSources.map((socialNetwork, index) => (
+                <LinkIcon to={socialLinks[index]} key={index}>
+                  <img src={socialNetwork} alt='' height='100%' />
+                </LinkIcon>
+              ))
+            }
           </SocialMedia>
           <Copyright>
             © 2020 Copyright Dizce
           </Copyright>
-          <Resources>
-            Media resources
-          </Resources>
+          <ResourcesText to='/resources'>
+              Media Resources
+          </ResourcesText>
         </ContentContainerGlobal>
       </div>
     </BigContainerGlobal>
