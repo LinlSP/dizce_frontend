@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1300" height="668" viewBox="0 0 1300 668">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="1300" height="668" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="homebg" clip-path="url(#clip-path)">
+    <g transform="translate(-42.176 -41.586)">
+      <rect id="Rechteck_1" data-name="Rechteck 1" width="287" height="53" rx="26.5" transform="translate(72.676 41.586) rotate(30)" fill="rgba(60,160,171,0.48)"/>
+    </g>
+    <g transform="translate(299.824 -41.586)">
+      <rect id="Rechteck_1-2" data-name="Rechteck 1" width="287" height="53" rx="26.5" transform="translate(72.676 41.586) rotate(30)" fill="rgba(60,160,171,0.48)"/>
+    </g>
+    <g transform="translate(641.824 -41.586)">
+      <rect id="Rechteck_1-3" data-name="Rechteck 1" width="287" height="53" rx="26.5" transform="translate(72.676 41.586) rotate(30)" fill="rgba(60,160,171,0.48)"/>
+    </g>
+    <g transform="translate(983.824 -41.586)">
+      <rect id="Rechteck_1-4" data-name="Rechteck 1" width="287" height="53" rx="26.5" transform="translate(72.676 41.586) rotate(30)" fill="rgba(60,160,171,0.48)"/>
+    </g>
+    <g transform="translate(-42.176 200.414)">
+      <rect id="Rechteck_1-5" data-name="Rechteck 1" width="287" height="53" rx="26.5" transform="translate(72.676 41.586) rotate(30)" fill="rgba(60,160,171,0.48)"/>
+    </g>
+    <g transform="translate(299.824 200.414)">
+      <rect id="Rechteck_1-6" data-name="Rechteck 1" width="287" height="53" rx="26.5" transform="translate(72.676 41.586) rotate(30)" fill="rgba(60,160,171,0.48)"/>
+    </g>
+    <g transform="translate(641.824 200.414)">
+      <rect id="Rechteck_1-7" data-name="Rechteck 1" width="287" height="53" rx="26.5" transform="translate(72.676 41.586) rotate(30)" fill="rgba(60,160,171,0.48)"/>
+    </g>
+    <g transform="translate(983.824 200.414)">
+      <rect id="Rechteck_1-8" data-name="Rechteck 1" width="287" height="53" rx="26.5" transform="translate(72.676 41.586) rotate(30)" fill="rgba(60,160,171,0.48)"/>
+    </g>
+    <g transform="translate(-42.176 442.414)">
+      <rect id="Rechteck_1-9" data-name="Rechteck 1" width="287" height="53" rx="26.5" transform="translate(72.676 41.586) rotate(30)" fill="rgba(60,160,171,0.48)"/>
+    </g>
+    <g transform="translate(299.824 442.414)">
+      <rect id="Rechteck_1-10" data-name="Rechteck 1" width="287" height="53" rx="26.5" transform="translate(72.676 41.586) rotate(30)" fill="rgba(60,160,171,0.48)"/>
+    </g>
+    <g transform="translate(641.824 442.414)">
+      <rect id="Rechteck_1-11" data-name="Rechteck 1" width="287" height="53" rx="26.5" transform="translate(72.676 41.586) rotate(30)" fill="rgba(60,160,171,0.48)"/>
+    </g>
+    <g transform="translate(983.824 442.414)">
+      <rect id="Rechteck_1-12" data-name="Rechteck 1" width="287" height="53" rx="26.5" transform="translate(72.676 41.586) rotate(30)" fill="rgba(60,160,171,0.48)"/>
+    </g>
+  </g>
+</svg>

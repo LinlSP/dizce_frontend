@@ -8,7 +8,7 @@
     "lint": "standard --fix",
     "server": "webpack-dev-server --port 3000 --host 192.168.0.11 --history-api-fallback",
     "dist": "rm -r dist",
-    "dev": "webpack --mode 'development' && webpack-dev-server --port 3000 --host 192.168.0.11 --history-api-fallback",
+    "dev": "webpack --mode 'development' && webpack-dev-server --port 3000 --host 192.168.137.1 --history-api-fallback",
     "build": "webpack"
   },
   "author": "LinlSP",

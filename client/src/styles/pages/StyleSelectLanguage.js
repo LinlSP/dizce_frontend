@@ -3,9 +3,9 @@ import { Bounce, FadeIn, SlideLeft, SlideRight } from '../global/Animations'
 import bg from '../../assets/bg.svg'
 
 export const TotalContainer = styled.div`
-  background: url(${bg}) center;
+  background: url(${bg}) no-repeat;
   background-color: red;
-  background-size: contain;
+  background-size: cover;
   height: 100vh;
   display: flex;
   justify-content: center;

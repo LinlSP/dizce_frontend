@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components'
 
-export const Globalstyles = createGlobalStyle`
+const Globalstyles = createGlobalStyle`
   html {
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
@@ -20,24 +20,31 @@ export const Globalstyles = createGlobalStyle`
 
   }
 `
-export const BigContainerGlobal = styled.div`
-  ${props => {
- return (`
-  background: ${props.bgcolor};
-  `
-  )
-}}
+const BigContainerGlobal = styled.div`
+  background: ${props=>props.bg};
+  background-size: ${props => props.bgsize ? props.bgsize: 'auto'};
+  background-color: ${props => props.bgcolor ? props.bgcolor: 'white'};
+  @media only screen and (min-width: 768px) {
+
+  }
+
 `
-export const ContentContainerGlobal = styled.div`
+const ContentContainerGlobal = styled.div`
   ${props => {
  return (`
-  background: ${props.bgcolor};
-  height: ${props.height};
+  height: ${props.height ? props.height : 'auto'};
   display: ${props.flex ? 'flex' : 'block'};
   flex-direction: ${props.flexCol ? 'column' : 'row'};
+  justify-content: ${props.justify};
+  align-items: ${props.align};
+  background-color: ${props.bgcolor ? props.bgcolor: 'transparent'};
   `
   )
 }}
-  justify-content: space-between;
-  align-items: center;
+  @media only screen and (min-width: 768px) {
+
+}
 `
+
+
+export {Globalstyles,BigContainerGlobal,ContentContainerGlobal}

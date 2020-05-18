@@ -2,12 +2,18 @@ import styled from 'styled-components'
 import { Link } from '@reach/router'
 
 export const SocialMedia = styled.div`
+
   width: 30%;
-  height: 20%;
+  height: 25%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   color: white;
+
+  @media only screen and (min-width: 768px) {
+    /* height: 40%; */
+
+  }
 `
 export const Copyright = styled.div`
   display: flex;
@@ -15,8 +21,12 @@ export const Copyright = styled.div`
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 1.5vh;
+  font-size: 2vh;
   text-align: center;
+  @media only screen and (min-width: 768px) {
+    /* height: 40%; */
+
+  }
 
 `
 export const ResourcesText = styled(Link)`
@@ -26,11 +36,21 @@ export const ResourcesText = styled(Link)`
   justify-content: flex-end;
   align-items: center;
   color: white;
-  font-size: 1.5vh;
+  font-size: 2vh;
   text-align: center;
+  @media only screen and (min-width: 768px) {
+    /* height: 40%; */
+
+  }
+
 `
 
 export const LinkIcon = styled(Link)`
   height: 100%;
   display: flex;
+  @media only screen and (min-width: 768px) {
+    /* height: 40%; */
+
+  }
+
 `

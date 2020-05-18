@@ -17,7 +17,7 @@ export const Footer = () => {
   return (
     <BigContainerGlobal bgcolor='black'>
       <div className='container'>
-        <ContentContainerGlobal bgcolor='transparent' height='9vh' flex>
+        <ContentContainerGlobal height='12vh' flex justify={'space-between'} align={'center'}>
           <SocialMedia>
             {
               socialSources.map((socialNetwork, index) => (

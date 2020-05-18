@@ -38,15 +38,26 @@ const Rotating = keyframes`
 export const LoaderIcon = styled.img`
   position: relative;
 
-  left: 1vw;
+  left: 12vw;
+  bottom: 20vh;
 
-  height: 8vw;
+  height: 15vh;
     animation: ${Rotating} 2s infinite;
+    @media only screen and (min-width: 768px) {
+    /* height: 40%; */
+
+  }
+
 `
 export const LoaderText = styled.div`
   position: relative;
-  top: 8vw;
-  font-size: 5vw;
-  letter-spacing: 4vw;
+  top: 5vh;
+  font-size: 6vh;
+  letter-spacing: 5vw;
   color: white;
+  @media only screen and (min-width: 768px) {
+    /* height: 40%; */
+
+  }
+
 `
