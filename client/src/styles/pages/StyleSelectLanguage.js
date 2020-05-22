@@ -2,11 +2,15 @@ import styled from 'styled-components'
 import { Bounce, FadeIn, SlideLeft, SlideRight } from '../global/Animations'
 import bg from '../../assets/bg.svg'
 
+var vh = window.innerHeight*0.01
+
+
 export const TotalContainer = styled.div`
-  background: url(${bg}) no-repeat;
+  background: url(${bg}) no-repeat center;
   background-color: red;
   background-size: cover;
-  height: 100vh;
+  height:${100*vh}px;
+  min-height:100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,7 +19,9 @@ export const TotalContainer = styled.div`
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  height: 90vh;
+  height: ${90*vh}px;
+  min-height:90vh;
+
   width: 100%;
   justify-content: space-between;
 `
@@ -31,7 +37,7 @@ export const LogoSection = styled.div`
 export const Title = styled.h1`
   width: 100%;
 
-  font-size: min(4vw,80px);
+  font-size: ${7*vh}px;
   color: white;
   font-family: 'Lato', sans-serif;
   text-align: center;
@@ -66,8 +72,8 @@ export const Lang = styled.button`
   border: white solid 1px;
   background-color: transparent;
   color: white;
-  font-size: min(2vw, 40px);
-  width:20%;
+  font-size: 100%;
+  width:30%;
   transition: 1s all ease;
   &:hover{
     background-color: black;

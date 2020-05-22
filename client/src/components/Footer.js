@@ -11,13 +11,16 @@ import instagram from '../assets/instagram.svg'
 
 /// //////////////////Self
 
+const vh = window.innerHeight*0.01
+
+
 export const Footer = () => {
   const socialLinks = ['twitter.com', 'instagram.com', 'facebook.com']
   const socialSources = [twitter, instagram, facebook]
   return (
     <BigContainerGlobal bgcolor='black'>
       <div className='container'>
-        <ContentContainerGlobal height='12vh' flex justify={'space-between'} align={'center'}>
+        <ContentContainerGlobal height={`${12*vh}px`} flex justify={'space-between'} align={'center'}>
           <SocialMedia>
             {
               socialSources.map((socialNetwork, index) => (

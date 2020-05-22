@@ -5,3 +5,4 @@ import React from 'react'
 /// //////////////////Resources and Components
 
 /// //////////////////Self
+const vh = window.innerHeight*0.01

@@ -24,9 +24,9 @@ const Provider = ({ children }) => {
   const values = {
     isLanguage,
     loader,
+    setLoader,
     error,
     setError,
-    setLoader,
     setStorageLanguage: (language) => {
       window.localStorage.setItem('language', language)
       setIsLanguage(language)

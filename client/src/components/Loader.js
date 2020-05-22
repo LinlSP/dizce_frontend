@@ -1,6 +1,6 @@
-import React, { useContext } from 'react'
-import { createPortal } from 'react-dom'
-import { Context } from '../Context'
+import React from 'react'
+// import { createPortal } from 'react-dom'
+// import { Context } from '../Context'
 
 /// //////////////////Resources & Components
 import logoSrc from '../assets/logo.svg'
@@ -8,18 +8,21 @@ import logoSrc from '../assets/logo.svg'
 import { Container, LoaderIcon, LoaderText } from '../styles/components/StyleLoader'
 
 /// //////////////////Self
+const vh = window.innerHeight*0.01
+
 export const Loader = () => {
-  const { loader } = useContext(Context)
+  // const { loader } = useContext(Context)
 
   /// //////////////////
-  if (!loader) return null
-
-  return createPortal(<>
+  // if (!loader) return null
+  return(
     <Container>
       <LoaderIcon src={logoSrc} />
       <LoaderText>
         Dizce
       </LoaderText>
     </Container>
-  </>, document.getElementById('Loader'))
+  )
+  // return createPortal(<>
+  // </>, document.getElementById('Loader'))
 }

@@ -1,4 +1,4 @@
-import React,{useContext} from 'react'
+import React,{useContext, useEffect} from 'react'
 import {Context} from '../Context'
 
 /// //////////////////Styles
@@ -9,8 +9,10 @@ import {Text,Icon} from '../styles/pages/StyleError'
 import errorSrc from '../assets/error.svg'
 
 /// //////////////////Self
+const vh = window.innerHeight*0.01
+
 export const Error = () =>{
-  const {isLanguage} = useContext(Context)
+  const {isLanguage, removeStorageLanguage} = useContext(Context)
   var message;
   switch(isLanguage){
     case 'spanish':
@@ -23,8 +25,14 @@ export const Error = () =>{
       message = 'Something went wrong :(';
   }
 
+  useEffect(()=>{
+    setTimeout(() => {
+      removeStorageLanguage()
+      location.reload()
+    }, 3000);
+  },[])
   return(<>
-    <ContentContainerGlobal height='100vh' flex flexCol justify='center' align='center' bgcolor='black'>
+    <ContentContainerGlobal height={`${100*vh}`} extra='min-height:100vh;' flex flexCol justify='center' align='center' bgcolor='black'>
       <Icon src={errorSrc}/>
       <Text>
         {message}

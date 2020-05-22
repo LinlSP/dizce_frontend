@@ -1,4 +1,5 @@
 import { css, keyframes } from 'styled-components'
+const vh = window.innerHeight*0.01
 
 const BounceKF = keyframes`
 0%,

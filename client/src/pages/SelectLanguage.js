@@ -9,6 +9,9 @@ import logoSrc from '../assets/logo2.svg'
 import Gobtn from '../assets/gobtn.svg'
 
 /// //////////////////Self
+const vh = window.innerHeight*0.01
+
+
 export const SelectLanguage = () => {
   const { setStorageLanguage, setLoader } = useContext(Context)
 
@@ -43,7 +46,7 @@ export const SelectLanguage = () => {
 
   return (
     <TotalContainer>
-      <div className='container' style={{ display: 'flex', alignItems: 'center', height: '100vh' }}>
+      <div className='container' style={{ display: 'flex', alignItems: 'center'}}>
         <Content>
           <LogoSection>
             <img src={logoSrc} alt='' height='100%' />

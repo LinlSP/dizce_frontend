@@ -1,4 +1,4 @@
-import React,{useContext} from 'react'
+import React,{useContext, useEffect} from 'react'
 import {Context} from '../Context'
 /// //////////////////Styles
 import {Text, BrokenLogo} from '../styles/pages/StyleNotFound'
@@ -8,6 +8,8 @@ import {ContentContainerGlobal} from '../styles/global/Globalstyles'
 import brokenLogo from '../assets/brokenLogo.svg'
 
 /// //////////////////Self
+const vh = window.innerHeight*0.01
+
 export const NotFound = () =>{
   const {isLanguage} = useContext(Context)
   var message;
@@ -22,8 +24,14 @@ export const NotFound = () =>{
         message = 'Page not found';
     }
 
+    useEffect(()=>{
+      setTimeout(() => {
+        window.location.href = '/'
+      }, 3000);
+    },[])
+  
   return(<>
-    <ContentContainerGlobal bgcolor={'rgba(93,193,185,1)'} height={'100vh'} flex justify={'center'} align={'center'}>
+    <ContentContainerGlobal bgcolor={'rgba(93,193,185,1)'} height={`${100*vh}`} flex justify={'center'} align={'center'} extra='min-height: 100vh;'>
       <Text>
         <BrokenLogo src={brokenLogo} height='100%' alt=""/>
         {message}

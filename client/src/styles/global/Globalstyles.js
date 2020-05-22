@@ -1,11 +1,11 @@
 import styled, { createGlobalStyle } from 'styled-components'
+const vh = window.innerHeight*0.01
 
 const Globalstyles = createGlobalStyle`
   html {
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
     overflow-x: hidden;
-
   }
   body{
     overflow-x: hidden;
@@ -21,9 +21,13 @@ const Globalstyles = createGlobalStyle`
   }
 `
 const BigContainerGlobal = styled.div`
-  background: ${props=>props.bg};
-  background-size: ${props => props.bgsize ? props.bgsize: 'auto'};
-  background-color: ${props => props.bgcolor ? props.bgcolor: 'white'};
+  ${props =>(`
+    background: ${props.bg};
+    background-size: ${props.bgsize};
+    background-color: ${props.bgcolor};
+    ${props.extra}
+  `)}
+
   @media only screen and (min-width: 768px) {
 
   }
@@ -32,12 +36,13 @@ const BigContainerGlobal = styled.div`
 const ContentContainerGlobal = styled.div`
   ${props => {
  return (`
-  height: ${props.height ? props.height : 'auto'};
+  height: ${props.height};
   display: ${props.flex ? 'flex' : 'block'};
   flex-direction: ${props.flexCol ? 'column' : 'row'};
   justify-content: ${props.justify};
   align-items: ${props.align};
-  background-color: ${props.bgcolor ? props.bgcolor: 'transparent'};
+  background-color: ${props.bgcolor};
+  ${props.extra}
   `
   )
 }}

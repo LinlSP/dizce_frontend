@@ -1,25 +1,18 @@
 import styled from 'styled-components'
 const vh = window.innerHeight*0.01
 
-
 export const Text = styled.div`
   text-align:center;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   color: white;
-  font-size: ${4.5*vh}px;
+  font-size: ${5*vh};
+  font-family: 'Lato', sans-serif;
   @media only screen and (min-width: 768px) {
-    /* height: 40%; */
 
   }
-
 `
-export const BrokenLogo = styled.img`
-  height: ${12*vh}px;
-  @media only screen and (min-width: 768px) {
-    /* height: 40%; */
 
-  }
-
+export const Icon = styled.img`
+  height: ${15*vh};
 `

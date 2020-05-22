@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Link } from '@reach/router'
+const vh = window.innerHeight*0.01
 
 export const SocialMedia = styled.div`
 
@@ -21,7 +22,7 @@ export const Copyright = styled.div`
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 2vh;
+  font-size: ${2*vh}px;
   text-align: center;
   @media only screen and (min-width: 768px) {
     /* height: 40%; */
@@ -36,7 +37,7 @@ export const ResourcesText = styled(Link)`
   justify-content: flex-end;
   align-items: center;
   color: white;
-  font-size: 2vh;
+  font-size: ${2*vh}px;
   text-align: center;
   @media only screen and (min-width: 768px) {
     /* height: 40%; */
