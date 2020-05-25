@@ -17,7 +17,9 @@ const Globalstyles = createGlobalStyle`
   }
   div{
     font-family: 'Lato', sans-serif;
-
+    &:hover{
+      cursor: context-menu;
+    }
   }
 `
 const BigContainerGlobal = styled.div`
@@ -28,9 +30,6 @@ const BigContainerGlobal = styled.div`
     ${props.extra}
   `)}
 
-  @media only screen and (min-width: 768px) {
-
-  }
 
 `
 const ContentContainerGlobal = styled.div`
@@ -46,9 +45,6 @@ const ContentContainerGlobal = styled.div`
   `
   )
 }}
-  @media only screen and (min-width: 768px) {
-
-}
 `
 
 

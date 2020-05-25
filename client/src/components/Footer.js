@@ -34,7 +34,7 @@ export const Footer = () => {
             © 2020 Copyright Dizce
           </Copyright>
           <ResourcesText to='/resources'>
-              Media Resources
+            Media Resources
           </ResourcesText>
         </ContentContainerGlobal>
       </div>

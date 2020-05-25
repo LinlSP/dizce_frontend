@@ -10,7 +10,6 @@ export const SocialMedia = styled.div`
   justify-content: space-around;
   align-items: center;
   color: white;
-
   @media only screen and (min-width: 768px) {
     /* height: 40%; */
 
@@ -24,6 +23,8 @@ export const Copyright = styled.div`
   color: white;
   font-size: ${2*vh}px;
   text-align: center;
+  font-weight:normal;
+
   @media only screen and (min-width: 768px) {
     /* height: 40%; */
 
@@ -33,7 +34,7 @@ export const Copyright = styled.div`
 export const ResourcesText = styled(Link)`
   display: flex;
   width: 30%;
-
+  font-weight:normal;
   justify-content: flex-end;
   align-items: center;
   color: white;

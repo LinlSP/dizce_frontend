@@ -4,9 +4,10 @@ import { Context } from '../Context'
 /// //////////////////Styles
 import {ContentContainerGlobal, BigContainerGlobal} from '../styles/global/Globalstyles'
 import {
-        LogoSection, MainTitle,LittleMainTitle,WorldIcon,MainButton,BurgerMenu, FirstLine, //mainscreen
+        LogoSection, MainTitle,LittleMainTitle,WorldIcon,WorldIconImage,MainButton,BurgerMenu, FirstLine, //mainscreen
         Question, Quote,Answer,AnswerImg,SliderButton, //slider
-        FocusTitle,FocusIcons,FIcon,FocusDescription,DTitle,DSubtitle,DPoints//ourfocus
+        FocusTitle,FocusIcons,FIcon,FocusDescription,DTitle,DSubtitle,DPoints,//ourfocus
+        FurtherTitle,Sections,Section1,Section2,Section3,FText,FImage,ImagesContainer//furthermore
         } from '../styles/pages/StyleHome'
 /// //////////////////Resources and Components
 import {Loader} from '../components/Loader'
@@ -23,7 +24,25 @@ import personalized from '../assets/personalized.svg'
 import sliderbutton from '../assets/sliderButton.svg'
 
 /// //////////////////Self
-const vh = window.innerHeight*0.01
+
+///setting the height
+const windowWidth = window.innerWidth
+
+var defaultVh = 784
+
+if(windowWidth > 900 && windowWidth < 1201){
+  defaultVh = 900
+  
+}else if(windowWidth > 1200 && windowWidth < 1801){
+  defaultVh = 1050
+
+}else if(windowWidth > 1800){
+  defaultVh = window.innerHeight
+}
+
+var vh = defaultVh*0.01
+///
+
 const pageName = 'home'
 const defaultbgcolor= 'rgba(93,193,185,1)'
 const secondarybgcolor = 'rgba(239,239,239,1)'
@@ -55,7 +74,7 @@ export const Home = () => {
   return (<>
   {/* ///////////////////////////////////////////////////////////////////////////// */}
   <div id='mainscreen'>
-    <BigContainerGlobal bg={`url(${homebg}) repeat center`} bgcolor={defaultbgcolor} bgsize='cover' extra={`height: ${vh*140}px;`}>
+    <BigContainerGlobal bg={`url(${homebg}) repeat center`} bgcolor={defaultbgcolor} bgsize='cover'>
       <div className='container'>
         <ContentContainerGlobal bgcolor='transparent' flex flexCol justify='space-between' align='center'>
           <LogoSection>
@@ -75,7 +94,7 @@ export const Home = () => {
             {maintitle.button}
           </MainButton>
           <WorldIcon>
-            <img src={languageWorld} height='100%' alt=""/>
+            <WorldIconImage src={languageWorld} height='100%' alt=""/>
           </WorldIcon>
         </ContentContainerGlobal>
       </div>
@@ -153,13 +172,45 @@ export const Home = () => {
     <BigContainerGlobal>
       <div className='container'>
         <ContentContainerGlobal>
-          ef
+          <FurtherTitle>
+            {titles.second}
+          </FurtherTitle>
+          <Sections>
+            <Section1>
+              <FText >
+                {furthermore.one}
+              </FText>
+              <div style={{width: '50%', display:'flex', justifyContent: 'center', alignItems:'center'}}>
+                <FImage width='80%' src='https://res.cloudinary.com/d1zc3/image/upload/v1588993595/All/Home/learnbook.jpg'/>
+              </div>
+
+            </Section1>
+            <Section2 >
+            <div style={{width: '50%', display:'flex', justifyContent: 'center', alignItems:'center'}}>
+              <FImage width='80%' src='https://res.cloudinary.com/d1zc3/image/upload/v1588988953/All/Home/earth.png'/>
+            </div>
+              <FText >
+                {furthermore.two}
+              </FText>
+            </Section2>
+            <Section3>
+              <FText width='90%' align> 
+                {furthermore.three}
+              </FText>
+              <ImagesContainer >
+                <FImage width='30%' src='https://res.cloudinary.com/d1zc3/image/upload/v1588993595/All/Home/alter.jpg'/>
+                <FImage width='30%' src='https://res.cloudinary.com/d1zc3/image/upload/v1588993595/All/Home/frau.jpg'/>
+                <FImage width='30%' src='https://res.cloudinary.com/d1zc3/image/upload/v1588993595/All/Home/boy-studies.jpg'/>
+              </ImagesContainer>
+            </Section3>
+          </Sections>
+
         </ContentContainerGlobal>
       </div>
     </BigContainerGlobal>
   </div>
-      <h1>Home</h1>
-      <button onClick={() => { removeStorageLanguage() }}>remove</button>
+      {/* <h1>Home</h1>
+      <button onClick={() => { removeStorageLanguage() }}>remove</button> */}
 
     </>);
 }
