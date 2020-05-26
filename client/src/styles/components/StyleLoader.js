@@ -1,5 +1,4 @@
 import styled, { keyframes } from 'styled-components'
-const vh = window.innerHeight*0.01
 
 export const Container = styled.div`
   position: fixed;
@@ -43,10 +42,6 @@ export const LoaderIcon = styled.img`
 
   height: 15vh;
     animation: ${Rotating} 2s infinite;
-    @media only screen and (min-width: 768px) {
-    /* height: 40%; */
-
-  }
 
 `
 export const LoaderText = styled.div`
@@ -56,9 +51,5 @@ export const LoaderText = styled.div`
   letter-spacing: 5vw;
   margin-right: -5vw;
   color: white;
-  @media only screen and (min-width: 768px) {
-    /* height: 40%; */
-
-  }
 
 `

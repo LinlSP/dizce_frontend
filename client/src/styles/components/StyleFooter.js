@@ -1,6 +1,22 @@
 import styled from 'styled-components'
 import { Link } from '@reach/router'
-const vh = window.innerHeight*0.01
+///setting the height
+const windowWidth = window.innerWidth
+
+var defaultVh = 784
+
+if(windowWidth > 900 && windowWidth < 1201){
+  defaultVh = 900
+
+}else if(windowWidth > 1200 && windowWidth < 1801){
+  defaultVh = 1050
+
+}else if(windowWidth > 1800){
+  defaultVh = window.innerHeight
+}
+
+var vh = defaultVh*0.01
+///
 
 export const SocialMedia = styled.div`
 
@@ -10,10 +26,6 @@ export const SocialMedia = styled.div`
   justify-content: space-around;
   align-items: center;
   color: white;
-  @media only screen and (min-width: 768px) {
-    /* height: 40%; */
-
-  }
 `
 export const Copyright = styled.div`
   display: flex;
@@ -25,10 +37,6 @@ export const Copyright = styled.div`
   text-align: center;
   font-weight:normal;
 
-  @media only screen and (min-width: 768px) {
-    /* height: 40%; */
-
-  }
 
 `
 export const ResourcesText = styled(Link)`
@@ -40,19 +48,11 @@ export const ResourcesText = styled(Link)`
   color: white;
   font-size: ${2*vh}px;
   text-align: center;
-  @media only screen and (min-width: 768px) {
-    /* height: 40%; */
-
-  }
 
 `
 
 export const LinkIcon = styled(Link)`
   height: 100%;
   display: flex;
-  @media only screen and (min-width: 768px) {
-    /* height: 40%; */
-
-  }
 
 `

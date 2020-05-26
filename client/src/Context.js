@@ -7,6 +7,10 @@ const Provider = ({ children }) => {
     loader: false,
     error: false
   })
+  const languages = ['Español', 'English', 'Deutsch']
+  const langToSave = ['spanish', 'english', 'german']
+
+
   const {loader, error} = globalStates
   const setLoader = (state) => {
     setglobalStates({
@@ -22,6 +26,8 @@ const Provider = ({ children }) => {
   }
 
   const values = {
+    languages,
+    langToSave,
     isLanguage,
     loader,
     setLoader,

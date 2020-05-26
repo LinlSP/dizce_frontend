@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-
+import {Link} from '@reach/router'
 ///setting the height
 const windowWidth = window.innerWidth
 
@@ -30,10 +30,79 @@ const LogoSection = styled.div`
 `
 
 const BurgerMenu = styled.img`
+  filter:invert(1);
+  transition: .5s all ease;
 &:hover{
+  filter:invert(0);
   cursor: pointer;
 }
+@media only screen and (min-width: 1200px) {
+    display:none;
+}
 `
+const SideMenu = styled.div`
+  min-height:100vh;
+  min-width:100vw;
+  background-color:rgba(0,0,0,.9);
+  position:fixed;
+  z-index:+1;
+  transform:translateX(100vw);
+  transition: 1s ease all;
+  ${props=>props.on ? 'transform:translateX(0);' : ''}
+  @media only screen and (min-width: 1200px) {
+  display:none;
+  }
+
+
+`
+const SideMenuLink = styled(Link)`
+  z-index:2;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  font-size:${3*vh}px;
+  text-transform:uppercase;
+  transition:1s all ease;
+  &:hover{
+    color:white;
+  cursor:pointer;
+  font-weight:bold;
+  text-decoration:none;
+  }
+
+`
+
+const SideMenuButton = styled.img`
+height:100%;
+transform:rotate(180deg);
+&:hover{
+  cursor:pointer;
+}
+`
+
+const UpperMenu = styled.div`
+@media only screen and (max-width: 1199px) {
+display:none;
+}
+display:flex;
+width:50%;
+flex-wrap:wrap;
+justify-content:space-between;
+align-items:center;
+`
+const UpperLink = styled(Link)`
+color:white;
+transition: .5s all ease;
+font-size:${2*vh}px;
+
+&:hover{
+  color:black;
+  text-decoration:none;
+}
+
+`
+
 
 const MainTitle = styled.div`
   margin-top: ${15*vh}px;
@@ -75,6 +144,11 @@ const MainButton = styled.button`
   padding: 0 ${3*vh}px ;
   margin-bottom: ${15*vh}px;
   font-weight: 300;
+  transition: .5s all ease;
+  &:hover{
+    background-color:white;
+    color:black;
+  }
 
 `
 const WorldIcon = styled.div`
@@ -83,12 +157,35 @@ const WorldIcon = styled.div`
   width:100%;
   justify-content: flex-start;
   margin-bottom:${30*vh}px;
-
 `
 const WorldIconImage = styled.img`
+  transition: .5s all ease;
+  filter:invert(1);
   &:hover{
     cursor:pointer;
+    filter:invert(0);
   }
+`
+
+const SelectLangBox = styled.div`
+position:absolute;
+transform:scale(0);
+transition:.5s all ease;
+${props=>props.on ? 'transform:scale(1);' : ''}
+
+`
+const LangInBox = styled.div`
+padding:${1*vh}px ${2*vh}px;
+font-size:0 ${3*vh}px;
+color:white;
+background-color:rgba(0,0,0,.5);
+display:flex;
+justify-content:center;
+align-items:center;
+transition:.5s all ease;
+&:hover{
+  background-color:rgba(0,0,0,1);
+}
 `
 //////////////////////////////////////slider
 const Question = styled.div`
@@ -122,6 +219,9 @@ const Answer = styled.div`
     width:100%;
     height:auto;
     padding-top:0;
+}
+  @media only screen and (min-width: 1801px) {
+    align-items:flex-end;
 }
 
 `
@@ -190,7 +290,7 @@ const FurtherTitle = styled.div`
   justify-content:center;
   align-items:center;
   font-size: ${4*vh}px;
-  margin-top:${20*vh}px;
+  padding-top:${20*vh}px;
   margin-bottom:${10*vh}px;
 `
 const Sections = styled.div`
@@ -223,7 +323,8 @@ const Section2 = styled.div`
 const Section3 = styled.div`
   display:flex;
   flex-direction:column;
-  margin:${10*vh}px 0;
+  margin:${10*vh}px 0 0 0;
+  padding-bottom:${10*vh}px;
   justify-content:center;
   align-items:center;
 
@@ -236,7 +337,7 @@ const ImagesContainer = styled.div`
 `
 
 export {
-  LogoSection,MainTitle,LittleMainTitle,WorldIcon,WorldIconImage,MainButton,BurgerMenu,FirstLine,
+  LogoSection,MainTitle,LittleMainTitle,WorldIcon,WorldIconImage,MainButton,BurgerMenu,FirstLine,UpperMenu,UpperLink,SideMenu,SideMenuLink,SideMenuButton,SelectLangBox,LangInBox,
   Question,Quote,Answer,AnswerImg,SliderButton,
   FocusTitle,FocusIcons,FIcon,FocusDescription,DTitle,DSubtitle,DPoints,
   FurtherTitle,Section1,Section2,Section3,Sections,FText,FImage,ImagesContainer

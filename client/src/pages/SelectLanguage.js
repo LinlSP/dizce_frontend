@@ -13,7 +13,7 @@ const vh = window.innerHeight*0.01
 
 
 export const SelectLanguage = () => {
-  const { setStorageLanguage, setLoader } = useContext(Context)
+  const {languages, setStorageLanguage, setLoader, langToSave } = useContext(Context)
 
   const [userSettings, setUserSettings] = useState({
     title: '',
@@ -25,8 +25,6 @@ export const SelectLanguage = () => {
   const { title, langNow, theDisplay, isSlideOn } = userSettings
 
   const titles = ['Idioma', 'Language', 'Sprache']
-  const languages = ['Español', 'English', 'Deutsch']
-  const langToSave = ['spanish', 'english', 'german']
 
   const mapsrc = `https://res.cloudinary.com/d1zc3/image/upload/v1589292483/All/Landing/${langNow}.png`
 

@@ -8,7 +8,6 @@ import {ContentContainerGlobal} from '../styles/global/Globalstyles'
 import brokenLogo from '../assets/brokenLogo.svg'
 
 /// //////////////////Self
-const vh = window.innerHeight*0.01
 
 export const NotFound = () =>{
   const {isLanguage} = useContext(Context)
@@ -25,13 +24,14 @@ export const NotFound = () =>{
     }
 
     useEffect(()=>{
-      setTimeout(() => {
+      const goback = setTimeout(() => {
         window.location.href = '/'
       }, 3000);
+      return () => clearTimeout(goback)
     },[])
   
   return(<>
-    <ContentContainerGlobal bgcolor={'rgba(93,193,185,1)'} height={`${100*vh}`} flex justify={'center'} align={'center'} extra='min-height: 100vh;'>
+    <ContentContainerGlobal bgcolor={'rgba(93,193,185,1)'}  flex justify={'center'} align={'center'} extra='min-height: 100vh;'>
       <Text>
         <BrokenLogo src={brokenLogo} height='100%' alt=""/>
         {message}

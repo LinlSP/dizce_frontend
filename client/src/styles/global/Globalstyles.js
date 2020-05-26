@@ -1,5 +1,4 @@
 import styled, { createGlobalStyle } from 'styled-components'
-const vh = window.innerHeight*0.01
 
 const Globalstyles = createGlobalStyle`
   html {

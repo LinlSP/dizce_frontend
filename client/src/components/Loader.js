@@ -8,7 +8,6 @@ import logoSrc from '../assets/logo.svg'
 import { Container, LoaderIcon, LoaderText } from '../styles/components/StyleLoader'
 
 /// //////////////////Self
-const vh = window.innerHeight*0.01
 
 export const Loader = () => {
   // const { loader } = useContext(Context)

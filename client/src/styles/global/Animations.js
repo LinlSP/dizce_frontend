@@ -1,5 +1,4 @@
 import { css, keyframes } from 'styled-components'
-const vh = window.innerHeight*0.01
 
 const BounceKF = keyframes`
 0%,
@@ -20,7 +19,7 @@ const TheFadeIn = keyframes`
 `
 const TheSlideLeft = keyframes`
     0% {
-      transform: translateX(-60vw);
+      transform: translateX(-100vw);
     }
     100% {
       transform: translateX(0);
@@ -28,7 +27,7 @@ const TheSlideLeft = keyframes`
 `
 const TheSlideRight = keyframes`
     0% {
-      transform: translateX(60vw);
+      transform: translateX(100vw);
     }
     100% {
       transform: translateX(0);

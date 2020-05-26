@@ -9,7 +9,6 @@ import {Text,Icon} from '../styles/pages/StyleError'
 import errorSrc from '../assets/error.svg'
 
 /// //////////////////Self
-const vh = window.innerHeight*0.01
 
 export const Error = () =>{
   const {isLanguage, removeStorageLanguage} = useContext(Context)
@@ -29,10 +28,10 @@ export const Error = () =>{
     setTimeout(() => {
       removeStorageLanguage()
       location.reload()
-    }, 3000);
+    }, 2000);
   },[])
   return(<>
-    <ContentContainerGlobal height={`${100*vh}`} extra='min-height:100vh;' flex flexCol justify='center' align='center' bgcolor='black'>
+    <ContentContainerGlobal extra='min-height:100vh;' flex flexCol justify='center' align='center' bgcolor='black'>
       <Icon src={errorSrc}/>
       <Text>
         {message}
