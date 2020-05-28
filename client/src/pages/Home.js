@@ -17,8 +17,8 @@ import burgerMenu from '../assets/burgerMenu.svg'
 import languageWorld from '../assets/languageWorld.svg'
 import quote1 from '../assets/initquote.svg'
 import quote2 from '../assets/endquote.svg'
-import business from '../assets/business.svg'
 import family from '../assets/family.svg'
+import business from '../assets/business.svg'
 import individual from '../assets/individual.svg'
 import personalized from '../assets/personalized.svg'
 import sliderbutton from '../assets/sliderButton.svg'
@@ -31,15 +31,10 @@ import Backbtn from '../assets/gobtn.svg'
 ///setting the height
 const windowWidth = window.innerWidth
 
-var defaultVh = 784
-
-if(windowWidth > 900 && windowWidth < 1201){
-  defaultVh = 900
-  
-}else if(windowWidth > 1200 && windowWidth < 1801){
-  defaultVh = 1050
-
-}else if(windowWidth > 1800){
+var defaultVh = 684
+if(windowWidth > 350 && windowWidth < 1701){
+  defaultVh = 784
+}else if(windowWidth > 1700){
   defaultVh = window.innerHeight
 }
 
@@ -51,14 +46,18 @@ const defaultbgcolor= 'rgba(93,193,185,1)'
 const secondarybgcolor = 'rgba(239,239,239,1)'
 const bggradient=`linear-gradient(90deg, rgba(255,255,255,1) 0%, ${defaultbgcolor} 100%)`
 const interpreter='https://res.cloudinary.com/d1zc3/image/upload/v1588988741/All/Home/Translator.png'
-
+const translators = 'https://res.cloudinary.com/d1zc3/image/upload/v1590540428/All/Home/Rechteck_1.png'
+const focusIcons = [family ,business , individual, personalized]
 
 export const Home = () => {
   const {isLanguage, setError, languages, setStorageLanguage, langToSave } = useContext(Context)
   const [textData, setTextData] = useState('')
   const [sideMenu, setSideMenu] = useState(false)
   const [langBox, setLangBox] = useState(false)
+  const [firstslider, setFirstslider] = useState(true)
+  const [focusIcon, setFocusIcon] = useState(parseInt('0'))
 
+  
   useEffect(() => {
     import(`../languages/${isLanguage}/${pageName}.json`)
       .then(({default: myData}) => {
@@ -69,6 +68,7 @@ export const Home = () => {
         setError(true)
       });
 
+
   }, [])
 
   const changeLanguage = (index, callback) =>{
@@ -76,7 +76,15 @@ export const Home = () => {
     callback;
   }
 
-  console.log(textData)
+  const onSliderChange = (value) =>{
+    setFirstslider(value);
+  }
+
+  const onFocusChange = (event) =>{
+    const focusIconNumber = parseInt(event.target.id);
+    setFocusIcon(focusIconNumber)
+  }
+
 
   if(textData === '') return  <Loader/>
 
@@ -157,20 +165,20 @@ export const Home = () => {
     <BigContainerGlobal id='question' bgcolor={defaultbgcolor}>
       <div className='container'>
         <ContentContainerGlobal flex justify='center' align='flex-end' extra={`padding: ${4*vh}px 0 ${4*vh}px 0;`}>
-          <Question>
+          <Question change={firstslider ? 1 : 0}>
             <Quote src={quote1} extra='margin-right: 1px;'/>
-              {questions[0].question}
+              {firstslider ? questions[0].question : questions[1].question}
           </Question>
-            <Quote src={quote2}/>
+            <Quote change={firstslider ? 1 : 0} src={quote2}/>
         </ContentContainerGlobal>
       </div>
     </BigContainerGlobal>
     <BigContainerGlobal id='answer' bg={bggradient}  bgsize='contain'>
       <div className="container">
         <ContentContainerGlobal flex justify='center' align='center'>
-          <Answer>
-            {questions[0].answer}
-            <AnswerImg src={interpreter} alt=""/>
+          <Answer change={firstslider ? 1 : 0}>
+            {firstslider ? questions[0].answer : questions[1].answer}
+            <AnswerImg src={firstslider ? interpreter : translators} alt=""/>
           </Answer>
         </ContentContainerGlobal>
       </div>
@@ -180,8 +188,8 @@ export const Home = () => {
     <BigContainerGlobal bgcolor={secondarybgcolor}>
       <div className='container'>
         <ContentContainerGlobal flex justify='center' align='center'>
-          <SliderButton src={sliderbutton} bgcolor='black'/>
-          <SliderButton src={sliderbutton} bgcolor='white'/>
+          <SliderButton src={sliderbutton} bgcolor={()=>(firstslider ? 'black':'white')} onClick={()=>onSliderChange(true)}/>
+          <SliderButton src={sliderbutton} bgcolor={()=>(firstslider ? 'white' : 'black')} onClick={()=>onSliderChange(false)}/>
         </ContentContainerGlobal>
       </div>
     </BigContainerGlobal>
@@ -195,23 +203,24 @@ export const Home = () => {
             {titles.first}
           </FocusTitle>
           <FocusIcons>
-            <FIcon src={family}/>
-            <FIcon src={business}/>
-            <FIcon src={individual}/>
-            <FIcon src={personalized}/>
+            {
+              focusIcons.map((source, index)=>(
+                <FIcon key={index} id={index} src={source} focusOn={focusIcon} onClick={(event)=>onFocusChange(event)}/>
+              ))
+            }
           </FocusIcons>
           <FocusDescription>
             <DTitle>
-              {focus[0].name}
+              {focus[focusIcon].name}
             </DTitle>
             <div>
               <DSubtitle>
-                {focus[0].text}
+                {focus[focusIcon].text}
               </DSubtitle>
               <DPoints>
-                <li>{focus[0].points.one}</li>
-                <li>{focus[0].points.two}</li>
-                <li>{focus[0].points.three}</li>
+                <li>{focus[focusIcon].points.one}</li>
+                <li>{focus[focusIcon].points.two}</li>
+                <li>{focus[focusIcon].points.three}</li>
               </DPoints>
             </div>
           </FocusDescription>

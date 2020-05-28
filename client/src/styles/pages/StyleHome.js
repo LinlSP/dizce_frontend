@@ -1,17 +1,14 @@
 import styled from 'styled-components'
+import {SlideLeft, SlideRight } from '../global/Animations'
 import {Link} from '@reach/router'
 ///setting the height
 const windowWidth = window.innerWidth
+const windowHeight = window.innerHeight
 
-var defaultVh = 784
-
-if(windowWidth > 900 && windowWidth < 1201){
-  defaultVh = 900
-
-}else if(windowWidth > 1200 && windowWidth < 1801){
-  defaultVh = 1050
-
-}else if(windowWidth > 1800){
+var defaultVh = 684
+if(windowWidth > 350 && windowWidth < 1701){
+  defaultVh = 784
+}else if(windowWidth > 1700){
   defaultVh = window.innerHeight
 }
 
@@ -168,23 +165,28 @@ const WorldIconImage = styled.img`
 `
 
 const SelectLangBox = styled.div`
+transform-origin:left top;
 position:absolute;
 transform:scale(0);
 transition:.5s all ease;
+margin-left:${6*vh}px;
+margin-top:${3*vh}px;
 ${props=>props.on ? 'transform:scale(1);' : ''}
-
+overflow-y: scroll;
+height:${17.5*vh}px;
 `
 const LangInBox = styled.div`
 padding:${1*vh}px ${2*vh}px;
-font-size:0 ${3*vh}px;
+font-size:${2.6*vh}px;
 color:white;
 background-color:rgba(0,0,0,.5);
 display:flex;
 justify-content:center;
 align-items:center;
-transition:.5s all ease;
+transition:1s all ease;
 &:hover{
   background-color:rgba(0,0,0,1);
+  cursor: pointer;
 }
 `
 //////////////////////////////////////slider
@@ -194,12 +196,23 @@ const Question = styled.div`
   text-align:center;
   font-size: ${3*vh}px;
   font-weight: bold;
+  ${props=>props.change ?
+    SlideLeft({time:'1.5s'})
+    :
+    SlideRight({time:'1.5s'})
+  }
   ${props=>props.extra}
 `
 const Quote = styled.img`
   position: relative;
   display:flex;
   height:${2*vh}px;
+  ${props=>props.change ?
+    SlideLeft({time:'1.5s'})
+    :
+    SlideRight({time:'1.5s'})
+  }
+
   ${props=>props.extra}
 `
 const Answer = styled.div`
@@ -214,14 +227,17 @@ const Answer = styled.div`
   font-size:${2.3*vh}px;
   height: ${80*vh}px;
   padding-top: ${4*vh}px;
+  ${props=>props.change ?
+    SlideRight({time:'1.5s'})
+    :
+    SlideLeft({time:'1.5s'})
+  }
+
   @media only screen and (min-width: 800px) {
     flex-direction:row;
     width:100%;
     height:auto;
     padding-top:0;
-}
-  @media only screen and (min-width: 1801px) {
-    align-items:flex-end;
 }
 
 `
@@ -238,6 +254,9 @@ const SliderButton = styled.img`
   margin: ${2*vh}px;
   border-radius:50%;
   background-color: ${props=>props.bgcolor};
+  &:hover{
+    cursor:pointer;
+  }
 `
 
 //////////////////////////////////////ourfocus
@@ -251,13 +270,27 @@ const FocusTitle = styled.div`
 `
 const FocusIcons = styled.div`
   display: flex;
+  flex-wrap:wrap;
   justify-content:space-between;
   align-items:center;
   padding-top:${10*vh}px;
   padding-bottom:${10*vh}px;
 `
 const FIcon = styled.img`
-width:20%;
+height: ${8*vh}px;
+opacity:.4;
+transition:1s all ease;
+
+${props=>{
+  if(parseInt(props.id) === props.focusOn) return `
+  opacity:1;
+  height: ${10*vh}px;
+
+  `
+}}
+&:hover{
+  cursor:pointer;
+}
 `
 const FocusDescription = styled.div`
   display: flex;
@@ -268,13 +301,13 @@ const FocusDescription = styled.div`
   border-bottom: ${1*vh}px  solid black;
 `
 const DTitle = styled.div`
-  font-size:${8*vh}px;
+  font-size:${6*vh}px;
   font-weight:bold;
   margin-bottom:${8*vh}px;
   margin-top:${4*vh}px;
 `
 const DSubtitle = styled.div`
-  font-size:${2.3*vh}px;
+  font-size:${2.5*vh}px;
   margin-bottom:${4*vh}px;
 `
 const DPoints = styled.ul`
