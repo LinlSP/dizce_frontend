@@ -2,7 +2,7 @@ import React from 'react'
 
 /// //////////////////Styles
 import { BigContainerGlobal, ContentContainerGlobal } from '../styles/global/Globalstyles'
-import { SocialMedia, Copyright, ResourcesText, LinkIcon } from '../styles/components/StyleFooter'
+import { SocialMedia, Copyright, ResourcesText, LinkIcon, RLink } from '../styles/components/StyleFooter'
 
 /// //////////////////Resources and Components
 import facebook from '../assets/facebook.svg'
@@ -44,8 +44,10 @@ export const Footer = () => {
           <Copyright>
             © 2020 Copyright Dizce
           </Copyright>
-          <ResourcesText to='/resources'>
-            Media Resources
+          <ResourcesText>
+            <RLink to='/resources'>
+              Media Resources
+            </RLink>
           </ResourcesText>
         </ContentContainerGlobal>
       </div>

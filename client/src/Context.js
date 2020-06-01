@@ -1,5 +1,6 @@
 import React, { createContext, useState } from 'react'
 export const Context = createContext()
+import {Header as TheHeader} from './components/Header'
 
 const Provider = ({ children }) => {
   const [isLanguage, setIsLanguage] = useState(window.localStorage.getItem('language'))
@@ -9,7 +10,7 @@ const Provider = ({ children }) => {
   })
   const languages = ['Español', 'English', 'Deutsch']
   const langToSave = ['spanish', 'english', 'german']
-
+  const Header = () => (<TheHeader language={isLanguage} />)
 
   const {loader, error} = globalStates
   const setLoader = (state) => {
@@ -33,6 +34,7 @@ const Provider = ({ children }) => {
     setLoader,
     error,
     setError,
+    Header,
     setStorageLanguage: (language) => {
       window.localStorage.setItem('language', language)
       setIsLanguage(language)

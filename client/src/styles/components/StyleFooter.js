@@ -34,16 +34,17 @@ export const Copyright = styled.div`
 
 
 `
-export const ResourcesText = styled(Link)`
+export const ResourcesText = styled.div`
   display: flex;
   width: 30%;
-  font-weight:normal;
   justify-content: flex-end;
   align-items: center;
+  text-align: center;
+`
+export const RLink = styled(Link)`
+  font-weight:normal;
   color: white;
   font-size: ${2*vh}px;
-  text-align: center;
-
 `
 
 export const LinkIcon = styled(Link)`

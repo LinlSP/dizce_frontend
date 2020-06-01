@@ -41,12 +41,15 @@ if(windowWidth > 350 && windowWidth < 1701){
 var vh = defaultVh*0.01
 ///
 
-const pageName = 'home'
+///cloudinary URl
+const imagesSrcUrl = 'https://res.cloudinary.com/d1zc3/image/upload/v1590540428/All/Home'
+///
+const selfName = 'home'
 const defaultbgcolor= 'rgba(93,193,185,1)'
 const secondarybgcolor = 'rgba(239,239,239,1)'
 const bggradient=`linear-gradient(90deg, rgba(255,255,255,1) 0%, ${defaultbgcolor} 100%)`
-const interpreter='https://res.cloudinary.com/d1zc3/image/upload/v1588988741/All/Home/Translator.png'
-const translators = 'https://res.cloudinary.com/d1zc3/image/upload/v1590540428/All/Home/Rechteck_1.png'
+const interpreter=`${imagesSrcUrl}/Translator.png`
+const translators = `${imagesSrcUrl}/Rechteck_1.png`
 const focusIcons = [family ,business , individual, personalized]
 
 export const Home = () => {
@@ -57,9 +60,11 @@ export const Home = () => {
   const [firstslider, setFirstslider] = useState(true)
   const [focusIcon, setFocusIcon] = useState(parseInt('0'))
 
+  const menuLinksTo = ['/about','/services','/contact','/legal']
+
   
   useEffect(() => {
-    import(`../languages/${isLanguage}/${pageName}.json`)
+    import(`../languages/${isLanguage}/${selfName}.json`)
       .then(({default: myData}) => {
         setTextData(myData);
       })
@@ -96,18 +101,13 @@ export const Home = () => {
       <div style={{width:'80%', display:'flex',justifyContent:'flex-start', height:`${6*vh}px`, position:'absolute'}}>
         <SideMenuButton src={Backbtn} height='100%' alt="" onClick={()=>setSideMenu(false)}/>
       </div>
-      <SideMenuLink to='/about'>
-        {sidepanel.one}
-      </SideMenuLink>
-      <SideMenuLink to='/services'>
-        {sidepanel.two}
-      </SideMenuLink>
-      <SideMenuLink to='/contact'>
-        {sidepanel.three}
-      </SideMenuLink>
-      <SideMenuLink to='/legal'>
-        {sidepanel.four}
-      </SideMenuLink>
+      {
+        sidepanel.map((linkTitle,index)=>(
+          <SideMenuLink key={index} to={menuLinksTo[index]}>
+            {linkTitle}
+          </SideMenuLink>
+        ))
+      }
     </div>
   </SideMenu>
   <div id='mainscreen'>
@@ -118,18 +118,13 @@ export const Home = () => {
             <img src={logo2} alt="" height='80%'/>
             <BurgerMenu src={burgerMenu} alt="" height='40%' onClick={()=>setSideMenu(true)}/>
             <UpperMenu>
-              <UpperLink to='/about'>
-                {sidepanel.one}
-              </UpperLink>
-              <UpperLink to='/services'>
-                {sidepanel.two}
-              </UpperLink>
-              <UpperLink to='/contact'>
-                {sidepanel.three}
-              </UpperLink>
-              <UpperLink to='/legal'>
-                {sidepanel.four}
-              </UpperLink>
+              {
+                sidepanel.map((linkTitle,index)=>(
+                  <UpperLink key={index} to={menuLinksTo[index]}>
+                    {linkTitle}
+                  </UpperLink>
+                ))
+              }
             </UpperMenu>
           </LogoSection>
           <MainTitle >
@@ -218,9 +213,11 @@ export const Home = () => {
                 {focus[focusIcon].text}
               </DSubtitle>
               <DPoints>
-                <li>{focus[focusIcon].points.one}</li>
-                <li>{focus[focusIcon].points.two}</li>
-                <li>{focus[focusIcon].points.three}</li>
+                {
+                  focus[focusIcon].points.map((point,index)=>(
+                    <li key={index}>{point}</li>
+                  ))
+                }
               </DPoints>
             </div>
           </FocusDescription>
@@ -239,29 +236,31 @@ export const Home = () => {
           <Sections>
             <Section1>
               <FText >
-                {furthermore.one}
+                {furthermore[0]}
               </FText>
               <div style={{width: '50%', display:'flex', justifyContent: 'center', alignItems:'center'}}>
-                <FImage width='80%' src='https://res.cloudinary.com/d1zc3/image/upload/v1588993595/All/Home/learnbook.jpg'/>
+                <FImage width='80%' src={`${imagesSrcUrl}/learnbook.jpg`}/>
               </div>
 
             </Section1>
             <Section2 >
             <div style={{width: '50%', display:'flex', justifyContent: 'center', alignItems:'center'}}>
-              <FImage width='80%' src='https://res.cloudinary.com/d1zc3/image/upload/v1588988953/All/Home/earth.png'/>
+              <FImage width='80%' src={`${imagesSrcUrl}/earth.png`}/>
             </div>
               <FText >
-                {furthermore.two}
+                {furthermore[1]}
               </FText>
             </Section2>
             <Section3>
               <FText width='90%' align> 
-                {furthermore.three}
+                {furthermore[2]}
               </FText>
               <ImagesContainer >
-                <FImage width='30%' src='https://res.cloudinary.com/d1zc3/image/upload/v1588993595/All/Home/alter.jpg'/>
-                <FImage width='30%' src='https://res.cloudinary.com/d1zc3/image/upload/v1588993595/All/Home/frau.jpg'/>
-                <FImage width='30%' src='https://res.cloudinary.com/d1zc3/image/upload/v1588993595/All/Home/boy-studies.jpg'/>
+                {
+                  ['alter','frau','boy-studies'].map((picName, index)=>(
+                    <FImage key={index} width='30%' src={`${imagesSrcUrl}/${picName}.jpg`}/>
+                  ))
+                }
               </ImagesContainer>
             </Section3>
           </Sections>

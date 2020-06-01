@@ -7,67 +7,67 @@
       "button":"Leg los, kostenlos"
 
     },
-  "questions":[
-    {
-      "question":"Pero en internet ya se ofrecen los servicios de traductores profesionales, no?",
-      "answer":"Nosotros también somos profesionales. La diferencia radica en que nosotros somos económicos y no nos especializamos en procesos burocráticos."
-    },
-    {
-      "question":"Por qué tendría que confiar en dizce, si ya existen traductores y diccionarios en línea? ",
-      "answer":"Porque dizce no es un traductor, sino un equipo de personas que te guiarán y posteriormente prepararán un producto personalizado. Además tales herramientas están llenas de imprecisiones."
-    }
-  ],
-  "titles":{
-    "first":"ENFOCADOS EN",
-    "second":"ADEMÁS"
-  },
-  "focus":[
-    {
-      "name":"Familias",
-      "text":"Ofrecemos y recomendamos materiales académicos para el aprendizaje en familia; tanto gratuitas, como de pago:",
-      "points":{
-        "one":"Páginas web educativas gratuitas.",
-        "two":"Contenidos exclusivos de otros idiomas, traducidos al Español.",
-        "three":"Traducción de contenidos audiovisuales, didácticos (juegos, programas) o textuales, a pedido."
+    "questions":[
+      {
+        "question":"Pero en internet ya se ofrecen los servicios de traductores profesionales, no?",
+        "answer":"Nosotros también somos profesionales. La diferencia radica en que nosotros somos económicos y no nos especializamos en procesos burocráticos."
+      },
+      {
+        "question":"Por qué tendría que confiar en dizce, si ya existen traductores y diccionarios en línea? ",
+        "answer":"Porque dizce no es un traductor, sino un equipo de personas que te guiarán y posteriormente prepararán un producto personalizado. Además tales herramientas están llenas de imprecisiones."
       }
+    ],
+    "titles":{
+      "first":"ENFOCADOS EN",
+      "second":"ADEMÁS"
     },
-    {
-      "name":"Empresas",
-      "text":"Ofrecemos y recomendamos materiales académicos para el aprendizaje en familia; tanto gratuitas, como de pago:",
-      "points":{
-          "one":"Páginas web educativas gratuitas.",
-          "two":"Contenidos exclusivos de otros idiomas, traducidos al Español.",
-          "three":"Traducción de contenidos audiovisuales, didácticos (juegos, programas) o textuales, a pedido."
-        }
-    },
-    {
-      "name":"Individuos",
-      "text":"Ofrecemos y recomendamos materiales académicos para el aprendizaje en familia; tanto gratuitas, como de pago:",
-      "points":{
-          "one":"Páginas web educativas gratuitas.",
-          "two":"Contenidos exclusivos de otros idiomas, traducidos al Español.",
-          "three":"Traducción de contenidos audiovisuales, didácticos (juegos, programas) o textuales, a pedido."
+    "focus":[
+      {
+        "name":"Familias",
+        "text":"Ofrecemos y recomendamos materiales académicos para el aprendizaje en familia; tanto gratuitas, como de pago:",
+        "points":[
+            "Páginas web educativas gratuitas.",
+            "Contenidos exclusivos de otros idiomas, traducidos al Español.",
+            "Traducción de contenidos audiovisuales, didácticos (juegos, programas) o textuales, a pedido."
+        ]
+      },
+      {
+        "name":"Empresas",
+        "text":"Ofrecemos y recomendamos materiales académicos para el aprendizaje en familia; tanto gratuitas, como de pago:",
+        "points":[
+            "Páginas web educativas gratuitas.",
+            "Contenidos exclusivos de otros idiomas, traducidos al Español.",
+            "Traducción de contenidos audiovisuales, didácticos (juegos, programas) o textuales, a pedido."
+          ]
+      },
+      {
+        "name":"Individuos",
+        "text":"Ofrecemos y recomendamos materiales académicos para el aprendizaje en familia; tanto gratuitas, como de pago:",
+        "points":[
+            "Páginas web educativas gratuitas.",
+            "Contenidos exclusivos de otros idiomas, traducidos al Español.",
+            "Traducción de contenidos audiovisuales, didácticos (juegos, programas) o textuales, a pedido."
+        ]
+      },
+      {
+        "name":"Personalización",
+        "text":"Ofrecemos y recomendamos materiales académicos para el aprendizaje en familia; tanto gratuitas, como de pago:",
+        "points":[
+            "Páginas web educativas gratuitas.",
+            "Contenidos exclusivos de otros idiomas, traducidos al Español.",
+            "Traducción de contenidos audiovisuales, didácticos (juegos, programas) o textuales, a pedido."
+        ]
       }
-    },
-    {
-      "name":"Personalización",
-      "text":"Ofrecemos y recomendamos materiales académicos para el aprendizaje en familia; tanto gratuitas, como de pago:",
-      "points":{
-          "one":"Páginas web educativas gratuitas.",
-          "two":"Contenidos exclusivos de otros idiomas, traducidos al Español.",
-          "three":"Traducción de contenidos audiovisuales, didácticos (juegos, programas) o textuales, a pedido."
-      }
-    }
-  ],
-  "furthermore":{
-      "one":"Nuestro objetivo es eliminar las barreras idiomáticas que te impiden la obtención de información, formación y educación de mejor calidad; así como la expansión de tu compañía.",
-      "two":"Pero la educación 'académica' no es la única y por ello estamos convencidos de que la comprensión de otras culturas es igualmente sino, más importante para expandirte.",
-      "three":"A nosotros no nos importa  tu edad ni  tu condición, solo tus ganas de ser mejor que ayer."
-  },
-  "sidepanel":{
-      "one":"Qué es?",
-      "two":"Servicios",
-      "three":"Contacto",
-      "four":"Términos y condiciones"
+    ],
+    "furthermore":[
+        "Nuestro objetivo es eliminar las barreras idiomáticas que te impiden la obtención de información, formación y educación de mejor calidad; así como tu expansión personal o empresarial.",
+        "Pero la educación 'académica' no es la única y por ello estamos convencidos de que la comprensión de otras culturas es igualmente sino, más importante para expandirte.",
+        "A nosotros no nos importa  tu edad ni  tu condición, solo tus ganas de ser mejor que ayer."
+    ],
+    "sidepanel":[
+        "Qué es?",
+        "Servicios",
+        "Contacto",
+        "Condiciones"
+    ]
   }
-}

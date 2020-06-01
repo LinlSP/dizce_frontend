@@ -2,31 +2,30 @@ import React, { useContext } from 'react'
 import { Router, Redirect } from '@reach/router'
 
 /// //////////////////Archives
-import { SelectLanguage } from './pages/SelectLanguage'
-import { Home } from './pages/Home'
 import { Context } from './Context'
 import { Footer } from './components/Footer'
+import { SelectLanguage } from './pages/SelectLanguage'
+import { Home } from './pages/Home'
 import { Resources } from './pages/Resources'
 import { NotFound } from './pages/NotFound'
+import { About } from './pages/About'
 import { Error } from './pages/Error'
-// import { Loader } from './components/Loader'
 
 /// //////////////////Styled components
 import { Globalstyles } from './styles/global/Globalstyles'
 
-const languages = ['spanish', 'english', 'german']
 /// /////////////////App
 
 
 export const App = () => {
-  const {error, isLanguage } = useContext(Context)
-  if (error) return <Error/>
-  if (languages.includes(isLanguage)) {
+  const {error, isLanguage, langToSave } = useContext(Context)
+  if (error) return <><Globalstyles /><Error/></>
+  if (langToSave.includes(isLanguage)) {
     return (<>
       <Globalstyles />
-      {/* <Loader /> */}
       <Router>
         <Home path='/' />
+        <About path='/about'/>
         <Resources path='/resources'/>
         <NotFound path='/*'/>
       </Router>

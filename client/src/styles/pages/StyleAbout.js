@@ -1,10 +1,5 @@
-import React from 'react'
+import styled from 'styled-components'
 
-/// //////////////////Styles
-
-/// //////////////////Resources and Components
-
-/// //////////////////Self
 ///setting the height
 const windowWidth = window.innerWidth
 
