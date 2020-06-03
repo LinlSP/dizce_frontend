@@ -1,4 +1,5 @@
-import React from 'react'
+import React,{useContext} from 'react'
+import {Context} from '../Context'
 
 /// //////////////////Styles
 import { BigContainerGlobal, ContentContainerGlobal } from '../styles/global/Globalstyles'
@@ -26,8 +27,23 @@ var vh = defaultVh*0.01
 
 
 export const Footer = () => {
+  const {isLanguage} = useContext(Context)
   const socialLinks = ['twitter.com', 'instagram.com', 'facebook.com']
   const socialSources = [twitter, instagram, facebook]
+
+  var resources;
+
+  switch(isLanguage){
+    case 'spanish':
+      resources = 'Recursos';
+      break;
+    case 'german':
+      resources = 'Ressourcen';
+      break;
+    default:
+      resources = 'Resources';
+  }
+
   return (
     <BigContainerGlobal bgcolor='black'>
       <div className='container'>
@@ -46,7 +62,7 @@ export const Footer = () => {
           </Copyright>
           <ResourcesText>
             <RLink to='/resources'>
-              Media Resources
+              {resources}
             </RLink>
           </ResourcesText>
         </ContentContainerGlobal>

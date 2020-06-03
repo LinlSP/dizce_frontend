@@ -9,6 +9,7 @@ import { Home } from './pages/Home'
 import { Resources } from './pages/Resources'
 import { NotFound } from './pages/NotFound'
 import { About } from './pages/About'
+import { Contact } from './pages/Contact'
 import { Error } from './pages/Error'
 
 /// //////////////////Styled components
@@ -26,6 +27,7 @@ export const App = () => {
       <Router>
         <Home path='/' />
         <About path='/about'/>
+        <Contact path='/contact' />
         <Resources path='/resources'/>
         <NotFound path='/*'/>
       </Router>

@@ -149,7 +149,7 @@ export const Home = () => {
                 ))
               }
             </SelectLangBox>
-            <WorldIconImage onClick={()=>{setLangBox(!langBox)}} src={languageWorld} height='100%' alt=""/>
+            <WorldIconImage name='language' onClick={()=>{setLangBox(!langBox)}} src={languageWorld} height='100%' alt=""/>
           </WorldIcon>
         </ContentContainerGlobal>
       </div>
