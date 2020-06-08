@@ -1,7 +1,7 @@
 import React, { useContext, useEffect , useState} from 'react'
 import { Context } from '../Context'
 
-/// //////////////////Styles
+////////////////////////////////////////////////////////////////////////////////////Styles
 import {ContentContainerGlobal, BigContainerGlobal} from '../styles/global/Globalstyles'
 import {
         LogoSection, MainTitle,LittleMainTitle,WorldIcon,WorldIconImage,MainButton,BurgerMenu, FirstLine,UpperMenu,UpperLink,SideMenu,SideMenuLink,SideMenuButton,SelectLangBox,LangInBox, //mainscreen
@@ -9,10 +9,10 @@ import {
         FocusTitle,FocusIcons,FIcon,FocusDescription,DTitle,DSubtitle,DPoints,//ourfocus
         FurtherTitle,Sections,Section1,Section2,Section3,FText,FImage,ImagesContainer//furthermore
         } from '../styles/pages/StyleHome'
-/// //////////////////Resources and Components
+////////////////////////////////////////////////////////////////////////////////////Resources and Components
 import {Loader} from '../components/Loader'
 import homebg from '../assets/homebg.svg'
-import logo2 from '../assets/logo2.svg'
+import logo2 from '../assets/logo2.png'
 import burgerMenu from '../assets/burgerMenu.svg'
 import languageWorld from '../assets/languageWorld.svg'
 import quote1 from '../assets/initquote.svg'
@@ -26,7 +26,7 @@ import lastbg from '../assets/homelastbg.svg'
 import Backbtn from '../assets/gobtn.svg'
 
 
-/// //////////////////Self
+////////////////////////////////////////////////////////////////////////////////////Self
 
 ///setting the height
 const windowWidth = window.innerWidth
@@ -44,6 +44,7 @@ var vh = defaultVh*0.01
 ///cloudinary URl
 const imagesSrcUrl = 'https://res.cloudinary.com/d1zc3/image/upload/v1590540428/All/Home'
 ///
+
 const selfName = 'home'
 const defaultbgcolor= 'rgba(93,193,185,1)'
 const secondarybgcolor = 'rgba(239,239,239,1)'
@@ -59,20 +60,23 @@ export const Home = () => {
   const [langBox, setLangBox] = useState(false)
   const [firstslider, setFirstslider] = useState(true)
   const [focusIcon, setFocusIcon] = useState(parseInt('0'))
-
   const menuLinksTo = ['/about','/services','/contact','/legal']
 
-  
-  useEffect(() => {
+  //////////////////Importing Text from JSON - function
+  const importTextFromJson = () => {
     import(`../languages/${isLanguage}/${selfName}.json`)
-      .then(({default: myData}) => {
+      .then(({ default: myData }) => {
         setTextData(myData);
       })
-      .catch(error=>{
+      .catch(error => {
         console.log(error)
         setError(true)
       });
+  }
+  ///////////
 
+  useEffect(() => {
+    importTextFromJson()
 
   }, [])
 
@@ -90,6 +94,7 @@ export const Home = () => {
     setFocusIcon(focusIconNumber)
   }
 
+  //////////////////PAGE
 
   if(textData === '') return  <Loader/>
 
@@ -136,7 +141,7 @@ export const Home = () => {
             </FirstLine>
             {maintitle.big2}
           </MainTitle>
-          <MainButton>
+          <MainButton to='/services'>
             {maintitle.button}
           </MainButton>
           <WorldIcon>

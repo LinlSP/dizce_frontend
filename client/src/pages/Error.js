@@ -1,17 +1,19 @@
 import React,{useContext, useEffect} from 'react'
 import {Context} from '../Context'
 
-/// //////////////////Styles
+////////////////////////////////////////////////////////////////////////////////////Styles
 import {ContentContainerGlobal} from '../styles/global/Globalstyles'
 import {Text,Icon} from '../styles/pages/StyleError'
 
-/// //////////////////Resources and Components
+////////////////////////////////////////////////////////////////////////////////////Resources and Components
 import errorSrc from '../assets/error.svg'
 
-/// //////////////////Self
+////////////////////////////////////////////////////////////////////////////////////Self
 
 export const Error = () =>{
+
   const {isLanguage, removeStorageLanguage} = useContext(Context)
+
   var message;
   switch(isLanguage){
     case 'spanish':
@@ -30,6 +32,9 @@ export const Error = () =>{
       location.reload()
     }, 2000);
   },[])
+
+  //////////////////PAGE
+
   return(<>
     <ContentContainerGlobal extra='min-height:100vh;' flex flexCol justify='center' align='center' bgcolor='black'>
       <Icon src={errorSrc}/>

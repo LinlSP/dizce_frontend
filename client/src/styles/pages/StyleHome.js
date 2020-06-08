@@ -132,7 +132,7 @@ const LittleMainTitle = styled.div`
   font-weight: lighter;
 
 `
-const MainButton = styled.button`
+const MainButton = styled(Link)`
   background-color: black;
   color: white;
   border: black;
@@ -145,6 +145,7 @@ const MainButton = styled.button`
   &:hover{
     background-color:white;
     color:black;
+    text-decoration:none;
   }
 
 `

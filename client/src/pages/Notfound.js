@@ -1,16 +1,17 @@
 import React,{useContext, useEffect} from 'react'
 import {Context} from '../Context'
-/// //////////////////Styles
+////////////////////////////////////////////////////////////////////////////////////Styles
 import {Text, BrokenLogo} from '../styles/pages/StyleNotFound'
 import {ContentContainerGlobal} from '../styles/global/Globalstyles'
 
-/// //////////////////Resources and Components
+////////////////////////////////////////////////////////////////////////////////////Resources and Components
 import brokenLogo from '../assets/brokenLogo.svg'
 
-/// //////////////////Self
+////////////////////////////////////////////////////////////////////////////////////Self
 
 export const NotFound = () =>{
   const {isLanguage} = useContext(Context)
+
   var message;
   switch(isLanguage){
       case 'spanish':
@@ -29,7 +30,9 @@ export const NotFound = () =>{
       }, 3000);
       return () => clearTimeout(goback)
     },[])
-  
+
+  //////////////////PAGE
+
   return(<>
     <ContentContainerGlobal bgcolor={'rgba(93,193,185,1)'}  flex justify={'center'} align={'center'} extra='min-height: 100vh;'>
       <Text>

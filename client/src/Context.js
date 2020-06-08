@@ -1,18 +1,23 @@
 import React, { createContext, useState } from 'react'
 export const Context = createContext()
+
 import {Header as TheHeader} from './components/Header'
 
 const Provider = ({ children }) => {
+//////////CONSTANTS
+  const languages = ['Español', 'English', 'Deutsch']
+  const langToSave = ['spanish', 'english', 'german']
   const [isLanguage, setIsLanguage] = useState(window.localStorage.getItem('language'))
   const [globalStates, setglobalStates] = useState({
     loader: false,
     error: false
   })
-  const languages = ['Español', 'English', 'Deutsch']
-  const langToSave = ['spanish', 'english', 'german']
+  const {loader, error} = globalStates
+//////////COMPONENTS
   const Header = () => (<TheHeader language={isLanguage} />)
 
-  const {loader, error} = globalStates
+//////////HANDLERS
+
   const setLoader = (state) => {
     setglobalStates({
       ...globalStates,
@@ -26,6 +31,19 @@ const Provider = ({ children }) => {
     })
   }
 
+  const setStorageLanguage = (language) => {
+    window.localStorage.setItem('language', language)
+    setIsLanguage(language)
+  }
+
+  const removeStorageLanguage = () => {
+    window.localStorage.removeItem('language')
+    setIsLanguage('')
+  }
+
+
+//////////VALUES
+
   const values = {
     languages,
     langToSave,
@@ -35,15 +53,11 @@ const Provider = ({ children }) => {
     error,
     setError,
     Header,
-    setStorageLanguage: (language) => {
-      window.localStorage.setItem('language', language)
-      setIsLanguage(language)
-    },
-    removeStorageLanguage: () => {
-      window.localStorage.removeItem('language')
-      setIsLanguage('')
-    }
+    setStorageLanguage,
+    removeStorageLanguage
   }
+
+//////////RETURNING 
 
   return (
     <Context.Provider value={values}>

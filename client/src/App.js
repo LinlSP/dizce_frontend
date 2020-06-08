@@ -11,6 +11,7 @@ import { NotFound } from './pages/NotFound'
 import { About } from './pages/About'
 import { Contact } from './pages/Contact'
 import { Error } from './pages/Error'
+import { Services } from './pages/Services'
 
 /// //////////////////Styled components
 import { Globalstyles } from './styles/global/Globalstyles'
@@ -29,6 +30,7 @@ export const App = () => {
         <About path='/about'/>
         <Contact path='/contact' />
         <Resources path='/resources'/>
+        <Services path='/services'/>
         <NotFound path='/*'/>
       </Router>
       <Footer />

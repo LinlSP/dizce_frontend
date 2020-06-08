@@ -1,16 +1,17 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { Context } from '../Context'
 
-/// //////////////////Styles
+////////////////////////////////////////////////////////////////////////////////////Styles
 import { LogoSection, TotalContainer, Content, Title, World, Languages, Lang, GoButton } from '../styles/pages/StyleSelectLanguage'
 
-/// //////////////////Resources and Components
-import logoSrc from '../assets/logo2.svg'
+////////////////////////////////////////////////////////////////////////////////////Resources and Components
+import logoSrc from '../assets/logo2.png'
 import Gobtn from '../assets/gobtn.svg'
 
-/// //////////////////Self
+////////////////////////////////////////////////////////////////////////////////////Self
+///setting the height
 const vh = window.innerHeight*0.01
-
+///
 
 export const SelectLanguage = () => {
   const {languages, setStorageLanguage, setLoader, langToSave } = useContext(Context)
@@ -41,6 +42,8 @@ export const SelectLanguage = () => {
     setStorageLanguage(langNow);
     setLoader(true);
   }
+
+  //////////////////PAGE
 
   return (
     <TotalContainer>

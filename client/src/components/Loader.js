@@ -1,19 +1,16 @@
 import React from 'react'
-// import { createPortal } from 'react-dom'
-// import { Context } from '../Context'
 
-/// //////////////////Resources & Components
+////////////////////////////////////////////////////////////////////////////////////Resources & Components
 import logoSrc from '../assets/logo.svg'
-/// //////////////////Styles
+////////////////////////////////////////////////////////////////////////////////////Styles
 import { Container, LoaderIcon, LoaderText } from '../styles/components/StyleLoader'
 
-/// //////////////////Self
+////////////////////////////////////////////////////////////////////////////////////Self
 
 export const Loader = () => {
-  // const { loader } = useContext(Context)
 
-  /// //////////////////
-  // if (!loader) return null
+  //////////////////PAGE
+
   return(
     <Container>
       <LoaderIcon src={logoSrc} />
@@ -22,6 +19,4 @@ export const Loader = () => {
       </LoaderText>
     </Container>
   )
-  // return createPortal(<>
-  // </>, document.getElementById('Loader'))
 }

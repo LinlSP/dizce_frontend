@@ -2,17 +2,17 @@ import React,{useState, useEffect, useContext} from 'react'
 import { Context } from '../Context'
 import { useLocation } from "@reach/router"
 
-/// //////////////////Styles
+////////////////////////////////////////////////////////////////////////////////////Styles
 import {Container, LinksContainer,MenuLogoLink,ChangeLang,Menu,
   PagesMenuBox,TitleInMenuBox,BackBtnLinks,BackBtnLanguages,LanguagesBox,LangInBox}
 from '../styles/components/StyleHeader'
-/// //////////////////Resources and Components
+////////////////////////////////////////////////////////////////////////////////////Resources and Components
 import {Loader} from './Loader'
-import logo from '../assets/logo2.svg'
+import logo from '../assets/logo2.png'
 import langWorld from '../assets/languageWorld.svg'
 import menu from '../assets/burgerMenu.svg'
 import backbtn from '../assets/gobtn.svg'
-/// //////////////////Self
+////////////////////////////////////////////////////////////////////////////////////Self
 ///setting the height
 const windowWidth = window.innerWidth
 
@@ -37,37 +37,42 @@ export const Header = (props) =>{
   const [activeMenu, setActiveMenu] = useState('')
   const location = useLocation()
   
-  
-  useEffect(() => {
-    import(`../languages/${props.language}/${selfName}.json`)
-    .then(({default: myData}) => {
-      setTextData(myData);
+  //////////////////Importing Text from JSON - function
+  const importTextFromJson = () => {
+    import(`../languages/${isLanguage}/${selfName}.json`)
+      .then(({ default: myData }) => {
+        setTextData(myData);
       })
-      .catch(error=>{
+      .catch(error => {
         console.log(error)
         setError(true)
       });
-      
+  }
+  ///////////
+
+  useEffect(() => {
+    importTextFromJson()     
       
     }, [])
   
-    const activateLinks = () =>{
-      setMenuOn(true);
-      setActiveMenu('links');
-    }
-    const activateLanguages = () =>{
-      setLanguagesMenu(true);
-      setActiveMenu('languages')
-    }
-    const deactivateLinks = () =>{
-      setMenuOn(false);
-      setActiveMenu('')
-    }
-    const deactivateLanguages = () =>{
-      setLanguagesMenu(false);
-      setActiveMenu('')
-    }
+  const activateLinks = () =>{
+    setMenuOn(true);
+    setActiveMenu('links');
+  }
+  const activateLanguages = () =>{
+    setLanguagesMenu(true);
+    setActiveMenu('languages')
+  }
+  const deactivateLinks = () =>{
+    setMenuOn(false);
+    setActiveMenu('')
+  }
+  const deactivateLanguages = () =>{
+    setLanguagesMenu(false);
+    setActiveMenu('')
+  }
 
+  //////////////////PAGE
 
   if(textData === '') return <Loader/>
 

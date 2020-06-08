@@ -1,11 +1,11 @@
 import React,{useState, useEffect, useContext} from 'react'
 import { Context } from '../Context'
-/// //////////////////Styles
+////////////////////////////////////////////////////////////////////////////////////Styles
 import {Container, PlaceHolder, QuestionWrapper, BrandName, AnswerWrapper, Answer, BigIcon} from '../styles/pages/StyleAbout'
-/// //////////////////Resources and Components
+////////////////////////////////////////////////////////////////////////////////////Resources and Components
 import dash from '../assets/languageIcon.svg'
 import bigIcon from '../assets/aboutIcons.svg'
-/// //////////////////Self
+////////////////////////////////////////////////////////////////////////////////////Self
 ///setting the height
 const windowWidth = window.innerWidth
 
@@ -25,23 +25,30 @@ export const About = () => {
   const {Header,isLanguage} = useContext(Context)
   const [textData, setTextData] = useState('')
 
-  useEffect(() => {
+  //////////////////Importing Text from JSON - function
+  const importTextFromJson = () => {
     import(`../languages/${isLanguage}/${selfName}.json`)
-    .then(({default: myData}) => {
-      setTextData(myData);
+      .then(({ default: myData }) => {
+        setTextData(myData);
       })
-      .catch(error=>{
+      .catch(error => {
         console.log(error)
         setError(true)
       });
+  }
+  ///////////
+
+  useEffect(() => {
+    importTextFromJson()
       
       
-    }, [])
+  }, [])
+
+  //////////////////PAGE
 
   if(textData === '') return <PlaceHolder/>
 
   const {question, answer} = textData
-  
 
   return(<>
     <Header/>

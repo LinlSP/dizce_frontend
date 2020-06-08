@@ -1,16 +1,16 @@
 import React,{useContext} from 'react'
 import {Context} from '../Context'
 
-/// //////////////////Styles
+////////////////////////////////////////////////////////////////////////////////////Styles
 import { BigContainerGlobal, ContentContainerGlobal } from '../styles/global/Globalstyles'
 import { SocialMedia, Copyright, ResourcesText, LinkIcon, RLink } from '../styles/components/StyleFooter'
 
-/// //////////////////Resources and Components
+////////////////////////////////////////////////////////////////////////////////////Resources and Components
 import facebook from '../assets/facebook.svg'
 import twitter from '../assets/twitter.svg'
 import instagram from '../assets/instagram.svg'
 
-/// //////////////////Self
+////////////////////////////////////////////////////////////////////////////////////Self
 
 ///setting the height
 const windowWidth = window.innerWidth
@@ -43,6 +43,8 @@ export const Footer = () => {
     default:
       resources = 'Resources';
   }
+
+  //////////////////PAGE
 
   return (
     <BigContainerGlobal bgcolor='black'>
