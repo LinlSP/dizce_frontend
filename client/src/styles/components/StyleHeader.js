@@ -13,6 +13,10 @@ if(windowWidth > 350 && windowWidth < 1701){
 var vh = defaultVh*0.01
 ///
 
+const PlaceHolder = styled.div`
+  background: rgba(0,0,0,1);
+  height:${10 * vh}px;
+`
 
 const Container = styled.div`
   background: rgba(0,0,0,1);
@@ -149,4 +153,4 @@ transform:rotate(90deg);
 `
 
 export {Container, LinksContainer,MenuLogoLink,ChangeLang,Menu,
-  PagesMenuBox,TitleInMenuBox,BackBtnLinks,BackBtnLanguages,LanguagesBox,LangInBox}
+  PagesMenuBox, TitleInMenuBox, BackBtnLinks, BackBtnLanguages, LanguagesBox, LangInBox, PlaceHolder}

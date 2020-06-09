@@ -9,13 +9,12 @@ import { Context } from '../Context'
 const vh = window.innerHeight*0.01
 ///
 export const Contact = () => {
-  const {Header} = useContext(Context)
+  // const {Header} = useContext(Context)
 
   //////////////////PAGE
 
   return(<>
-    <Header/>
-    <div style={{height:'100vh'}}>
+    <div style={{height:'95vh'}}>
       Contact
     </div>
   </>)

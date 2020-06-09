@@ -1,17 +1,19 @@
 import React, { useContext } from 'react'
-import { Router, Redirect } from '@reach/router'
+import { Router, Redirect, Location } from '@reach/router'
 
 /// //////////////////Archives
 import { Context } from './Context'
 import { Footer } from './components/Footer'
-import { SelectLanguage } from './pages/SelectLanguage'
-import { Home } from './pages/Home'
-import { Resources } from './pages/Resources'
+import { Header } from './components/Header'
 import { NotFound } from './pages/NotFound'
+import { Error } from './pages/Error'
+import { SelectLanguage } from './pages/SelectLanguage'
+import { Resources } from './pages/Resources'
+import { Home } from './pages/Home'
 import { About } from './pages/About'
 import { Contact } from './pages/Contact'
-import { Error } from './pages/Error'
 import { Services } from './pages/Services'
+import { Conditions } from './pages/Conditions'
 
 /// //////////////////Styled components
 import { Globalstyles } from './styles/global/Globalstyles'
@@ -25,13 +27,21 @@ export const App = () => {
   if (langToSave.includes(isLanguage)) {
     return (<>
       <Globalstyles />
+      <Location>
+        {
+          ({location}) => (
+            <Header locationPath={location.pathname}/>
+          )
+        }
+      </Location>
       <Router>
+        <NotFound default />
         <Home path='/' />
         <About path='/about'/>
         <Contact path='/contact' />
         <Resources path='/resources'/>
         <Services path='/services'/>
-        <NotFound path='/*'/>
+        <Conditions path='/legal'/>
       </Router>
       <Footer />
     </>)

@@ -22,7 +22,7 @@ var vh = defaultVh*0.01
 const selfName = 'about'
 
 export const About = () => {
-  const {Header,isLanguage} = useContext(Context)
+  const {isLanguage} = useContext(Context)
   const [textData, setTextData] = useState('')
 
   //////////////////Importing Text from JSON - function
@@ -51,7 +51,6 @@ export const About = () => {
   const {question, answer} = textData
 
   return(<>
-    <Header/>
     <div style={{  background:"rgba(198,235,239,1)"}}>
       <div className="container">
         <Container>

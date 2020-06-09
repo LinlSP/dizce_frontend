@@ -1,13 +1,11 @@
 import React,{useState, useEffect, useContext} from 'react'
 import { Context } from '../Context'
-import { useLocation } from "@reach/router"
 
 ////////////////////////////////////////////////////////////////////////////////////Styles
 import {Container, LinksContainer,MenuLogoLink,ChangeLang,Menu,
-  PagesMenuBox,TitleInMenuBox,BackBtnLinks,BackBtnLanguages,LanguagesBox,LangInBox}
+  PagesMenuBox, TitleInMenuBox, BackBtnLinks, BackBtnLanguages, LanguagesBox, LangInBox, PlaceHolder}
 from '../styles/components/StyleHeader'
 ////////////////////////////////////////////////////////////////////////////////////Resources and Components
-import {Loader} from './Loader'
 import logo from '../assets/logo2.png'
 import langWorld from '../assets/languageWorld.svg'
 import menu from '../assets/burgerMenu.svg'
@@ -28,17 +26,18 @@ var vh = defaultVh*0.01
 
 const selfName = 'header'
 const toPages = ['/about','/services','/contact','/legal']
+const availableIn = ['/about','/services','/contact','/legal']
 
-export const Header = (props) =>{
+export const Header = ({locationPath}) =>{
   const {languages, langToSave, setStorageLanguage, isLanguage} = useContext(Context)
   const [textData, setTextData] = useState('')
   const [menuOn, setMenuOn] = useState(false)
   const [languagesMenu,setLanguagesMenu] = useState(false)
   const [activeMenu, setActiveMenu] = useState('')
-  const location = useLocation()
+  const currentPageIndex = toPages.indexOf(locationPath)
   
   //////////////////Importing Text from JSON - function
-  const importTextFromJson = () => {
+  const importTextFromJson = (props) => {
     import(`../languages/${isLanguage}/${selfName}.json`)
       .then(({ default: myData }) => {
         setTextData(myData);
@@ -74,10 +73,12 @@ export const Header = (props) =>{
 
   //////////////////PAGE
 
-  if(textData === '') return <Loader/>
+  if (availableIn.indexOf(locationPath) === -1) return <></>
+
+  if(textData === '') return <PlaceHolder/>
 
   const {pagename} = textData
-  const currentPageIndex = toPages.indexOf(location.pathname)
+
   return(<>
     <Container activated={activeMenu}>
       <div className="container">

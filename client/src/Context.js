@@ -1,8 +1,6 @@
 import React, { createContext, useState } from 'react'
 export const Context = createContext()
 
-import {Header as TheHeader} from './components/Header'
-
 const Provider = ({ children }) => {
 //////////CONSTANTS
   const languages = ['Español', 'English', 'Deutsch']
@@ -14,7 +12,6 @@ const Provider = ({ children }) => {
   })
   const {loader, error} = globalStates
 //////////COMPONENTS
-  const Header = () => (<TheHeader language={isLanguage} />)
 
 //////////HANDLERS
 
@@ -52,7 +49,6 @@ const Provider = ({ children }) => {
     setLoader,
     error,
     setError,
-    Header,
     setStorageLanguage,
     removeStorageLanguage
   }

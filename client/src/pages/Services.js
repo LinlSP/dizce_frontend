@@ -22,7 +22,7 @@ var vh = defaultVh*0.01
 const selfName = 'services'
 
 export const Services = () => {
-  const { Header, isLanguage } = useContext(Context)
+  const { isLanguage } = useContext(Context)
   const [textData, setTextData] = useState('')
 
   //////////////////Importing Text from JSON - function
@@ -50,7 +50,6 @@ export const Services = () => {
   const { services } = textData
 
     return(<>
-        <Header/>
         <BigContainerGlobal bg={`url(${bg}) no-repeat center`} bgsize='cover'>
           <div className="container">
             <Container>
