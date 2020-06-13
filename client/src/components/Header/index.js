@@ -1,15 +1,15 @@
 import React,{useState, useEffect, useContext} from 'react'
-import { Context } from '../Context'
+import { Context } from '../../Context'
 
 ////////////////////////////////////////////////////////////////////////////////////Styles
 import {Container, LinksContainer,MenuLogoLink,ChangeLang,Menu,
   PagesMenuBox, TitleInMenuBox, BackBtnLinks, BackBtnLanguages, LanguagesBox, LangInBox, PlaceHolder}
-from '../styles/components/StyleHeader'
+from './styles'
 ////////////////////////////////////////////////////////////////////////////////////Resources and Components
-import logo from '../assets/logo2.png'
-import langWorld from '../assets/languageWorld.svg'
-import menu from '../assets/burgerMenu.svg'
-import backbtn from '../assets/gobtn.svg'
+import logo from '../../assets/logo2.png'
+import langWorld from '../../assets/languageWorld.svg'
+import menu from '../../assets/burgerMenu.svg'
+import backbtn from '../../assets/gobtn.svg'
 ////////////////////////////////////////////////////////////////////////////////////Self
 ///setting the height
 const windowWidth = window.innerWidth
@@ -26,7 +26,7 @@ var vh = defaultVh*0.01
 
 const selfName = 'header'
 const toPages = ['/about','/services','/contact','/legal']
-const availableIn = ['/about','/services','/contact','/legal']
+const availableIn = ['about','services','contact','legal']
 
 export const Header = ({locationPath}) =>{
   const {languages, langToSave, setStorageLanguage, isLanguage} = useContext(Context)
@@ -35,10 +35,10 @@ export const Header = ({locationPath}) =>{
   const [languagesMenu,setLanguagesMenu] = useState(false)
   const [activeMenu, setActiveMenu] = useState('')
   const currentPageIndex = toPages.indexOf(locationPath)
-  
+  const locationWord = locationPath.split('/')[1]
   //////////////////Importing Text from JSON - function
-  const importTextFromJson = (props) => {
-    import(`../languages/${isLanguage}/${selfName}.json`)
+  const importTextFromJson = () => {
+    import(`../../languages/${isLanguage}/${selfName}.json`)
       .then(({ default: myData }) => {
         setTextData(myData);
       })
@@ -70,10 +70,15 @@ export const Header = ({locationPath}) =>{
     setLanguagesMenu(false);
     setActiveMenu('')
   }
+  const changeLanguage = (index, callback) => {
+    setStorageLanguage(langToSave[index]);
+    callback;
+  }
+
 
   //////////////////PAGE
 
-  if (availableIn.indexOf(locationPath) === -1) return <></>
+  if (availableIn.indexOf(locationWord) === -1) return <></>
 
   if(textData === '') return <PlaceHolder/>
 
@@ -86,7 +91,7 @@ export const Header = ({locationPath}) =>{
           <BackBtnLanguages src={backbtn} alt=''  onClick={()=>deactivateLanguages()}/>
           {
             languages.map((language,index)=>(
-              <LangInBox thelanguage={langToSave[index]} currentlang={isLanguage} key={index} onClick={()=>setStorageLanguage(langToSave[index])}>
+              <LangInBox thelanguage={langToSave[index]} currentlang={isLanguage} key={index} onClick={() => changeLanguage(index, location.reload())}>
                 {language}
               </LangInBox>
             ))

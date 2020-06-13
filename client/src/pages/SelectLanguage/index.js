@@ -1,12 +1,12 @@
-import React, { useContext, useState, useEffect } from 'react'
-import { Context } from '../Context'
+import React, { useContext, useState } from 'react'
+import { Context } from'../../Context'
 
 ////////////////////////////////////////////////////////////////////////////////////Styles
-import { LogoSection, TotalContainer, Content, Title, World, Languages, Lang, GoButton } from '../styles/pages/StyleSelectLanguage'
+import { LogoSection, TotalContainer, Content, Title, World, Languages, Lang, GoButton } from './styles'
 
 ////////////////////////////////////////////////////////////////////////////////////Resources and Components
-import logoSrc from '../assets/logo2.png'
-import Gobtn from '../assets/gobtn.svg'
+import logoSrc from'../../assets/logo2.png'
+import Gobtn from'../../assets/gobtn.svg'
 
 ////////////////////////////////////////////////////////////////////////////////////Self
 ///setting the height

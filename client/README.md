@@ -17,6 +17,9 @@ Frontend of the public WebApp of DIZCE
         - Add the language to the *languages* [original] and *langToSave* [in English] constants at **Context**.
         - Add the respective language carpet with all the JSON in it: **./src/languages** (The JSON has to be in the same format as in the other languages; and have the same names).
         - Add the respective translation in the 'switch' at **./src/components/Footer.js**, **./src/pages/NotFound.js & Error.js**
+    
+    When trying to add the header to a page:
+        - Just add the page "pathname" to the "const availableIn" in header component in './src/components/Header.js'
 
 
 ## Authors

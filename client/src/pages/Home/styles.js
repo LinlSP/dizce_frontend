@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {SlideLeft, SlideRight } from '../global/Animations'
+import {SlideLeft, SlideRight } from'../../styles/global/Animations'
 import {Link} from '@reach/router'
 ///setting the height
 const windowWidth = window.innerWidth
@@ -60,12 +60,13 @@ const SideMenuLink = styled(Link)`
   color:white;
   font-size:${3*vh}px;
   text-transform:uppercase;
-  transition:1s all ease;
+  padding:${2*vh}px;
+  transition:.5s all ease;
   &:hover{
     color:white;
-  cursor:pointer;
-  font-weight:bold;
-  text-decoration:none;
+    cursor:pointer;
+    font-weight:bold;
+    text-decoration:none;
   }
 
 `

@@ -1,12 +1,12 @@
 import React,{useContext, useEffect} from 'react'
-import {Context} from '../Context'
+import {Context} from '../../Context'
 
 ////////////////////////////////////////////////////////////////////////////////////Styles
-import {ContentContainerGlobal} from '../styles/global/Globalstyles'
-import {Text,Icon} from '../styles/pages/StyleError'
+import {ContentContainerGlobal} from '../../styles/global/Globalstyles'
+import {Text,Icon} from './styles'
 
 ////////////////////////////////////////////////////////////////////////////////////Resources and Components
-import errorSrc from '../assets/error.svg'
+import errorSrc from '../../assets/error.svg'
 
 ////////////////////////////////////////////////////////////////////////////////////Self
 

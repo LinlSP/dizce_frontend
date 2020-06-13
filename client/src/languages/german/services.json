@@ -1,15 +1,15 @@
 {
     "services":[
         {
-            "type":"Gratis",
+            "type":"Kostenlos",
             "sub":"Contenidos de otros autores recomendados por nosotros."
         },
         {
-            "type":"Tienda",
+            "type":"Laden",
             "sub":"Los contenidos más pedidos por nuestros clientes"
         },
         {
-            "type":"Personalizado",
+            "type":"Personalisiert",
             "sub":"Tienes algo en mente? Estés seguro o no, esta es tu opción"
         }
     ]

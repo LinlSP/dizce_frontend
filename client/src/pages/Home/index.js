@@ -1,29 +1,29 @@
 import React, { useContext, useEffect , useState} from 'react'
-import { Context } from '../Context'
+import { Context } from '../../Context'
 
 ////////////////////////////////////////////////////////////////////////////////////Styles
-import {ContentContainerGlobal, BigContainerGlobal} from '../styles/global/Globalstyles'
+import {ContentContainerGlobal, BigContainerGlobal} from '../../styles/global/Globalstyles'
 import {
         LogoSection, MainTitle,LittleMainTitle,WorldIcon,WorldIconImage,MainButton,BurgerMenu, FirstLine,UpperMenu,UpperLink,SideMenu,SideMenuLink,SideMenuButton,SelectLangBox,LangInBox, //mainscreen
         Question, Quote,Answer,AnswerImg,SliderButton, //slider
         FocusTitle,FocusIcons,FIcon,FocusDescription,DTitle,DSubtitle,DPoints,//ourfocus
         FurtherTitle,Sections,Section1,Section2,Section3,FText,FImage,ImagesContainer//furthermore
-        } from '../styles/pages/StyleHome'
+        } from './styles'
 ////////////////////////////////////////////////////////////////////////////////////Resources and Components
-import {Loader} from '../components/Loader'
-import homebg from '../assets/homebg.svg'
-import logo2 from '../assets/logo2.png'
-import burgerMenu from '../assets/burgerMenu.svg'
-import languageWorld from '../assets/languageWorld.svg'
-import quote1 from '../assets/initquote.svg'
-import quote2 from '../assets/endquote.svg'
-import family from '../assets/family.svg'
-import business from '../assets/business.svg'
-import individual from '../assets/individual.svg'
-import personalized from '../assets/personalized.svg'
-import sliderbutton from '../assets/sliderButton.svg'
-import lastbg from '../assets/homelastbg.svg'
-import Backbtn from '../assets/gobtn.svg'
+import {Loader} from '../../components/Loader'
+import homebg from '../../assets/homebg.svg'
+import logo2 from '../../assets/logo2.png'
+import burgerMenu from '../../assets/burgerMenu.svg'
+import languageWorld from '../../assets/languageWorld.svg'
+import quote1 from '../../assets/initquote.svg'
+import quote2 from '../../assets/endquote.svg'
+import family from '../../assets/family.svg'
+import business from '../../assets/business.svg'
+import individual from '../../assets/individual.svg'
+import personalized from '../../assets/personalized.svg'
+import sliderbutton from '../../assets/sliderButton.svg'
+import lastbg from '../../assets/homelastbg.svg'
+import Backbtn from '../../assets/gobtn.svg'
 
 
 ////////////////////////////////////////////////////////////////////////////////////Self
@@ -64,7 +64,7 @@ export const Home = () => {
 
   //////////////////Importing Text from JSON - function
   const importTextFromJson = () => {
-    import(`../languages/${isLanguage}/${selfName}.json`)
+    import(`../../languages/${isLanguage}/${selfName}.json`)
       .then(({ default: myData }) => {
         setTextData(myData);
       })
@@ -102,7 +102,7 @@ export const Home = () => {
   return (<>
   {/* ///////////////////////////////////////////////////////////////////////////// */}
   <SideMenu on={sideMenu ? 1 : 0}>
-    <div className='container' style={{display:'flex',flexDirection:'column', justifyContent:'space-between', alignItems:'center', minHeight:'100vh',padding: '5vh 0'}}>
+    <div className='container' style={{display:'flex',flexDirection:'column', alignItems:'center', minHeight:'100vh',padding: '5vh 0'}}>
       <div style={{width:'80%', display:'flex',justifyContent:'flex-start', height:`${6*vh}px`, position:'absolute'}}>
         <SideMenuButton src={Backbtn} height='100%' alt="" onClick={()=>setSideMenu(false)}/>
       </div>

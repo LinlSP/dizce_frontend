@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Bounce, FadeIn, SlideLeft, SlideRight } from '../global/Animations'
+import { Bounce, FadeIn, SlideLeft, SlideRight } from '../../styles/global/Animations'
 import bg from '../../assets/bg.svg'
 
 var vh = window.innerHeight*0.01
@@ -14,6 +14,9 @@ export const TotalContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (pointer:none), (pointer:coarse) {
+    min-height: auto;
+  }
 `
 
 export const Content = styled.div`
@@ -24,6 +27,9 @@ export const Content = styled.div`
 
   width: 100%;
   justify-content: space-between;
+  @media (pointer:none), (pointer:coarse) {
+    min-height: auto;
+  }
 `
 export const LogoSection = styled.div`
   width: 100%;

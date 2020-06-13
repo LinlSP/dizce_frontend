@@ -1,11 +1,11 @@
 import React,{useContext, useEffect} from 'react'
-import {Context} from '../Context'
+import {Context} from'../../Context'
 ////////////////////////////////////////////////////////////////////////////////////Styles
-import {Text, BrokenLogo} from '../styles/pages/StyleNotFound'
-import {ContentContainerGlobal} from '../styles/global/Globalstyles'
+import {Text, BrokenLogo} from './styles'
+import {ContentContainerGlobal} from'../../styles/global/Globalstyles'
 
 ////////////////////////////////////////////////////////////////////////////////////Resources and Components
-import brokenLogo from '../assets/brokenLogo.svg'
+import brokenLogo from'../../assets/brokenLogo.svg'
 
 ////////////////////////////////////////////////////////////////////////////////////Self
 

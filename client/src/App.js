@@ -14,6 +14,10 @@ import { About } from './pages/About'
 import { Contact } from './pages/Contact'
 import { Services } from './pages/Services'
 import { Conditions } from './pages/Conditions'
+import { Free } from './components/Free'
+import { Store } from './components/Store'
+import { Personalized } from './components/Personalized'
+
 
 /// //////////////////Styled components
 import { Globalstyles } from './styles/global/Globalstyles'
@@ -41,6 +45,9 @@ export const App = () => {
         <Contact path='/contact' />
         <Resources path='/resources'/>
         <Services path='/services'/>
+          <Free path='/services/free'/>
+          <Store path='/services/store'/>
+          <Personalized path='/services/personalized'/>
         <Conditions path='/legal'/>
       </Router>
       <Footer />
