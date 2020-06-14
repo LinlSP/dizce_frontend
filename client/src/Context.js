@@ -1,47 +1,57 @@
-import React, { createContext, useState } from 'react'
-export const Context = createContext()
+import React, { createContext, useState } from "react";
+export const Context = createContext();
 
 const Provider = ({ children }) => {
-//////////CONSTANTS
-  const languages = ['Español', 'English', 'Deutsch']
-  const langToSave = ['spanish', 'english', 'german']
-  const [isLanguage, setIsLanguage] = useState(window.localStorage.getItem('language'))
+  /// ///////CONSTANTS
+  const languages = ["Español", "English", "Deutsch"];
+  const langToSave = ["spanish", "english", "german"];
+  const [isLanguage, setIsLanguage] = useState(
+    window.localStorage.getItem("language")
+  );
   const [globalStates, setglobalStates] = useState({
     loader: false,
-    error: false
-  })
-  const {loader, error} = globalStates
-//////////COMPONENTS
+    error: false,
+    headerAvailable: false,
+  });
+  const { loader, error, headerAvailable } = globalStates;
+  /// ///////COMPONENTS
 
-//////////HANDLERS
+  /// ///////HANDLERS
 
   const setLoader = (state) => {
     setglobalStates({
       ...globalStates,
-      loader: state
-    })
-  }
+      loader: state,
+    });
+  };
   const setError = (state) => {
     setglobalStates({
       ...globalStates,
-      error: state
-    })
-  }
+      error: state,
+    });
+  };
+  const setHeaderAvailable = (state) => {
+    setglobalStates({
+      ...globalStates,
+      headerAvailable: state,
+    });
+  };
 
   const setStorageLanguage = (language) => {
-    window.localStorage.setItem('language', language)
-    setIsLanguage(language)
-  }
+    window.localStorage.setItem("language", language);
+    setIsLanguage(language);
+  };
 
   const removeStorageLanguage = () => {
-    window.localStorage.removeItem('language')
-    setIsLanguage('')
-  }
+    window.localStorage.removeItem("language");
+    setIsLanguage("");
+  };
 
-
-//////////VALUES
+  /// ///////VALUES
 
   const values = {
+    headerAvailable,
+    setHeaderAvailable,
     languages,
     langToSave,
     isLanguage,
@@ -50,19 +60,15 @@ const Provider = ({ children }) => {
     error,
     setError,
     setStorageLanguage,
-    removeStorageLanguage
-  }
+    removeStorageLanguage,
+  };
 
-//////////RETURNING 
+  /// ///////RETURNING
 
-  return (
-    <Context.Provider value={values}>
-      {children}
-    </Context.Provider>
-  )
-}
+  return <Context.Provider value={values}>{children}</Context.Provider>;
+};
 
 export default {
   Provider,
-  Consumer: Context.Consumer
-}
+  Consumer: Context.Consumer,
+};

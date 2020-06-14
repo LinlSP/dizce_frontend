@@ -1,4 +1,4 @@
-import { css, keyframes } from 'styled-components'
+import { css, keyframes } from "styled-components";
 
 const BounceKF = keyframes`
 0%,
@@ -8,7 +8,7 @@ const BounceKF = keyframes`
     50% {
       transform: translateY(-10px);
     }
-`
+`;
 
 const TheFadeIn = keyframes`
   0%{
@@ -16,7 +16,7 @@ const TheFadeIn = keyframes`
   }100%{
     opacity: 1;
   }
-`
+`;
 const TheSlideLeft = keyframes`
     0% {
       transform: translateX(-100vw);
@@ -24,7 +24,7 @@ const TheSlideLeft = keyframes`
     100% {
       transform: translateX(0);
     }
-`
+`;
 const TheSlideRight = keyframes`
     0% {
       transform: translateX(100vw);
@@ -32,21 +32,21 @@ const TheSlideRight = keyframes`
     100% {
       transform: translateX(0);
     }
-`
+`;
 
-export const Bounce = ({ time = '1s', type = 'ease' } = {}) =>
+export const Bounce = ({ time = "1s", type = "ease" } = {}) =>
   css`
     animation: ${time} ${BounceKF} ${type};
-  `
-export const FadeIn = ({ time = '1s', type = 'ease' } = {}) =>
+  `;
+export const FadeIn = ({ time = "1s", type = "ease" } = {}) =>
   css`
     animation: ${time} ${TheFadeIn} ${type};
-  `
-export const SlideLeft = ({ time = '1s', type = 'ease' } = {}) =>
+  `;
+export const SlideLeft = ({ time = "1s", type = "ease" } = {}) =>
   css`
     animation: ${time} ${TheSlideLeft} ${type};
-  `
-export const SlideRight = ({ time = '1s', type = 'ease' } = {}) =>
+  `;
+export const SlideRight = ({ time = "1s", type = "ease" } = {}) =>
   css`
     animation: ${time} ${TheSlideRight} ${type};
-  `
+  `;

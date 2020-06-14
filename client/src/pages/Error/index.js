@@ -1,46 +1,58 @@
-import React,{useContext, useEffect} from 'react'
-import {Context} from '../../Context'
+import React, { useContext, useEffect } from "react";
+import { Context } from "../../Context";
 
-////////////////////////////////////////////////////////////////////////////////////Styles
-import {ContentContainerGlobal} from '../../styles/global/Globalstyles'
-import {Text,Icon} from './styles'
+/// /////////////////////////////////////////////////////////////////////////////////Styles
+import { ContentContainerGlobal } from "../../styles/global/Globalstyles";
+import { Text, Icon } from "./styles";
 
-////////////////////////////////////////////////////////////////////////////////////Resources and Components
-import errorSrc from '../../assets/error.svg'
+/// /////////////////////////////////////////////////////////////////////////////////Resources and Components
+import errorSrc from "../../assets/error.svg";
 
-////////////////////////////////////////////////////////////////////////////////////Self
+/// /////////////////////////////////////////////////////////////////////////////////Self
 
-export const Error = () =>{
-
-  const {isLanguage, removeStorageLanguage} = useContext(Context)
+export const Error = () => {
+  const {
+    isLanguage,
+    removeStorageLanguage,
+    headerAvailable,
+    setHeaderAvailable,
+  } = useContext(Context);
 
   var message;
-  switch(isLanguage){
-    case 'spanish':
-      message = 'Sucedió un error :(';
+  switch (isLanguage) {
+    case "spanish":
+      message = "Sucedió un error :(";
       break;
-    case 'german':
-      message = 'Etwas ist schiefgelaufen :(';
+    case "german":
+      message = "Etwas ist schiefgelaufen :(";
       break;
     default:
-      message = 'Something went wrong :(';
+      message = "Something went wrong :(";
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     setTimeout(() => {
-      removeStorageLanguage()
-      location.reload()
+      removeStorageLanguage();
+      window.location.reload();
     }, 2000);
-  },[])
+    if (headerAvailable) setHeaderAvailable(false);
+  }, []);
 
-  //////////////////PAGE
+  /// ///////////////PAGE
 
-  return(<>
-    <ContentContainerGlobal extra='min-height:100vh;' flex flexCol justify='center' align='center' bgcolor='black'>
-      <Icon src={errorSrc}/>
-      <Text>
-        {message}
-      </Text>
-    </ContentContainerGlobal>
-  </>)
-}
+  return (
+    <>
+      <ContentContainerGlobal
+        extra="min-height:100vh;"
+        flex
+        flexCol
+        justify="center"
+        align="center"
+        bgcolor="black"
+      >
+        <Icon src={errorSrc} />
+        <Text>{message}</Text>
+      </ContentContainerGlobal>
+    </>
+  );
+};

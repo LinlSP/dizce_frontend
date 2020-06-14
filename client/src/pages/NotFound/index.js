@@ -1,44 +1,55 @@
-import React,{useContext, useEffect} from 'react'
-import {Context} from'../../Context'
-////////////////////////////////////////////////////////////////////////////////////Styles
-import {Text, BrokenLogo} from './styles'
-import {ContentContainerGlobal} from'../../styles/global/Globalstyles'
+import React, { useContext, useEffect } from "react";
+import { Context } from "../../Context";
+/// /////////////////////////////////////////////////////////////////////////////////Styles
+import { Text, BrokenLogo } from "./styles";
+import { ContentContainerGlobal } from "../../styles/global/Globalstyles";
 
-////////////////////////////////////////////////////////////////////////////////////Resources and Components
-import brokenLogo from'../../assets/brokenLogo.svg'
+/// /////////////////////////////////////////////////////////////////////////////////Resources and Components
+import brokenLogo from "../../assets/brokenLogo.svg";
 
-////////////////////////////////////////////////////////////////////////////////////Self
+/// /////////////////////////////////////////////////////////////////////////////////Self
 
-export const NotFound = () =>{
-  const {isLanguage} = useContext(Context)
+export const NotFound = () => {
+  const { isLanguage, headerAvailable, setHeaderAvailable } = useContext(
+    Context
+  );
 
   var message;
-  switch(isLanguage){
-      case 'spanish':
-        message = 'Página no encontrada';
-        break;
-      case 'german':
-        message = 'Die Seite wurde nicht gefunden';
-        break;
-      default:
-        message = 'Page not found';
-    }
+  switch (isLanguage) {
+    case "spanish":
+      message = "Página no encontrada";
+      break;
+    case "german":
+      message = "Die Seite wurde nicht gefunden";
+      break;
+    default:
+      message = "Page not found";
+  }
 
-    useEffect(()=>{
-      const goback = setTimeout(() => {
-        window.location.href = '/'
-      }, 3000);
-      return () => clearTimeout(goback)
-    },[])
+  useEffect(() => {
+    const goback = setTimeout(() => {
+      window.location.href = "/";
+    }, 3000);
+    if (headerAvailable) setHeaderAvailable(false);
+    return () => clearTimeout(goback);
+  }, []);
 
-  //////////////////PAGE
+  /// ///////////////PAGE
 
-  return(<>
-    <ContentContainerGlobal bgcolor={'rgba(93,193,185,1)'}  flex justify={'center'} align={'center'} extra='min-height: 100vh;'>
-      <Text>
-        <BrokenLogo src={brokenLogo} height='100%' alt=""/>
-        {message}
-      </Text>
-    </ContentContainerGlobal>
-  </>)
-}
+  return (
+    <>
+      <ContentContainerGlobal
+        bgcolor="rgba(93,193,185,1)"
+        flex
+        justify="center"
+        align="center"
+        extra="min-height: 100vh;"
+      >
+        <Text>
+          <BrokenLogo src={brokenLogo} height="100%" alt="" />
+          {message}
+        </Text>
+      </ContentContainerGlobal>
+    </>
+  );
+};
