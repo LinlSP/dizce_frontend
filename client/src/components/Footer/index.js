@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import { Context } from "../../Context";
+import React from "react";
 
 /// /////////////////////////////////////////////////////////////////////////////////Styles
 import {
@@ -12,12 +11,14 @@ import {
   ResourcesText,
   LinkIcon,
   RLink,
+  PlaceHolder,
 } from "./styles";
 
 /// /////////////////////////////////////////////////////////////////////////////////Resources and Components
 import facebook from "../../assets/facebook.svg";
 import twitter from "../../assets/twitter.svg";
 import instagram from "../../assets/instagram.svg";
+import { useInjectText } from "../../customHooks/useInjectText";
 
 /// /////////////////////////////////////////////////////////////////////////////////Self
 
@@ -38,37 +39,33 @@ const date = new Date();
 const year = date.getFullYear();
 
 export const Footer = () => {
-  const { isLanguage } = useContext(Context);
-  const socialLinks = ["twitter.com", "instagram.com", "facebook.com"];
+  const socialLinks = [
+    "https://twitter.com/dizce_company",
+    "https://www.instagram.com/dizce.company",
+    "https://www.facebook.com/pg/dizce.company",
+  ];
   const socialSources = [twitter, instagram, facebook];
-
-  var resources;
-
-  switch (isLanguage) {
-    case "spanish":
-      resources = "Recursos";
-      break;
-    case "german":
-      resources = "Ressourcen";
-      break;
-    default:
-      resources = "Resources";
-  }
+  const selfName = "footer";
+  ///////////////////onMount hooks
+  const textData = useInjectText(selfName);
 
   /// ///////////////PAGE
+  if (textData === "") return <PlaceHolder />;
+
+  const { resources } = textData;
 
   return (
     <BigContainerGlobal bgcolor="black">
       <div className="container">
         <ContentContainerGlobal
-          height={`${12 * vh}px`}
+          height={`${11 * vh}px`}
           flex
           justify="space-between"
           align="center"
         >
           <SocialMedia>
             {socialSources.map((socialNetwork, index) => (
-              <LinkIcon to={socialLinks[index]} key={index}>
+              <LinkIcon href={socialLinks[index]} key={index}>
                 <img src={socialNetwork} alt="" height="100%" />
               </LinkIcon>
             ))}

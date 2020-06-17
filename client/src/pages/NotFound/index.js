@@ -1,40 +1,25 @@
-import React, { useContext, useEffect } from "react";
-import { Context } from "../../Context";
+import React from "react";
 /// /////////////////////////////////////////////////////////////////////////////////Styles
 import { Text, BrokenLogo } from "./styles";
 import { ContentContainerGlobal } from "../../styles/global/Globalstyles";
 
 /// /////////////////////////////////////////////////////////////////////////////////Resources and Components
 import brokenLogo from "../../assets/brokenLogo.svg";
+import { useDisableHeader } from "../../customHooks/useDisableHeader";
+import { useReturnToMenu } from "../../customHooks/useReturnToMenu";
+import { useInjectText } from "../../customHooks/useInjectText";
 
 /// /////////////////////////////////////////////////////////////////////////////////Self
 
 export const NotFound = () => {
-  const { isLanguage, headerAvailable, setHeaderAvailable } = useContext(
-    Context
-  );
-
-  var message;
-  switch (isLanguage) {
-    case "spanish":
-      message = "Página no encontrada";
-      break;
-    case "german":
-      message = "Die Seite wurde nicht gefunden";
-      break;
-    default:
-      message = "Page not found";
-  }
-
-  useEffect(() => {
-    const goback = setTimeout(() => {
-      window.location.href = "/";
-    }, 3000);
-    if (headerAvailable) setHeaderAvailable(false);
-    return () => clearTimeout(goback);
-  }, []);
+  const selfName = "notfound";
+  ///////////////////onMount hooks
+  useReturnToMenu();
+  useDisableHeader();
+  const textData = useInjectText(selfName);
 
   /// ///////////////PAGE
+  const { message } = textData;
 
   return (
     <>

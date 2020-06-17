@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { Context } from "../../Context";
 
 /// /////////////////////////////////////////////////////////////////////////////////Styles
@@ -58,6 +58,8 @@ import personalized from "../../assets/personalized.svg";
 import sliderbutton from "../../assets/sliderButton.svg";
 import lastbg from "../../assets/homelastbg.svg";
 import Backbtn from "../../assets/gobtn.svg";
+import { useInjectText } from "../../customHooks/useInjectText";
+import { useDisableHeader } from "../../customHooks/useDisableHeader";
 
 /// /////////////////////////////////////////////////////////////////////////////////Self
 
@@ -88,41 +90,17 @@ const translators = `${imagesSrcUrl}/Rechteck_1.png`;
 const focusIcons = [family, business, individual, personalized];
 
 export const Home = () => {
-  const {
-    isLanguage,
-    setError,
-    languages,
-    setStorageLanguage,
-    langToSave,
-    headerAvailable,
-    setHeaderAvailable,
-  } = useContext(Context);
-  const [textData, setTextData] = useState("");
+  const { languages, setStorageLanguage, langToSave } = useContext(Context);
   const [sideMenu, setSideMenu] = useState(false);
   const [langBox, setLangBox] = useState(false);
   const [firstslider, setFirstslider] = useState(true);
   const [focusIcon, setFocusIcon] = useState(parseInt("0"));
   const menuLinksTo = ["/about", "/services", "/contact", "/legal"];
 
-  /// ///////////////Importing Text from JSON - function
-  const importTextFromJson = () => {
-    import(`../../languages/${isLanguage}/${selfName}.json`)
-      .then(({ default: myData }) => {
-        setTextData(myData);
-      })
-      .catch((error) => {
-        console.log(error);
-        setError(true);
-      });
-  };
-  /// ////////
-
-  useEffect(() => {
-    importTextFromJson();
-    if (headerAvailable) {
-      setHeaderAvailable(false);
-    }
-  }, []);
+  ///////////////////onMount hooks
+  useDisableHeader();
+  const textData = useInjectText(selfName);
+  ///////////////////
 
   const changeLanguage = (index, callback) => {
     setStorageLanguage(langToSave[index]);

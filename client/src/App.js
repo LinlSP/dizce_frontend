@@ -64,7 +64,6 @@ export const App = () => {
         <Resources path="/resources" />
         <Redirect from="/*" to="/" default noThrow />
       </Router>
-      <Footer />
     </>
   );
 };

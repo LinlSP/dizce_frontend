@@ -1,10 +1,12 @@
-import React, { useContext, useState, useEffect } from "react";
-import { Context } from "../../Context";
+import React from "react";
 /// /////////////////////////////////////////////////////////////////////////////////Styles
 import { BigContainerGlobal } from "../../styles/global/Globalstyles";
 import { Container, PlaceHolder, OptionBox, Title, SubTitle } from "./styles";
 /// /////////////////////////////////////////////////////////////////////////////////Resources and Components
 import bg from "../../assets/servicesBg.svg";
+import { useInjectText } from "../../customHooks/useInjectText";
+import { useEnableHeader } from "../../customHooks/useEnableHeader";
+
 const freeBg =
   "https://res.cloudinary.com/d1zc3/image/upload/v1591983275/All/Services/Free/blurredbooks.jpg";
 const storeBg =
@@ -13,11 +15,7 @@ const personalizedBg =
   "https://res.cloudinary.com/d1zc3/image/upload/v1591983312/All/Services/Personalized/business.jpg";
 /// /////////////////////////////////////////////////////////////////////////////////Self
 
-const selfName = "services";
-
 export const Services = () => {
-  const { isLanguage, setHeaderAvailable, setError } = useContext(Context);
-  const [textData, setTextData] = useState("");
   const bgImages = [freeBg, storeBg, personalizedBg];
   const routes = ["/free", "", "/personalized"];
   const boxStyles = [
@@ -34,26 +32,12 @@ export const Services = () => {
       bg: "rgba(0,0,0,.7)",
     },
   ];
+  const selfName = "services";
+  ///////////////////onMount hooks
+  const textData = useInjectText(selfName);
+  useEnableHeader();
 
-  /// ///////////////Importing Text from JSON - function
-  const importTextFromJson = () => {
-    import(`../../languages/${isLanguage}/${selfName}.json`)
-      .then(({ default: myData }) => {
-        setTextData(myData);
-      })
-      .catch((error) => {
-        console.log(error);
-        setError(true);
-      });
-  };
-  /// ////////
-
-  useEffect(() => {
-    importTextFromJson();
-    setHeaderAvailable(true);
-  }, []);
-
-  /// ///////////////PAGE
+  ///////////////////PAGE
 
   if (textData === "") return <PlaceHolder bg={bg} />;
 

@@ -13,6 +13,9 @@ import {
 /// /////////////////////////////////////////////////////////////////////////////////Resources and Components
 import dash from "../../assets/languageIcon.svg";
 import bigIcon from "../../assets/aboutIcons.svg";
+import { useInjectText } from "../../customHooks/useInjectText";
+import { useEnableHeader } from "../../customHooks/useEnableHeader";
+
 /// /////////////////////////////////////////////////////////////////////////////////Self
 /// setting the height
 const windowWidth = window.innerWidth;
@@ -27,29 +30,11 @@ if (windowWidth > 350 && windowWidth < 1701) {
 var vh = defaultVh * 0.01;
 ///
 
-const selfName = "about";
-
 export const About = () => {
-  const { isLanguage, setHeaderAvailable, setError } = useContext(Context);
-  const [textData, setTextData] = useState("");
-
-  /// ///////////////Importing Text from JSON - function
-  const importTextFromJson = () => {
-    import(`../../languages/${isLanguage}/${selfName}.json`)
-      .then(({ default: myData }) => {
-        setTextData(myData);
-      })
-      .catch((error) => {
-        console.log(error);
-        setError(true);
-      });
-  };
-  /// ////////
-
-  useEffect(() => {
-    importTextFromJson();
-    setHeaderAvailable(true);
-  }, []);
+  const selfName = "about";
+  ///////////////////onMount hooks
+  const textData = useInjectText(selfName);
+  useEnableHeader();
 
   /// ///////////////PAGE
 

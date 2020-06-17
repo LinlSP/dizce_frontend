@@ -11,6 +11,8 @@ if (windowWidth > 350 && windowWidth < 1701) {
 }
 
 var vh = defaultVh * 0.01;
+
+const screenHeight = window.innerHeight * 0.01;
 ///
 
 const PlaceHolder = styled.div`
@@ -22,19 +24,22 @@ const PlaceHolder = styled.div`
 `;
 
 const Container = styled.div`
-  height: ${95 * vh}px;
+  min-height: 95vh;
+  height: ${85 * vh}px;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
   align-items: center;
   @media only screen and (min-width: 993px) {
     flex-direction: row;
-    min-height: 95vh;
   }
 
   @media only screen and (min-width: 1701px) {
     flex-direction: column;
-    min-height: 95vh;
+  }
+  @media (pointer: none), (pointer: coarse) {
+    min-height: ${95 * screenHeight}px;
+    height: auto;
   }
 `;
 const OptionBox = styled(Link)`
@@ -51,6 +56,7 @@ const OptionBox = styled(Link)`
   transition: 0.5s all ease;
   padding: ${1 * vh}px;
   border-radius: 5px;
+  margin: ${2 * vh}px 0;
   &:hover {
     border-color: rgba(255, 255, 255, 1);
     transform: scale(1.05);

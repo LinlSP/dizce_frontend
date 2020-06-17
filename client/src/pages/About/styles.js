@@ -11,11 +11,13 @@ if (windowWidth > 350 && windowWidth < 1701) {
 }
 
 var vh = defaultVh * 0.01;
+
+const screenHeight = window.innerHeight * 0.01;
 ///
 
 export const PlaceHolder = styled.div`
   background: rgba(198, 235, 239, 1);
-  height: 95vh;
+  height: ${95 * screenHeight}px;
 `;
 
 export const Container = styled.div`
@@ -27,6 +29,9 @@ export const Container = styled.div`
     justify-content: none;
     flex-direction: column;
     align-items: center;
+  }
+  @media (pointer: none), (pointer: coarse) {
+    min-height: ${95 * screenHeight}px;
   }
 `;
 export const QuestionWrapper = styled.div`
@@ -47,7 +52,7 @@ export const QuestionWrapper = styled.div`
   @media only screen and (max-width: 770px) {
     margin: ${5 * vh}px 0;
     width: 100%;
-    min-height: 44vh;
+    min-height: ${44 * screenHeight}px;
   }
 `;
 export const BrandName = styled.div`

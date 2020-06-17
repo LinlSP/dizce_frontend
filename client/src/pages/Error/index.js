@@ -1,5 +1,4 @@
-import React, { useContext, useEffect } from "react";
-import { Context } from "../../Context";
+import React from "react";
 
 /// /////////////////////////////////////////////////////////////////////////////////Styles
 import { ContentContainerGlobal } from "../../styles/global/Globalstyles";
@@ -7,38 +6,21 @@ import { Text, Icon } from "./styles";
 
 /// /////////////////////////////////////////////////////////////////////////////////Resources and Components
 import errorSrc from "../../assets/error.svg";
+import { useDisableHeader } from "../../customHooks/useDisableHeader";
+import { useReturnToMenu } from "../../customHooks/useReturnToMenu";
+import { useInjectText } from "../../customHooks/useInjectText";
 
 /// /////////////////////////////////////////////////////////////////////////////////Self
 
 export const Error = () => {
-  const {
-    isLanguage,
-    removeStorageLanguage,
-    headerAvailable,
-    setHeaderAvailable,
-  } = useContext(Context);
-
-  var message;
-  switch (isLanguage) {
-    case "spanish":
-      message = "Sucedió un error :(";
-      break;
-    case "german":
-      message = "Etwas ist schiefgelaufen :(";
-      break;
-    default:
-      message = "Something went wrong :(";
-  }
-
-  useEffect(() => {
-    setTimeout(() => {
-      removeStorageLanguage();
-      window.location.reload();
-    }, 2000);
-    if (headerAvailable) setHeaderAvailable(false);
-  }, []);
+  const selfName = "error";
+  ///////////////////onMount hooks
+  useReturnToMenu();
+  useDisableHeader();
+  const textData = useInjectText(selfName);
 
   /// ///////////////PAGE
+  const { message } = textData;
 
   return (
     <>

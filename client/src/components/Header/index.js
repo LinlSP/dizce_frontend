@@ -21,9 +21,10 @@ import logo from "../../assets/logo2.png";
 import langWorld from "../../assets/languageWorld.svg";
 import menu from "../../assets/burgerMenu.svg";
 import backbtn from "../../assets/gobtn.svg";
+import { useInjectText } from "../../customHooks/useInjectText";
+
 /// /////////////////////////////////////////////////////////////////////////////////Self
 
-const selfName = "header";
 const toPages = ["/about", "/services", "/contact", "/legal"];
 
 export const Header = ({ locationPath }) => {
@@ -33,29 +34,15 @@ export const Header = ({ locationPath }) => {
     setStorageLanguage,
     isLanguage,
     headerAvailable,
-    setError,
   } = useContext(Context);
-  const [textData, setTextData] = useState("");
   const [menuOn, setMenuOn] = useState(false);
   const [languagesMenu, setLanguagesMenu] = useState(false);
   const [activeMenu, setActiveMenu] = useState("");
   const currentPageIndex = toPages.indexOf(locationPath);
-  /// ///////////////Importing Text from JSON - function
-  const importTextFromJson = () => {
-    import(`../../languages/${isLanguage}/${selfName}.json`)
-      .then(({ default: myData }) => {
-        setTextData(myData);
-      })
-      .catch((error) => {
-        console.log(error);
-        setError(true);
-      });
-  };
-  /// ////////
-
-  useEffect(() => {
-    importTextFromJson();
-  }, []);
+  const selfName = "header";
+  ///////////////////onMount hooks
+  const textData = useInjectText(selfName);
+  //////////////////
 
   const activateLinks = () => {
     setMenuOn(true);

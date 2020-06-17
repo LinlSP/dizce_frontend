@@ -13,6 +13,10 @@ if (windowWidth > 350 && windowWidth < 1701) {
 var vh = defaultVh * 0.01;
 ///
 
+export const PlaceHolder = styled.div`
+  background: black;
+  height: ${11 * vh}px;
+`;
 export const SocialMedia = styled.div`
   width: 30%;
   height: 25%;
@@ -44,7 +48,7 @@ export const RLink = styled(Link)`
   font-size: ${2 * vh}px;
 `;
 
-export const LinkIcon = styled(Link)`
+export const LinkIcon = styled.a`
   height: 100%;
   display: flex;
 `;
