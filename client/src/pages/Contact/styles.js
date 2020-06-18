@@ -15,6 +15,7 @@ var vh = defaultVh * 0.01;
 const screenHeight = window.innerHeight * 0.01;
 ///
 const PlaceHolder = styled.div`
+  background: rgba(198, 235, 239, 1);
   height: ${95 * screenHeight}px;
 `;
 const Container = styled.div`

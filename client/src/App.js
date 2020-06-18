@@ -13,7 +13,7 @@ import { Home } from "./pages/Home";
 import { About } from "./pages/About";
 import { Contact } from "./pages/Contact";
 import { Services } from "./pages/Services";
-import { Conditions } from "./pages/Conditions";
+import { Legal } from "./pages/Legal";
 import { Free } from "./components/Free";
 // import { Store } from './components/Store'
 import { Personalized } from "./components/Personalized";
@@ -49,7 +49,7 @@ export const App = () => {
           {/* <Store path='/services/store'/> */}
           <Free path="/services/free" />
           <Personalized path="/services/personalized" />
-          <Conditions path="/legal" />
+          <Legal path="/legal" />
         </Router>
         <Footer />
       </>

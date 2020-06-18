@@ -55,7 +55,11 @@ export const Contact = () => {
   const { inquiries, support, or, socialmedia } = textData;
 
   return (
-    <>
+    <div
+      style={{
+        background: "rgba(198, 235, 239, 1)",
+      }}
+    >
       <Container className="container">
         <MailButton on={mail0 ? 1 : 0} onClick={() => revealMail(0)}>
           {mail0 ? mails[0] : inquiries}
@@ -73,6 +77,6 @@ export const Contact = () => {
           ))}
         </SocialMedia>
       </Container>
-    </>
+    </div>
   );
 };
