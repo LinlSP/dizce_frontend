@@ -1,6 +1,6 @@
-import styled from 'styled-components'
-import { Link } from '@reach/router'
-import { vh } from '../height'
+import styled from "styled-components";
+import { Link } from "@reach/router";
+import { vh } from "../index";
 
 const LogoSection = styled.div`
   display: flex;
@@ -10,7 +10,7 @@ const LogoSection = styled.div`
   width: 100%;
   margin-bottom: ${1 * vh}px;
   margin-top: ${1 * vh}px;
-`
+`;
 
 const BurgerMenu = styled.img`
   filter: invert(1);
@@ -22,7 +22,7 @@ const BurgerMenu = styled.img`
   @media only screen and (min-width: 1200px) {
     display: none;
   }
-`
+`;
 const SideMenu = styled.div`
   min-height: 100vh;
   min-width: 100vw;
@@ -31,11 +31,11 @@ const SideMenu = styled.div`
   z-index: +1;
   transform: translateX(100vw);
   transition: 1s ease all;
-  ${(props) => (props.on ? 'transform:translateX(0);' : '')}
+  ${(props) => (props.on ? "transform:translateX(0);" : "")}
   @media only screen and (min-width: 1200px) {
     display: none;
   }
-`
+`;
 const SideMenuLink = styled(Link)`
   z-index: 2;
   display: flex;
@@ -52,7 +52,7 @@ const SideMenuLink = styled(Link)`
     font-weight: bold;
     text-decoration: none;
   }
-`
+`;
 
 const SideMenuButton = styled.img`
   height: 100%;
@@ -60,7 +60,7 @@ const SideMenuButton = styled.img`
   &:hover {
     cursor: pointer;
   }
-`
+`;
 
 const UpperMenu = styled.div`
   @media only screen and (max-width: 1199px) {
@@ -71,7 +71,7 @@ const UpperMenu = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-`
+`;
 const UpperLink = styled(Link)`
   color: white;
   transition: 0.5s all ease;
@@ -81,7 +81,7 @@ const UpperLink = styled(Link)`
     color: black;
     text-decoration: none;
   }
-`
+`;
 
 const MainTitle = styled.div`
   margin-top: ${15 * vh}px;
@@ -92,14 +92,14 @@ const MainTitle = styled.div`
   font-size: ${6 * vh}px;
   font-weight: bold;
   flex-direction: column;
-`
+`;
 
 const FirstLine = styled.div`
   color: white;
   display: flex;
   font-size: ${6 * vh}px;
   font-weight: bold;
-`
+`;
 
 const LittleMainTitle = styled.div`
   color: white;
@@ -110,7 +110,7 @@ const LittleMainTitle = styled.div`
   color: white;
   font-size: ${3 * vh}px;
   font-weight: lighter;
-`
+`;
 const MainButton = styled(Link)`
   background-color: black;
   color: white;
@@ -126,14 +126,14 @@ const MainButton = styled(Link)`
     color: black;
     text-decoration: none;
   }
-`
+`;
 const WorldIcon = styled.div`
   height: ${6 * vh}px;
   display: flex;
   width: 100%;
   justify-content: flex-start;
   margin-bottom: ${30 * vh}px;
-`
+`;
 const WorldIconImage = styled.img`
   transition: 0.5s all ease;
   filter: invert(1);
@@ -141,7 +141,7 @@ const WorldIconImage = styled.img`
     cursor: pointer;
     filter: invert(0);
   }
-`
+`;
 
 const SelectLangBox = styled.div`
   transform-origin: left top;
@@ -150,10 +150,10 @@ const SelectLangBox = styled.div`
   transition: 0.5s all ease;
   margin-left: ${6 * vh}px;
   margin-top: ${3 * vh}px;
-  ${(props) => (props.on ? 'transform:scale(1);' : '')}
+  ${(props) => (props.on ? "transform:scale(1);" : "")}
   overflow-y: scroll;
   height: ${17.5 * vh}px;
-`
+`;
 const LangInBox = styled.div`
   padding: ${1 * vh}px ${2 * vh}px;
   font-size: ${2.6 * vh}px;
@@ -167,7 +167,7 @@ const LangInBox = styled.div`
     background-color: rgba(0, 0, 0, 1);
     cursor: pointer;
   }
-`
+`;
 
 export {
   LogoSection,
@@ -184,5 +184,5 @@ export {
   SideMenuLink,
   SideMenuButton,
   SelectLangBox,
-  LangInBox
-}
+  LangInBox,
+};

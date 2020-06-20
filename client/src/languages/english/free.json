@@ -1,0 +1,7 @@
+{
+  "contentOrigin": "Original content of the language:",
+  "availableLanguages": ["English", "Spanish", "German"],
+  "availableLanguagesForPetition": ["english", "spanish", "german"],
+
+  "filters": ["All", "Science", "Mathemathic", "Technology", "Social sciences"]
+}

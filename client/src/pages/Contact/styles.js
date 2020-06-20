@@ -1,26 +1,13 @@
-import styled from 'styled-components'
+import styled from "styled-components";
+import { vh, screenHeight } from "../../styles/global/Height";
 
-/// setting the height
-const windowWidth = window.innerWidth
-
-var defaultVh = 684
-if (windowWidth > 350 && windowWidth < 1701) {
-  defaultVh = 784
-} else if (windowWidth > 1700) {
-  defaultVh = window.innerHeight
-}
-
-var vh = defaultVh * 0.01
-
-const screenHeight = window.innerHeight * 0.01
-///
 const PlaceHolder = styled.div`
   background: rgba(198, 235, 239, 1);
   height: 95vh;
   @media (pointer: none), (pointer: coarse) {
     height: ${95 * screenHeight}px;
   }
-`
+`;
 const Container = styled.div`
   @media only screen and (max-width: 545px) {
     height: auto;
@@ -35,7 +22,7 @@ const Container = styled.div`
     min-height: ${95 * screenHeight}px;
     height: auto;
   }
-`
+`;
 
 const MailButton = styled.div`
   margin-top: ${6 * vh}px;
@@ -52,10 +39,10 @@ const MailButton = styled.div`
   &:hover {
     filter: invert(1);
     cursor: pointer;
-    ${(props) => (props.on ? 'filter: invert(0);' : '')}
+    ${(props) => (props.on ? "filter: invert(0);" : "")}
   }
-  ${(props) => (props.on ? `font-size : ${3 * vh}px;` : '')}
-`
+  ${(props) => (props.on ? `font-size : ${3 * vh}px;` : "")}
+`;
 
 const SocialMedia = styled.div`
   margin-top: ${6 * vh}px;
@@ -66,7 +53,7 @@ const SocialMedia = styled.div`
   align-items: center;
   justify-content: space-around;
   color: white;
-`
+`;
 const LinkIcon = styled.a`
   height: 100%;
   display: flex;
@@ -76,18 +63,18 @@ const LinkIcon = styled.a`
     filter: invert(0.5);
     cursor: pointer;
   }
-`
+`;
 
 const TheOr = styled.div`
   margin-top: ${6 * vh}px;
   font-size: ${6 * vh}px;
   color: black;
-`
+`;
 const TheText = styled.div`
   color: black;
   font-size: ${3 * vh}px;
   text-align: center;
-`
+`;
 
 export {
   PlaceHolder,
@@ -96,5 +83,5 @@ export {
   SocialMedia,
   LinkIcon,
   TheOr,
-  TheText
-}
+  TheText,
+};

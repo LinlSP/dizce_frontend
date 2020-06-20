@@ -1,6 +1,6 @@
-import styled from 'styled-components'
-import { SlideLeft, SlideRight } from '../../../styles/global/Animations'
-import { vh } from '../height'
+import styled from "styled-components";
+import { SlideLeft, SlideRight } from "../../../styles/global/Animations";
+import { vh } from "../index";
 
 const Question = styled.div`
   color: white;
@@ -9,18 +9,18 @@ const Question = styled.div`
   font-size: ${3 * vh}px;
   font-weight: bold;
   ${(props) =>
-    props.change ? SlideLeft({ time: '1.5s' }) : SlideRight({ time: '1.5s' })}
+    props.change ? SlideLeft({ time: "1.5s" }) : SlideRight({ time: "1.5s" })}
   ${(props) => props.extra}
-`
+`;
 const Quote = styled.img`
   position: relative;
   display: flex;
   height: ${2 * vh}px;
   ${(props) =>
-    props.change ? SlideLeft({ time: '1.5s' }) : SlideRight({ time: '1.5s' })}
+    props.change ? SlideLeft({ time: "1.5s" }) : SlideRight({ time: "1.5s" })}
 
   ${(props) => props.extra}
-`
+`;
 const Answer = styled.div`
   display: flex;
   flex-direction: column;
@@ -34,7 +34,7 @@ const Answer = styled.div`
   height: ${80 * vh}px;
   padding-top: ${4 * vh}px;
   ${(props) =>
-    props.change ? SlideRight({ time: '1.5s' }) : SlideLeft({ time: '1.5s' })}
+    props.change ? SlideRight({ time: "1.5s" }) : SlideLeft({ time: "1.5s" })}
 
   @media only screen and (min-width: 800px) {
     flex-direction: row;
@@ -42,14 +42,14 @@ const Answer = styled.div`
     height: auto;
     padding-top: 0;
   }
-`
+`;
 
 const AnswerImg = styled.img`
   height: 75%;
   @media only screen and (min-width: 800px) {
     height: 90%;
   }
-`
+`;
 const SliderButton = styled.img`
   height: ${3.5 * vh}px;
   margin: ${2 * vh}px;
@@ -58,6 +58,6 @@ const SliderButton = styled.img`
   &:hover {
     cursor: pointer;
   }
-`
+`;
 
-export { Question, Quote, Answer, AnswerImg, SliderButton }
+export { Question, Quote, Answer, AnswerImg, SliderButton };

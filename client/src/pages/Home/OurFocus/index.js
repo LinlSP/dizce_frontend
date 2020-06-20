@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 /// /////////////////////////////////////////////////////////////////////////////////Styles
-import { vh } from '../height'
+import { vh } from "../index";
 import {
   FocusTitle,
   FocusIcons,
@@ -9,13 +9,13 @@ import {
   FocusDescription,
   DTitle,
   DSubtitle,
-  DPoints
-} from './styles'
+  DPoints,
+} from "./styles";
 /// /////////////////////////////////////////////////////////////////////////////////Resources and Components
-import family from '../../../assets/family.svg'
-import business from '../../../assets/business.svg'
-import individual from '../../../assets/individual.svg'
-import personalized from '../../../assets/personalized.svg'
+import family from "../../../assets/family.svg";
+import business from "../../../assets/business.svg";
+import individual from "../../../assets/individual.svg";
+import personalized from "../../../assets/personalized.svg";
 
 /// /////////////////////////////////////////////////////////////////////////////////Self
 
@@ -24,20 +24,20 @@ export const OurFocus = ({
   secondarybgcolor,
   titles,
   ContentContainerGlobal,
-  BigContainerGlobal
+  BigContainerGlobal,
 }) => {
-  const [focusIcon, setFocusIcon] = useState(parseInt('0'))
-  const focusIconsSrc = [family, business, individual, personalized]
+  const [focusIcon, setFocusIcon] = useState(parseInt("0"));
+  const focusIconsSrc = [family, business, individual, personalized];
 
   const onFocusChange = (event) => {
-    const focusIconNumber = parseInt(event.target.id)
-    setFocusIcon(focusIconNumber)
-  }
+    const focusIconNumber = parseInt(event.target.id);
+    setFocusIcon(focusIconNumber);
+  };
 
   return (
-    <div id='ourfocus'>
+    <div id="ourfocus">
       <BigContainerGlobal bgcolor={secondarybgcolor}>
-        <div className='container'>
+        <div className="container">
           <ContentContainerGlobal
             flex
             flexCol
@@ -70,5 +70,5 @@ export const OurFocus = ({
         </div>
       </BigContainerGlobal>
     </div>
-  )
-}
+  );
+};

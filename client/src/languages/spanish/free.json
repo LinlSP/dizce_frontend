@@ -1,8 +1,6 @@
 {
   "contentOrigin": "Contenidos originarios del idioma:",
   "availableLanguages": ["Español", "Inglés", "Alemán"],
-  "filters": {
-    "mainF": ["Todo", "Colegio", "Universidad", "Avanzado"],
-    "secondaryF": []
-  }
+  "availableLanguagesForPetition": ["spanish", "english", "german"],
+  "filters": ["Todo", "Ciencias", "Matemáticas", "Tecnología", "Sociales"]
 }

@@ -1,33 +1,22 @@
-import styled from 'styled-components'
-import { Link } from '@reach/router'
-/// setting the height
-const windowWidth = window.innerWidth
-
-var defaultVh = 684
-if (windowWidth > 350 && windowWidth < 1701) {
-  defaultVh = 784
-} else if (windowWidth > 1700) {
-  defaultVh = window.innerHeight
-}
-
-var vh = defaultVh * 0.01
-///
+import styled from "styled-components";
+import { Link } from "@reach/router";
+import { vh } from "../../styles/global/Height";
 
 const PlaceHolder = styled.div`
   background: rgba(0, 0, 0, 1);
   height: ${10 * vh}px;
-`
+`;
 
 const Container = styled.div`
   background: rgba(0, 0, 0, 1);
   height: ${10 * vh}px;
   overflow-y: hidden;
   ${(props) => {
-    if (props.activated === 'links') return
-    if (props.activated === 'languages') return
-    return 'overflow-x: hidden'
+    if (props.activated === "links") return;
+    if (props.activated === "languages") return;
+    return "overflow-x: hidden";
   }}
-`
+`;
 const LinksContainer = styled.div`
   width: 100%;
   height: ${10 * vh}px;
@@ -37,11 +26,15 @@ const LinksContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   ${(props) => {
-    if (props.activated === 'links') { return `transform: translateY(-${20 * vh}px);` }
-    if (props.activated === 'languages') { return `transform: translateY(${20 * vh}px);` }
-    return ''
+    if (props.activated === "links") {
+      return `transform: translateY(-${20 * vh}px);`;
+    }
+    if (props.activated === "languages") {
+      return `transform: translateY(${20 * vh}px);`;
+    }
+    return "";
   }}
-`
+`;
 const MenuLogoLink = styled(Link)`
   height: 50%;
   opacity: 0.8;
@@ -50,7 +43,7 @@ const MenuLogoLink = styled(Link)`
     cursor: pointer;
     opacity: 1;
   }
-`
+`;
 const ChangeLang = styled.img`
   filter: invert(0.8);
   transition: 0.5s all ease;
@@ -58,7 +51,7 @@ const ChangeLang = styled.img`
     filter: invert(1);
     cursor: pointer;
   }
-`
+`;
 
 const Menu = styled.img`
   filter: invert(0.8);
@@ -67,7 +60,7 @@ const Menu = styled.img`
     cursor: pointer;
     filter: invert(1);
   }
-`
+`;
 
 const LanguagesBox = styled.div`
   background: black;
@@ -78,8 +71,8 @@ const LanguagesBox = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  ${(props) => (props.on ? 'transform: translateY(0);' : '')}
-`
+  ${(props) => (props.on ? "transform: translateY(0);" : "")}
+`;
 const LangInBox = styled.div`
   white-space: nowrap;
   color: rgba(255, 255, 255, 0.8);
@@ -96,10 +89,10 @@ const LangInBox = styled.div`
   }
   ${(props) => {
     if (props.thelanguage === props.currentlang) {
-      return 'color:white; font-weight: bold;'
+      return "color:white; font-weight: bold;";
     }
   }}
-`
+`;
 
 const PagesMenuBox = styled.div`
   background: black;
@@ -111,8 +104,8 @@ const PagesMenuBox = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  ${(props) => (props.on ? `transform: translateY(-${20 * vh}px);` : '')}
-`
+  ${(props) => (props.on ? `transform: translateY(-${20 * vh}px);` : "")}
+`;
 
 const TitleInMenuBox = styled(Link)`
   white-space: nowrap;
@@ -130,10 +123,10 @@ const TitleInMenuBox = styled(Link)`
   }
   ${(props) => {
     if (props.theindex === props.page) {
-      return 'color:white; font-weight: bold;'
+      return "color:white; font-weight: bold;";
     }
   }}
-`
+`;
 
 const BackBtnLinks = styled.img`
   height: 50%;
@@ -141,14 +134,14 @@ const BackBtnLinks = styled.img`
   &:hover {
     cursor: pointer;
   }
-`
+`;
 const BackBtnLanguages = styled.img`
   height: 50%;
   transform: rotate(90deg);
   &:hover {
     cursor: pointer;
   }
-`
+`;
 
 export {
   Container,
@@ -162,5 +155,5 @@ export {
   BackBtnLanguages,
   LanguagesBox,
   LangInBox,
-  PlaceHolder
-}
+  PlaceHolder,
+};

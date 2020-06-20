@@ -1,37 +1,39 @@
-import React from 'react'
+import React from "react";
 
 /// /////////////////////////////////////////////////////////////////////////////////Styles
 import {
   ContentContainerGlobal,
-  BigContainerGlobal
-} from '../../styles/global/Globalstyles'
+  BigContainerGlobal,
+} from "../../styles/global/Globalstyles";
+import { vh } from "../../styles/global/Height";
+export { vh };
 /// /////////////////////////////////////////////////////////////////////////////////Resources and Components
-import { Loader } from '../../components/Loader'
+import { Loader } from "../../components/Loader";
 
-import { useInjectText } from '../../customHooks/useInjectText'
-import { useDisableHeader } from '../../customHooks/useDisableHeader'
+import { useInjectText } from "../../customHooks/useInjectText";
+import { useDisableHeader } from "../../customHooks/useDisableHeader";
 
-import { MainScreen } from './MainScreen'
-import { Slider } from './Slider'
-import { OurFocus } from './OurFocus'
-import { Furthermore } from './Furthermore'
+import { MainScreen } from "./MainScreen";
+import { Slider } from "./Slider";
+import { OurFocus } from "./OurFocus";
+import { Furthermore } from "./Furthermore";
 
 /// /////////////////////////////////////////////////////////////////////////////////Self
 
 export const Home = () => {
-  const selfName = 'home'
+  const selfName = "home";
   const imagesSrcUrl =
-    'https://res.cloudinary.com/d1zc3/image/upload/v1590540428/All/Home'
-  const defaultbgcolor = 'rgba(93,193,185,1)'
-  const secondarybgcolor = 'rgba(239,239,239,1)'
+    "https://res.cloudinary.com/d1zc3/image/upload/v1590540428/All/Home";
+  const defaultbgcolor = "rgba(93,193,185,1)";
+  const secondarybgcolor = "rgba(239,239,239,1)";
 
   /// ////////////////onMount hooks
-  useDisableHeader()
-  const textData = useInjectText(selfName)
+  useDisableHeader();
+  const textData = useInjectText(selfName);
 
   /// ///////////////PAGE
 
-  if (textData === '') return <Loader />
+  if (textData === "") return <Loader />;
 
   const {
     maintitle,
@@ -39,8 +41,8 @@ export const Home = () => {
     questions,
     titles,
     focus,
-    furthermore
-  } = textData
+    furthermore,
+  } = textData;
   return (
     <>
       {/* ///////////////////////////////////////////////////////////////////////////// */}
@@ -77,5 +79,5 @@ export const Home = () => {
         BigContainerGlobal={BigContainerGlobal}
       />
     </>
-  )
-}
+  );
+};

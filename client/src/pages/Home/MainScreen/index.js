@@ -1,5 +1,5 @@
-import React, { useContext, useState } from 'react'
-import { Context } from '../../../Context'
+import React, { useContext, useState } from "react";
+import { Context } from "../../../Context";
 
 /// /////////////////////////////////////////////////////////////////////////////////Styles
 
@@ -18,29 +18,17 @@ import {
   SideMenuLink,
   SideMenuButton,
   SelectLangBox,
-  LangInBox
-} from './styles'
+  LangInBox,
+} from "./styles";
 
 /// /////////////////////////////////////////////////////////////////////////////////Resources and Components
-import homebg from '../../../assets/homebg.svg'
-import logo2 from '../../../assets/logo2.png'
-import burgerMenu from '../../../assets/burgerMenu.svg'
-import languageWorld from '../../../assets/languageWorld.svg'
-import Backbtn from '../../../assets/gobtn.svg'
-
+import homebg from "../../../assets/homebg.svg";
+import logo2 from "../../../assets/logo2.png";
+import burgerMenu from "../../../assets/burgerMenu.svg";
+import languageWorld from "../../../assets/languageWorld.svg";
+import Backbtn from "../../../assets/gobtn.svg";
+import { vh } from "../index";
 /// /////////////////////////////////////////////////////////////////////////////////Self
-/// setting the height
-const windowWidth = window.innerWidth
-
-var defaultVh = 684
-if (windowWidth > 350 && windowWidth < 1701) {
-  defaultVh = 784
-} else if (windowWidth > 1700) {
-  defaultVh = window.innerHeight
-}
-
-var vh = defaultVh * 0.01
-///
 
 export const MainScreen = ({
   big1,
@@ -50,46 +38,46 @@ export const MainScreen = ({
   sidepanel,
   defaultbgcolor,
   ContentContainerGlobal,
-  BigContainerGlobal
+  BigContainerGlobal,
 }) => {
-  const { languages, setStorageLanguage, langToSave } = useContext(Context)
+  const { languages, setStorageLanguage, langToSave } = useContext(Context);
 
-  const [sideMenu, setSideMenu] = useState(false)
-  const [langBox, setLangBox] = useState(false)
+  const [sideMenu, setSideMenu] = useState(false);
+  const [langBox, setLangBox] = useState(false);
 
-  const menuLinksTo = ['/about', '/services', '/contact', '/legal']
+  const menuLinksTo = ["/about", "/services", "/contact", "/legal"];
 
   const changeLanguage = (index) => {
-    setStorageLanguage(langToSave[index])
-    window.location.reload()
-  }
+    setStorageLanguage(langToSave[index]);
+    window.location.reload();
+  };
 
   return (
     <>
       <SideMenu on={sideMenu ? 1 : 0}>
         <div
-          className='container'
+          className="container"
           style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            minHeight: '100vh',
-            padding: '5vh 0'
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            minHeight: "100vh",
+            padding: "5vh 0",
           }}
         >
           <div
             style={{
-              width: '80%',
-              display: 'flex',
-              justifyContent: 'flex-start',
+              width: "80%",
+              display: "flex",
+              justifyContent: "flex-start",
               height: `${6 * vh}px`,
-              position: 'absolute'
+              position: "absolute",
             }}
           >
             <SideMenuButton
               src={Backbtn}
-              height='100%'
-              alt=''
+              height="100%"
+              alt=""
               onClick={() => setSideMenu(false)}
             />
           </div>
@@ -100,26 +88,26 @@ export const MainScreen = ({
           ))}
         </div>
       </SideMenu>
-      <div id='mainscreen'>
+      <div id="mainscreen">
         <BigContainerGlobal
           bg={`url(${homebg}) repeat center`}
           bgcolor={defaultbgcolor}
-          bgsize='cover'
+          bgsize="cover"
         >
-          <div className='container'>
+          <div className="container">
             <ContentContainerGlobal
-              bgcolor='transparent'
+              bgcolor="transparent"
               flex
               flexCol
-              justify='space-between'
-              align='center'
+              justify="space-between"
+              align="center"
             >
               <LogoSection>
-                <img src={logo2} alt='' height='80%' />
+                <img src={logo2} alt="" height="80%" />
                 <BurgerMenu
                   src={burgerMenu}
-                  alt=''
-                  height='40%'
+                  alt=""
+                  height="40%"
                   onClick={() => setSideMenu(true)}
                 />
                 <UpperMenu>
@@ -137,14 +125,14 @@ export const MainScreen = ({
                 </FirstLine>
                 {big2}
               </MainTitle>
-              <MainButton to='/services'>{button}</MainButton>
+              <MainButton to="/services">{button}</MainButton>
               <WorldIcon>
                 <SelectLangBox on={langBox ? 1 : 0}>
                   {languages.map((language, index) => (
                     <LangInBox
                       key={index}
                       onClick={() => {
-                        changeLanguage(index)
+                        changeLanguage(index);
                       }}
                     >
                       {language}
@@ -152,13 +140,13 @@ export const MainScreen = ({
                   ))}
                 </SelectLangBox>
                 <WorldIconImage
-                  name='language'
+                  name="language"
                   onClick={() => {
-                    setLangBox(!langBox)
+                    setLangBox(!langBox);
                   }}
                   src={languageWorld}
-                  height='100%'
-                  alt=''
+                  height="100%"
+                  alt=""
                 />
               </WorldIcon>
             </ContentContainerGlobal>
@@ -166,5 +154,5 @@ export const MainScreen = ({
         </BigContainerGlobal>
       </div>
     </>
-  )
-}
+  );
+};
