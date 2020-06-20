@@ -1,5 +1,5 @@
-import React, { useContext, useState } from "react";
-import { Context } from "../../Context";
+import React, { useContext, useState } from 'react'
+import { Context } from '../../Context'
 
 /// /////////////////////////////////////////////////////////////////////////////////Styles
 import {
@@ -10,65 +10,65 @@ import {
   World,
   Languages,
   Lang,
-  GoButton,
-} from "./styles";
+  GoButton
+} from './styles'
 
 /// /////////////////////////////////////////////////////////////////////////////////Resources and Components
-import logoSrc from "../../assets/logo2.png";
-import Gobtn from "../../assets/gobtn.svg";
+import logoSrc from '../../assets/logo2.png'
+import Gobtn from '../../assets/gobtn.svg'
 
 /// /////////////////////////////////////////////////////////////////////////////////Self
 
 export const SelectLanguage = () => {
   const { languages, setStorageLanguage, setLoader, langToSave } = useContext(
     Context
-  );
+  )
 
   const [userSettings, setUserSettings] = useState({
-    title: "",
-    langNow: "earth",
-    theDisplay: "none",
-    isSlideOn: false,
-  });
+    title: '',
+    langNow: 'earth',
+    theDisplay: 'none',
+    isSlideOn: false
+  })
 
-  const { title, langNow, theDisplay, isSlideOn } = userSettings;
+  const { title, langNow, theDisplay, isSlideOn } = userSettings
 
-  const titles = ["Idioma", "Language", "Sprache"];
+  const titles = ['Idioma', 'Language', 'Sprache']
 
-  const mapsrc = `https://res.cloudinary.com/d1zc3/image/upload/v1589292483/All/Landing/${langNow}.png`;
+  const mapsrc = `https://res.cloudinary.com/d1zc3/image/upload/v1589292483/All/Landing/${langNow}.png`
 
   const updateUserSettings = (index) => {
     setUserSettings({
       title: titles[index],
       langNow: langToSave[index],
-      theDisplay: "inline",
-      isSlideOn: !isSlideOn,
-    });
-  };
+      theDisplay: 'inline',
+      isSlideOn: !isSlideOn
+    })
+  }
 
   const setSettings = () => {
-    setStorageLanguage(langNow);
-    setLoader(true);
-  };
+    setStorageLanguage(langNow)
+    setLoader(true)
+  }
 
   /// ///////////////PAGE
 
   return (
     <TotalContainer>
       <div
-        className="container"
-        style={{ display: "flex", alignItems: "center" }}
+        className='container'
+        style={{ display: 'flex', alignItems: 'center' }}
       >
         <Content>
           <LogoSection>
-            <img src={logoSrc} alt="" height="100%" />
+            <img src={logoSrc} alt='' height='100%' />
             <GoButton
-              id="goButton"
+              id='goButton'
               onClick={() => {
-                setSettings();
+                setSettings()
               }}
               src={Gobtn}
-              alt=""
+              alt=''
               seen={theDisplay}
             />
           </LogoSection>
@@ -79,7 +79,7 @@ export const SelectLanguage = () => {
               <Lang
                 key={index}
                 onClick={() => {
-                  updateUserSettings(index);
+                  updateUserSettings(index)
                 }}
               >
                 {language}
@@ -89,5 +89,5 @@ export const SelectLanguage = () => {
         </Content>
       </div>
     </TotalContainer>
-  );
-};
+  )
+}

@@ -1,24 +1,27 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 /// setting the height
-const windowWidth = window.innerWidth;
+const windowWidth = window.innerWidth
 
-var defaultVh = 684;
+var defaultVh = 684
 if (windowWidth > 350 && windowWidth < 1701) {
-  defaultVh = 784;
+  defaultVh = 784
 } else if (windowWidth > 1700) {
-  defaultVh = window.innerHeight;
+  defaultVh = window.innerHeight
 }
 
-var vh = defaultVh * 0.01;
+var vh = defaultVh * 0.01
 
-const screenHeight = window.innerHeight * 0.01;
+const screenHeight = window.innerHeight * 0.01
 ///
 
 export const PlaceHolder = styled.div`
   background: rgba(198, 235, 239, 1);
-  height: ${95 * screenHeight}px;
-`;
+  height: 95vh;
+  @media (pointer: none), (pointer: coarse) {
+    height: ${95 * screenHeight}px;
+  }
+`
 
 export const Container = styled.div`
   min-height: 95vh;
@@ -33,7 +36,7 @@ export const Container = styled.div`
   @media (pointer: none), (pointer: coarse) {
     min-height: ${95 * screenHeight}px;
   }
-`;
+`
 export const QuestionWrapper = styled.div`
   background: radial-gradient(
     circle at 50%,
@@ -54,11 +57,11 @@ export const QuestionWrapper = styled.div`
     width: 100%;
     min-height: ${44 * screenHeight}px;
   }
-`;
+`
 export const BrandName = styled.div`
   font-weight: bold;
   font-size: ${5 * vh}px;
-`;
+`
 
 export const AnswerWrapper = styled.div`
   display: flex;
@@ -71,7 +74,7 @@ export const AnswerWrapper = styled.div`
     width: 100%;
     flex-direction: row;
   }
-`;
+`
 
 export const Answer = styled.div`
   padding: ${10 * vh}px 0;
@@ -86,10 +89,10 @@ export const Answer = styled.div`
     width: auto;
     padding: 0 ${1 * vh}px;
   }
-`;
+`
 export const BigIcon = styled.img`
   height: ${20 * vh}px;
   @media only screen and (max-width: 770px) {
     height: ${10 * vh}px;
   }
-`;
+`

@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useContext } from "react";
-import { Context } from "../../Context";
+import React, { useState, useContext } from 'react'
+import { Context } from '../../Context'
 
 /// /////////////////////////////////////////////////////////////////////////////////Styles
 import {
@@ -14,18 +14,18 @@ import {
   BackBtnLanguages,
   LanguagesBox,
   LangInBox,
-  PlaceHolder,
-} from "./styles";
+  PlaceHolder
+} from './styles'
 /// /////////////////////////////////////////////////////////////////////////////////Resources and Components
-import logo from "../../assets/logo2.png";
-import langWorld from "../../assets/languageWorld.svg";
-import menu from "../../assets/burgerMenu.svg";
-import backbtn from "../../assets/gobtn.svg";
-import { useInjectText } from "../../customHooks/useInjectText";
+import logo from '../../assets/logo2.png'
+import langWorld from '../../assets/languageWorld.svg'
+import menu from '../../assets/burgerMenu.svg'
+import backbtn from '../../assets/gobtn.svg'
+import { useInjectText } from '../../customHooks/useInjectText'
 
 /// /////////////////////////////////////////////////////////////////////////////////Self
 
-const toPages = ["/about", "/services", "/contact", "/legal"];
+const toPages = ['/about', '/services', '/contact', '/legal']
 
 export const Header = ({ locationPath }) => {
   const {
@@ -33,54 +33,54 @@ export const Header = ({ locationPath }) => {
     langToSave,
     setStorageLanguage,
     isLanguage,
-    headerAvailable,
-  } = useContext(Context);
-  const [menuOn, setMenuOn] = useState(false);
-  const [languagesMenu, setLanguagesMenu] = useState(false);
-  const [activeMenu, setActiveMenu] = useState("");
-  const currentPageIndex = toPages.indexOf(locationPath);
-  const selfName = "header";
-  ///////////////////onMount hooks
-  const textData = useInjectText(selfName);
-  //////////////////
+    headerAvailable
+  } = useContext(Context)
+  const [menuOn, setMenuOn] = useState(false)
+  const [languagesMenu, setLanguagesMenu] = useState(false)
+  const [activeMenu, setActiveMenu] = useState('')
+  const currentPageIndex = toPages.indexOf(locationPath)
+  const selfName = 'header'
+  /// ////////////////onMount hooks
+  const textData = useInjectText(selfName)
+  /// ///////////////
 
   const activateLinks = () => {
-    setMenuOn(true);
-    setActiveMenu("links");
-  };
+    setMenuOn(true)
+    setActiveMenu('links')
+  }
   const activateLanguages = () => {
-    setLanguagesMenu(true);
-    setActiveMenu("languages");
-  };
+    setLanguagesMenu(true)
+    setActiveMenu('languages')
+  }
   const deactivateLinks = () => {
-    setMenuOn(false);
-    setActiveMenu("");
-  };
+    setMenuOn(false)
+    setActiveMenu('')
+  }
   const deactivateLanguages = () => {
-    setLanguagesMenu(false);
-    setActiveMenu("");
-  };
-  const changeLanguage = (index, callback) => {
-    setStorageLanguage(langToSave[index]);
-    callback;
-  };
+    setLanguagesMenu(false)
+    setActiveMenu('')
+  }
+  const changeLanguage = (index) => {
+    setStorageLanguage(langToSave[index])
+    window.location.reload()
+  }
 
   /// ///////////////PAGE
 
-  if (!headerAvailable) return <></>;
+  if (!headerAvailable) return <></>
 
-  if (textData === "") return <PlaceHolder />;
+  if (textData === '') return <PlaceHolder />
 
-  const { pagename } = textData;
+  const { pagename } = textData
 
   return (
     <>
       <Container activated={activeMenu}>
-        <div className="container">
+        <div className='container'>
           <LanguagesBox on={languagesMenu ? 1 : 0}>
             <BackBtnLanguages
               src={backbtn}
-              alt=""
+              alt=''
               onClick={() => deactivateLanguages()}
             />
             {languages.map((language, index) => (
@@ -88,38 +88,38 @@ export const Header = ({ locationPath }) => {
                 thelanguage={langToSave[index]}
                 currentlang={isLanguage}
                 key={index}
-                onClick={() => changeLanguage(index, window.location.reload())}
+                onClick={() => changeLanguage(index)}
               >
                 {language}
               </LangInBox>
             ))}
           </LanguagesBox>
           <LinksContainer activated={activeMenu}>
-            <MenuLogoLink to="/">
-              <img height="100%" src={logo} alt="" />
+            <MenuLogoLink to='/'>
+              <img height='100%' src={logo} alt='' />
             </MenuLogoLink>
-            <div style={{ height: "40%" }}>
+            <div style={{ height: '40%' }}>
               <Menu
-                height="100%"
+                height='100%'
                 src={menu}
-                alt=""
+                alt=''
                 onClick={() => activateLinks()}
               />
             </div>
-            <div style={{ height: "50%" }}>
+            <div style={{ height: '50%' }}>
               <ChangeLang
-                height="100%"
-                name="language"
+                height='100%'
+                name='language'
                 src={langWorld}
                 onClick={() => activateLanguages()}
-                alt=""
+                alt=''
               />
             </div>
           </LinksContainer>
           <PagesMenuBox on={menuOn ? 1 : 0}>
             <BackBtnLinks
               src={backbtn}
-              alt=""
+              alt=''
               onClick={() => deactivateLinks()}
             />
             {pagename.map((name, index) => (
@@ -136,5 +136,5 @@ export const Header = ({ locationPath }) => {
         </div>
       </Container>
     </>
-  );
-};
+  )
+}

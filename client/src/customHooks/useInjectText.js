@@ -1,23 +1,24 @@
-import { useState, useEffect, useContext } from "react";
-import { Context } from "../Context";
+import { useState, useEffect, useContext } from 'react'
+import { Context } from '../Context'
 
 export const useInjectText = (componentName) => {
-  const { isLanguage, setError } = useContext(Context);
-  const [textData, setTextData] = useState("");
+  const { isLanguage, setError } = useContext(Context)
+  const [textData, setTextData] = useState('')
 
   useEffect(() => {
     import(`../languages/${isLanguage}/${componentName}.json`)
       .then(({ default: myData }) => {
-        setTextData(myData);
+        setTextData(myData)
       })
       .catch((error) => {
-        setError(true);
-      });
+        console.log(error)
+        setError(true)
+      })
 
     // return () => {
     //   setTextData("");
     // };
-  }, []);
+  }, [])
 
-  return textData;
-};
+  return textData
+}

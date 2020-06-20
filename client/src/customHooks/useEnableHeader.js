@@ -1,15 +1,13 @@
-import { useEffect, useContext } from "react";
-import { Context } from "../Context";
+import { useEffect, useContext } from 'react'
+import { Context } from '../Context'
 
 export const useEnableHeader = () => {
-  const { setHeaderAvailable } = useContext(Context);
+  const { setHeaderAvailable } = useContext(Context)
 
   useEffect(() => {
-    setHeaderAvailable(true);
+    setHeaderAvailable(true)
     // return () => {
     //     cleanup
     // };
-  }, []);
-
-  return;
-};
+  }, [])
+}

@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react'
 
 /// /////////////////////////////////////////////////////////////////////////////////Resources & Components
-import logoSrc from "../../assets/logo.svg";
+import logoSrc from '../../assets/logo.svg'
 /// /////////////////////////////////////////////////////////////////////////////////Styles
-import { Container, LoaderIcon, LoaderText } from "./styles";
+import { Container, LoaderIcon, LoaderText } from './styles'
 
 /// /////////////////////////////////////////////////////////////////////////////////Self
 
@@ -15,5 +15,5 @@ export const Loader = () => {
       <LoaderIcon src={logoSrc} />
       <LoaderText>Dizce</LoaderText>
     </Container>
-  );
-};
+  )
+}

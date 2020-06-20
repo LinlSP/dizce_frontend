@@ -1,15 +1,15 @@
-import React from "react";
+import React from 'react'
 /// /////////////////////////////////////////////////////////////////////////////////Styles
 
 /// /////////////////////////////////////////////////////////////////////////////////Resources and Components
-import { useEnableHeader } from "../../customHooks/useEnableHeader";
+import { useEnableHeader } from '../../customHooks/useEnableHeader'
 
 /// /////////////////////////////////////////////////////////////////////////////////Self
-export const Free = () => {
-  const selfName = "free";
-  ///////////////////onMount hooks
-  useEnableHeader();
-  ///////////////////Page
+export const Personalized = () => {
+  // const selfName = 'personalized'
+  /// ////////////////onMount hooks
+  useEnableHeader()
+  /// ////////////////Page
 
-  return <>byhef</>;
-};
+  return <>Personalized Component</>
+}

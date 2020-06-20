@@ -1,0 +1,8 @@
+{
+  "contentOrigin": "Contenidos originarios del idioma:",
+  "availableLanguages": ["Español", "Inglés", "Alemán"],
+  "filters": {
+    "mainF": ["Todo", "Colegio", "Universidad", "Avanzado"],
+    "secondaryF": []
+  }
+}

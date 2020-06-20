@@ -22,7 +22,6 @@ const PlaceHolder = styled.div`
     height: ${95 * screenHeight}px;
   }
 `
-
 const Container = styled.div`
   min-height: 95vh;
   padding: ${3 * vh}px ${1 * vh}px;
@@ -31,20 +30,38 @@ const Container = styled.div`
   }
 `
 
-const Term = styled.div`
-  margin: ${3 * vh}px 0;
-  color: black;
-  font-size: ${2 * vh}px;
-  text-align: justify;
-`
-const Title = styled.div`
-  font-weight: bold;
-  color: black;
-  font-size: ${4 * vh}px;
-`
+const PreferencesZone = styled.div``
+const BackButton = styled.div``
+const ItemsSrc = styled.div``
+const FiltersZone = styled.div``
+
 const SeparatingLine = styled.hr`
   background: black;
   width: 100%;
   height: ${1 * vh}px;
 `
-export { PlaceHolder, Container, Term, Title, SeparatingLine }
+
+const ResultZone = styled.div`
+  padding: ${2 * vh}px ${1 * vh}px;
+`
+
+const Item = styled.div``
+
+const ItemImg = styled.div``
+const ItemTitle = styled.div``
+const ItemDescription = styled.div``
+
+export {
+  PlaceHolder,
+  Container,
+  PreferencesZone,
+  BackButton,
+  ItemsSrc,
+  FiltersZone,
+  SeparatingLine,
+  ResultZone,
+  Item,
+  ItemImg,
+  ItemTitle,
+  ItemDescription
+}

@@ -1,18 +1,18 @@
-import styled from "styled-components";
-import { Link } from "@reach/router";
+import styled from 'styled-components'
+import { Link } from '@reach/router'
 /// setting the height
-const windowWidth = window.innerWidth;
+const windowWidth = window.innerWidth
 
-var defaultVh = 684;
+var defaultVh = 684
 if (windowWidth > 350 && windowWidth < 1701) {
-  defaultVh = 784;
+  defaultVh = 784
 } else if (windowWidth > 1700) {
-  defaultVh = window.innerHeight;
+  defaultVh = window.innerHeight
 }
 
-var vh = defaultVh * 0.01;
+var vh = defaultVh * 0.01
 
-const screenHeight = window.innerHeight * 0.01;
+const screenHeight = window.innerHeight * 0.01
 ///
 
 const PlaceHolder = styled.div`
@@ -21,7 +21,10 @@ const PlaceHolder = styled.div`
         background: url(${props.bg}) no-repeat center;
         background-size: cover;
     `}
-`;
+  @media (pointer: none), (pointer: coarse) {
+    height: ${95 * screenHeight}px;
+  }
+`
 
 const Container = styled.div`
   min-height: 95vh;
@@ -41,7 +44,7 @@ const Container = styled.div`
     min-height: ${95 * screenHeight}px;
     height: auto;
   }
-`;
+`
 const OptionBox = styled(Link)`
   overflow: hidden;
   display: flex;
@@ -74,14 +77,14 @@ const OptionBox = styled(Link)`
   }
   ${(props) =>
     props.available
-      ? ""
+      ? ''
       : `
         opacity:.5;
         &:hover{
             cursor: context-menu;
         }
     `}
-`;
+`
 const Title = styled.div`
   font-size: ${4 * vh}px;
   margin-bottom: ${1 * vh}px;
@@ -92,7 +95,7 @@ const Title = styled.div`
         color: ${props.color};
         background: ${props.bgcolor}; 
     `}
-`;
+`
 const SubTitle = styled.div`
   font-weight: 400;
   font-size: ${2 * vh}px;
@@ -104,6 +107,6 @@ const SubTitle = styled.div`
         color: ${props.color};
         background: ${props.bgcolor}; 
     `}
-`;
+`
 
-export { Container, PlaceHolder, OptionBox, Title, SubTitle };
+export { Container, PlaceHolder, OptionBox, Title, SubTitle }

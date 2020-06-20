@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from 'styled-components'
 
 const Globalstyles = createGlobalStyle`
   html {
@@ -20,7 +20,7 @@ const Globalstyles = createGlobalStyle`
       cursor: context-menu;
     }
   }
-`;
+`
 const BigContainerGlobal = styled.div`
   ${(props) => `
     background: ${props.bg};
@@ -28,19 +28,19 @@ const BigContainerGlobal = styled.div`
     background-color: ${props.bgcolor};
     ${props.extra}
   `}
-`;
+`
 const ContentContainerGlobal = styled.div`
   ${(props) => {
     return `
   height: ${props.height};
-  display: ${props.flex ? "flex" : "block"};
-  flex-direction: ${props.flexCol ? "column" : "row"};
+  display: ${props.flex ? 'flex' : 'block'};
+  flex-direction: ${props.flexCol ? 'column' : 'row'};
   justify-content: ${props.justify};
   align-items: ${props.align};
   background-color: ${props.bgcolor};
   ${props.extra}
-  `;
+  `
   }}
-`;
+`
 
-export { Globalstyles, BigContainerGlobal, ContentContainerGlobal };
+export { Globalstyles, BigContainerGlobal, ContentContainerGlobal }

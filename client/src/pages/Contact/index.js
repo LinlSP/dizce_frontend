@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 /// /////////////////////////////////////////////////////////////////////////////////Styles
 import {
   PlaceHolder,
@@ -7,64 +7,66 @@ import {
   SocialMedia,
   LinkIcon,
   TheOr,
-  TheText,
-} from "./styles";
+  TheText
+} from './styles'
 /// /////////////////////////////////////////////////////////////////////////////////Resources and Components
-import facebook from "../../assets/facebook.svg";
-import twitter from "../../assets/twitter.svg";
-import instagram from "../../assets/instagram.svg";
-import { useInjectText } from "../../customHooks/useInjectText";
-import { useEnableHeader } from "../../customHooks/useEnableHeader";
+import facebook from '../../assets/facebook.svg'
+import twitter from '../../assets/twitter.svg'
+import instagram from '../../assets/instagram.svg'
+import { useInjectText } from '../../customHooks/useInjectText'
+import { useEnableHeader } from '../../customHooks/useEnableHeader'
 /// /////////////////////////////////////////////////////////////////////////////////Self
 export const Contact = () => {
   const [revealed, setRevealed] = useState({
     mail0: false,
-    mail1: false,
-  });
-  const { mail0, mail1 } = revealed;
-  const mails = ["dizce.inquiries@gmail.com", "dizce.supp@gmail.com"];
+    mail1: false
+  })
+  const { mail0, mail1 } = revealed
+  const mails = ['dizce.inquiries@gmail.com', 'dizce.supp@gmail.com']
   const socialLinks = [
-    "https://twitter.com/dizce_company",
-    "https://www.instagram.com/dizce.company",
-    "https://www.facebook.com/pg/dizce.company",
-  ];
-  const socialSources = [twitter, instagram, facebook];
+    'https://twitter.com/dizce_company',
+    'https://www.instagram.com/dizce.company',
+    'https://www.facebook.com/pg/dizce.company'
+  ]
+  const socialSources = [twitter, instagram, facebook]
 
-  const selfName = "contact";
-  ///////////////////onMount hooks
-  const textData = useInjectText(selfName);
-  useEnableHeader();
-  //////////////////
+  const selfName = 'contact'
+  /// ////////////////onMount hooks
+  const textData = useInjectText(selfName)
+  useEnableHeader()
+  /// ///////////////
 
   const revealMail = (number) => {
-    if (number === 0)
+    if (number === 0) {
       setRevealed({
         ...revealed,
-        mail0: true,
-      });
-    if (number === 1)
+        mail0: true
+      })
+    }
+    if (number === 1) {
       setRevealed({
         ...revealed,
-        mail1: true,
-      });
-  };
+        mail1: true
+      })
+    }
+  }
 
   /// ///////////////PAGE
-  if (textData === "") return <PlaceHolder />;
+  if (textData === '') return <PlaceHolder />
 
-  const { inquiries, support, or, socialmedia } = textData;
+  const { inquiries, support, or, socialmedia } = textData
 
   return (
     <div
       style={{
-        background: "rgba(198, 235, 239, 1)",
+        background: 'rgba(198, 235, 239, 1)'
       }}
     >
-      <Container className="container">
+      <Container className='container'>
         <MailButton on={mail0 ? 1 : 0} onClick={() => revealMail(0)}>
           {mail0 ? mails[0] : inquiries}
         </MailButton>
-        <MailButton on={mail0 ? 1 : 0} onClick={() => revealMail(1)}>
+        <MailButton on={mail1 ? 1 : 0} onClick={() => revealMail(1)}>
           {mail1 ? mails[1] : support}
         </MailButton>
         <TheOr>{or}</TheOr>
@@ -72,11 +74,11 @@ export const Contact = () => {
         <SocialMedia>
           {socialSources.map((socialNetwork, index) => (
             <LinkIcon href={socialLinks[index]} key={index}>
-              <img src={socialNetwork} alt="" height="100%" />
+              <img src={socialNetwork} alt='' height='100%' />
             </LinkIcon>
           ))}
         </SocialMedia>
       </Container>
     </div>
-  );
-};
+  )
+}

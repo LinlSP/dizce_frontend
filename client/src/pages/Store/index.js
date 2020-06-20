@@ -1,15 +1,9 @@
-import React from "react";
+import React from 'react'
 /// /////////////////////////////////////////////////////////////////////////////////Styles
 
 /// /////////////////////////////////////////////////////////////////////////////////Resources and Components
-import { useEnableHeader } from "../../customHooks/useEnableHeader";
 
 /// /////////////////////////////////////////////////////////////////////////////////Self
-export const Personalized = () => {
-  const selfName = "personalized";
-  ///////////////////onMount hooks
-  useEnableHeader();
-  ///////////////////Page
-
-  return <>Personalized Component</>;
-};
+export const Store = () => {
+  return <>Store Component</>
+}

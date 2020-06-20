@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from 'styled-components'
 
 export const Container = styled.div`
   position: fixed;
@@ -10,8 +10,8 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`;
-const animationOrigin = " transform-origin: bottom left;";
+`
+const animationOrigin = ' transform-origin: bottom left;'
 
 const Rotating = keyframes`
  0% {
@@ -33,7 +33,7 @@ const Rotating = keyframes`
     transform: rotate(360deg);
     ${animationOrigin}
   }
-`;
+`
 
 export const LoaderIcon = styled.img`
   position: relative;
@@ -42,7 +42,7 @@ export const LoaderIcon = styled.img`
 
   height: 15vh;
   animation: ${Rotating} 2s infinite;
-`;
+`
 export const LoaderText = styled.div`
   position: relative;
   top: 5vh;
@@ -50,4 +50,4 @@ export const LoaderText = styled.div`
   letter-spacing: 5vw;
   margin-right: -5vw;
   color: white;
-`;
+`
