@@ -47,7 +47,12 @@ export const Slider = ({
             </ContentContainerGlobal>
           </div>
         </BigContainerGlobal>
-        <BigContainerGlobal id="answer" bg={bggradient} bgsize="contain">
+        <BigContainerGlobal
+          id="answer"
+          bg={bggradient}
+          bgsize="contain"
+          extra="transition: height 2s ease-out 1s;"
+        >
           <div className="container">
             <ContentContainerGlobal flex justify="center" align="center">
               <Answer change={firstslider ? 1 : 0}>

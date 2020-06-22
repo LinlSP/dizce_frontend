@@ -1,19 +1,19 @@
-import styled from 'styled-components'
-import { FadeIn, SlideLeft, SlideRight } from '../../styles/global/Animations'
-import bg from '../../assets/bg.svg'
+import styled from "styled-components";
+import { FadeIn, SlideLeft, SlideRight } from "../../styles/global/Animations";
+import bg from "../../assets/bg.svg";
 
-var vh = window.innerHeight * 0.01
+var vh = window.innerHeight * 0.01;
 
 export const TotalContainer = styled.div`
   background: url(${bg}) no-repeat center;
   background-color: red;
   background-size: cover;
-  height: ${100 * vh}px;
-  min-height: 100vh;
+  height: ${105 * vh}px;
+  min-height: 105vh;
   display: flex;
   justify-content: center;
   align-items: center;
-`
+`;
 
 export const Content = styled.div`
   display: flex;
@@ -26,13 +26,13 @@ export const Content = styled.div`
   @media (pointer: none), (pointer: coarse) {
     min-height: auto;
   }
-`
+`;
 export const LogoSection = styled.div`
   width: 100%;
   height: 6%;
   display: flex;
   justify-content: space-between;
-`
+`;
 export const Title = styled.h1`
   width: 100%;
 
@@ -45,8 +45,8 @@ export const Title = styled.h1`
     cursor: context-menu;
   }
   ${(props) =>
-    props.slide ? SlideLeft({ time: '1s' }) : SlideRight({ time: '1s' })}
-`
+    props.slide ? SlideLeft({ time: "1s" }) : SlideRight({ time: "1s" })}
+`;
 export const World = styled.div`
   background: ${(props) => `url(${props.sorc}) no-repeat center`};
   background-size: contain;
@@ -55,15 +55,15 @@ export const World = styled.div`
   display: flex;
   justify-content: center;
   ${(props) =>
-    props.slide ? SlideRight({ time: '1s' }) : SlideLeft({ time: '1s' })}
-`
+    props.slide ? SlideRight({ time: "1s" }) : SlideLeft({ time: "1s" })}
+`;
 export const Languages = styled.div`
   height: 15%;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-`
+`;
 export const Lang = styled.button`
   font-family: "Lato", sans-serif;
   border-radius: 5px;
@@ -76,7 +76,7 @@ export const Lang = styled.button`
   &:hover {
     background-color: black;
   }
-`
+`;
 export const GoButton = styled.img`
   height: 100%;
   background-color: transparent;
@@ -85,4 +85,4 @@ export const GoButton = styled.img`
   &:hover {
     cursor: pointer;
   }
-`
+`;

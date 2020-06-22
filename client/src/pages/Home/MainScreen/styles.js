@@ -150,7 +150,8 @@ const SelectLangBox = styled.div`
   transition: 0.5s all ease;
   margin-left: ${6 * vh}px;
   margin-top: ${3 * vh}px;
-  ${(props) => (props.on ? "transform:scale(1);" : "")}
+  opacity: 0;
+  ${(props) => (props.on ? "transform:scale(1); opacity: 1;" : "")}
   overflow-y: scroll;
   height: ${17.5 * vh}px;
 `;
