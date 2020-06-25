@@ -1,0 +1,6 @@
+<svg id="mathematic" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <path id="Pfad_7" data-name="Pfad 7" d="M3.667,0A3.666,3.666,0,0,0,0,3.667V15.333H15.333V0Zm6,9H8.333v1.333a1,1,0,0,1-2,0V9H5A1,1,0,1,1,5,7H6.333V5.667a1,1,0,0,1,2,0V7H9.667a1,1,0,1,1,0,2Z" transform="translate(0)" fill="#df2f2f"/>
+  <path id="Pfad_8" data-name="Pfad 8" d="M0,12.5V24.167a3.666,3.666,0,0,0,3.667,3.667H15.333V12.5Zm10.04,8.627A1,1,0,1,1,8.627,22.54l-.96-.96-.96.96a1,1,0,0,1-1.413-1.415l.96-.96-.96-.96a1,1,0,0,1,1.415-1.415l.96.96.96-.96a1,1,0,0,1,1.415,1.415l-.96.96Z" transform="translate(0 4.167)" fill="#df2f2f"/>
+  <path id="Pfad_9" data-name="Pfad 9" d="M24.167,0H12.5V15.333H27.833V3.667A3.666,3.666,0,0,0,24.167,0ZM23.5,8.667h-6a1,1,0,1,1,0-2h6a1,1,0,0,1,0,2Z" transform="translate(4.167 0)" fill="#df2f2f"/>
+  <path id="Pfad_10" data-name="Pfad 10" d="M12.5,12.5V27.833H24.167a3.666,3.666,0,0,0,3.667-3.667V12.5ZM23.167,23.167h-6a1,1,0,0,1,0-2h6a1,1,0,0,1,0,2Zm0-4h-6a1,1,0,0,1,0-2h6a1,1,0,0,1,0,2Z" transform="translate(4.167 4.167)" fill="#df2f2f"/>
+</svg>

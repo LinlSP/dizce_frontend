@@ -3,7 +3,6 @@ import { Link } from "@reach/router";
 import { vh } from "../index";
 
 const Container = styled.div`
-  padding-top: ${5 * vh}px;
   padding-bottom: ${10 * vh}px;
 `;
 
@@ -68,7 +67,7 @@ const Filter = styled.button`
   border-radius: ${3 * vh}px;
   color: white;
   transition: 0.5s all ease;
-  margin: ${1 * vh}px 0;
+  margin: ${1 * vh}px ${0.5 * vh}px;
   &:hover {
     cursor: pointer;
   }
@@ -76,7 +75,7 @@ const Filter = styled.button`
     const { color, on, disabled } = props;
     return `
     ${disabled ? "opacity:.6;" : ""}
-    ${on ? "transform:scale(1.2);" : ""}
+    ${on ? "transform:scale(1.1);" : ""}
     border:${0.5 * vh}px solid ${color};
   `;
   }}

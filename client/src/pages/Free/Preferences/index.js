@@ -14,6 +14,11 @@ import {
 } from "./styles";
 /// /////////////////////////////////////////////////////////////////////////////////Resources and Components
 import backImg from "../../../assets/backIcon.svg";
+import all from "../../../assets/all.svg";
+import sciences from "../../../assets/chemistry.svg";
+import mathematic from "../../../assets/mathematic.svg";
+import technology from "../../../assets/computer.svg";
+import social from "../../../assets/social.svg";
 
 /// /////////////////////////////////////////////////////////////////////////////////Self
 export const Preferences = ({
@@ -25,7 +30,14 @@ export const Preferences = ({
   filters,
 }) => {
   const [filterOn, setFilterOn] = useState("");
-  const filterColors = ["white", "green", "red", "blue", "orange"];
+  const filterColors = [
+    "white",
+    "rgba(29,207,41)",
+    "rgba(223,47,47)",
+    "rgba(40,92,213)",
+    "rgba(213,142,36)",
+  ];
+  const filterIcons = [all, sciences, mathematic, technology, social];
 
   const onChangeLanguage = () => {
     setLoading(true);
@@ -74,6 +86,7 @@ export const Preferences = ({
             key={index}
             onClick={() => onClickFilter(index)}
           >
+            <FilterImg src={filterIcons[index]} />
             {filter}
           </Filter>
         ))}

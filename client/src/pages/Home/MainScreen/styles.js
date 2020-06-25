@@ -35,6 +35,9 @@ const SideMenu = styled.div`
   @media only screen and (min-width: 1200px) {
     display: none;
   }
+  @media (pointer: none), (pointer: coarse) {
+    min-height: 115vh;
+  }
 `;
 const SideMenuLink = styled(Link)`
   z-index: 2;

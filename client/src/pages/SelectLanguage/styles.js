@@ -13,6 +13,9 @@ export const TotalContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (pointer: none), (pointer: coarse) {
+    min-height: ${115 * vh}px;
+  }
 `;
 
 export const Content = styled.div`

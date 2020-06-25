@@ -13,6 +13,7 @@ import { Results } from "./Results";
 const TotalContainer = styled.div`
   background: rgba(198, 235, 239, 1);
   min-height: 95vh;
+  padding: ${5 * vh}px 0;
   @media (pointer: none), (pointer: coarse) {
     min-height: ${95 * screenHeight}px;
   }
