@@ -1,32 +1,34 @@
-////////////////////////////////////////////MODULES
-const express = require('express')
-const cors = require('cors')
-const path = require('path')
-// const mongoose = require('mongoose')
-// const Schema = mongoose.Schema
-require('dotenv').config()
+const express = require("express");
+const cors = require("cors");
+const router = express.Router();
+require("dotenv").config();
 
-////////////////////////////////////////////IMPORTS
-////////////////////////////////////////////CONSTANTS
-const app = express()
-const { PORT } = process.env
-const frontendRoutes = ['/','/about','/contact','/resources','/services','/*']
-////////////////////////////////////////////SETTINGS
-app.use(cors())
-app.use(express.static('../client/dist'));
-////////////////////////////////////////////BACKEND ROUTES
-////////////////////////////////////////////FRONTEND ROUTES
+const config = require("./config");
+const db = require("./db");
+const routes = require("./network/routes");
 
-frontendRoutes.map((route, index)=>{
-  return (
-    app.get(route, function (req, res) {
-      res.sendFile(path.join(__dirname, '../client/dist/index.html'), function(err) {
-      })
-    })         
-  )
-})
-    
-////////////////////////////////////////////RETURNING SERVER
-app.listen(PORT, () => {
-  console.log(`App listening on http://localhost:${PORT}`)
-})
+const app = express();
+const { dbUri, port, host } = config;
+
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+routes(router);
+app.use("/api", router);
+
+app.use(express.static("public"));
+app.get("/*", function (req, res) {
+  res.sendFile("public/index.html", { root: __dirname });
+});
+
+(async () => {
+  try {
+    const cluster = await db(dbUri);
+    app.locals.cluster = cluster;
+    await app.listen(port);
+    console.log(`App listening on ${host}:${port}`);
+  } catch (error) {
+    console.log(error);
+  }
+})();

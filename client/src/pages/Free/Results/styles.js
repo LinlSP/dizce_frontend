@@ -22,16 +22,48 @@ export const SubContainer = styled.div`
 `;
 
 export const Item = styled.div`
-  height: ${20 * vh}px;
+  padding: ${1 * vh}px;
   width: ${30 * vh}px;
-  border: ${1 * vh}px solid black;
+  border: ${0.2 * vh}px solid white;
   border-radius: ${0.5 * vh}px;
   margin: ${2 * vh}px ${1 * vh}px;
   transition: 0.5s all ease;
   background: black;
+
   &:hover {
     cursor: pointer;
-    border: ${1 * vh}px solid red;
+    border: ${0.2 * vh}px solid red;
+  }
+`;
+
+export const ItemLogo = styled.div`
+  background: url(${(props) => props.src}) no-repeat center;
+  background-size: contain;
+  height: ${10 * vh}px;
+  width: 100%;
+  margin-bottom: ${1 * vh}px;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+export const ItemName = styled.div`
+  font-size: ${2 * vh}px;
+  margin-bottom: ${0.5 * vh}px;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+export const ItemPhrase = styled.div`
+  font-size: ${1.5 * vh}px;
+  margin-bottom: ${0.5 * vh}px;
+
+  color: white;
+  text-align: center;
+  &:hover {
+    cursor: pointer;
   }
 `;
 

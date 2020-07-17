@@ -2,5 +2,6 @@
   "selectText": "Contenidos originarios del idioma:",
   "availableLanguages": ["Español", "Inglés", "Alemán"],
   "availableLanguagesForPetition": ["spanish", "english", "german"],
-  "filters": ["Todo", "Ciencias", "Matemáticas", "Tecnología", "Sociales"]
+  "filters": ["Todo", "Ciencias", "Matemáticas", "Tecnología", "Sociales"],
+  "filtersForPetition": ["", "sciences", "mathematic", "technology", "social"]
 }

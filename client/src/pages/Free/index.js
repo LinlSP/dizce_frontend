@@ -21,7 +21,10 @@ const TotalContainer = styled.div`
 
 /// /////////////////////////////////////////////////////////////////////////////////Self
 export const Free = () => {
-  const [loadingResult, setLoadingResult] = useState(false);
+  const [dbResults, setDbResults] = useState({
+    loading: true,
+    results: "",
+  });
   const selfName = "free";
 
   /// ////////////////onMount hooks
@@ -34,10 +37,10 @@ export const Free = () => {
     <TotalContainer>
       <Preferences
         {...textData}
-        loading={loadingResult}
-        setLoading={setLoadingResult}
+        loading={dbResults.loading}
+        setResults={setDbResults}
       />
-      <Results loading={loadingResult} setLoading={setLoadingResult} />
+      <Results {...dbResults} />
     </TotalContainer>
   );
 };

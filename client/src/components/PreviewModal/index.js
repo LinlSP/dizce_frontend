@@ -13,9 +13,11 @@ export const PreviewModal = ({
   children,
   height,
   extra,
+  setLoadingTrue,
 } = {}) => {
   const closeModal = () => {
     setModal(false);
+    setLoadingTrue();
   };
 
   if (!isOpen) {

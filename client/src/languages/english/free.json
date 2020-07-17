@@ -3,5 +3,6 @@
   "availableLanguages": ["English", "Spanish", "German"],
   "availableLanguagesForPetition": ["english", "spanish", "german"],
 
-  "filters": ["All", "Science", "Mathematic", "Technology", "Social sciences"]
+  "filters": ["All", "Science", "Mathematic", "Technology", "Social sciences"],
+  "filtersForPetition": ["", "sciences", "mathematic", "technology", "social"]
 }

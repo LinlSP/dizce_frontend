@@ -4,6 +4,12 @@ const path = require("path");
 // const WorkboxWebpackPlugin = require('workbox-webpack-plugin')
 
 module.exports = {
+  devServer: {
+    proxy: {
+      "/api": "http://localhost:8080",
+    },
+  },
+
   output: {
     filename: "app.bundle.js",
     publicPath: "/",

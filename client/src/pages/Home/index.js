@@ -13,6 +13,7 @@ import { Loader } from "../../components/Loader";
 import { useInjectText } from "../../customHooks/useInjectText";
 import { useDisableHeader } from "../../customHooks/useDisableHeader";
 
+import { FadeInWrapper } from "./FadeInWrapper";
 import { MainScreen } from "./MainScreen";
 import { Slider } from "./Slider";
 import { OurFocus } from "./OurFocus";
@@ -54,30 +55,36 @@ export const Home = () => {
         BigContainerGlobal={BigContainerGlobal}
       />
       {/* ///////////////////////////////////////////////////////////////////////////// */}
-      <Slider
-        imagesSrcUrl={imagesSrcUrl}
-        questions={questions}
-        defaultbgcolor={defaultbgcolor}
-        secondarybgcolor={secondarybgcolor}
-        ContentContainerGlobal={ContentContainerGlobal}
-        BigContainerGlobal={BigContainerGlobal}
-      />
+      <FadeInWrapper>
+        <Slider
+          imagesSrcUrl={imagesSrcUrl}
+          questions={questions}
+          defaultbgcolor={defaultbgcolor}
+          secondarybgcolor={secondarybgcolor}
+          ContentContainerGlobal={ContentContainerGlobal}
+          BigContainerGlobal={BigContainerGlobal}
+        />
+      </FadeInWrapper>
       {/* ///////////////////////////////////////////////////////////////////////////// */}
-      <OurFocus
-        focus={focus}
-        secondarybgcolor={secondarybgcolor}
-        ContentContainerGlobal={ContentContainerGlobal}
-        BigContainerGlobal={BigContainerGlobal}
-        titles={titles}
-      />
+      <FadeInWrapper>
+        <OurFocus
+          focus={focus}
+          secondarybgcolor={secondarybgcolor}
+          ContentContainerGlobal={ContentContainerGlobal}
+          BigContainerGlobal={BigContainerGlobal}
+          titles={titles}
+        />
+      </FadeInWrapper>
       {/* ///////////////////////////////////////////////////////////////////////////// */}
-      <Furthermore
-        titles={titles}
-        furthermore={furthermore}
-        imagesSrcUrl={imagesSrcUrl}
-        ContentContainerGlobal={ContentContainerGlobal}
-        BigContainerGlobal={BigContainerGlobal}
-      />
+      <FadeInWrapper>
+        <Furthermore
+          titles={titles}
+          furthermore={furthermore}
+          imagesSrcUrl={imagesSrcUrl}
+          ContentContainerGlobal={ContentContainerGlobal}
+          BigContainerGlobal={BigContainerGlobal}
+        />
+      </FadeInWrapper>
     </>
   );
 };

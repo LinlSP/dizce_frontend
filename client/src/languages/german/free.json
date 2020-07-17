@@ -2,12 +2,12 @@
   "selectText": "Originalinhalt der Sprache:",
   "availableLanguages": ["Deutsch", "Englisch", "Spanisch"],
   "availableLanguagesForPetition": ["german", "english", "spanish"],
-
   "filters": [
     "Alles",
     "Wissenschaft",
     "Mathematik",
     "Technologie",
     "Sozialwissenschaft"
-  ]
+  ],
+  "filtersForPetition": ["", "sciences", "mathematic", "technology", "social"]
 }
