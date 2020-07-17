@@ -49,7 +49,7 @@ export const App = () => {
           <Services path="/services" />
           {/* <Store path='/services/store'/> */}
           <Free path="/services/free" />
-          <Personalized path="/services/personalized" />
+          {/* <Personalized path="/services/personalized" /> */}
           <Legal path="/legal" />
         </Router>
         <Footer />

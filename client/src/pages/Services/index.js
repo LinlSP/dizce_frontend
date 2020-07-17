@@ -17,7 +17,7 @@ const personalizedBg =
 
 export const Services = () => {
   const bgImages = [freeBg, storeBg, personalizedBg];
-  const routes = ["/free", "", "/personalized"];
+  const routes = ["/free", "", ""];
   const boxStyles = [
     {
       text: "white",
@@ -51,7 +51,7 @@ export const Services = () => {
             {services.map((boxText, index) => (
               <OptionBox
                 bg={bgImages[index]}
-                available={index === 1 ? 0 : 1}
+                available={index === 0 ? 1 : 0}
                 key={index}
                 to={"/services" + routes[index]}
               >

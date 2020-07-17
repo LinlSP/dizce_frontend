@@ -1,15 +1,17 @@
-import React from 'react'
+import React from "react";
 /// /////////////////////////////////////////////////////////////////////////////////Styles
 
 /// /////////////////////////////////////////////////////////////////////////////////Resources and Components
-import { useEnableHeader } from '../../customHooks/useEnableHeader'
+import { useEnableHeader } from "../../customHooks/useEnableHeader";
 
 /// /////////////////////////////////////////////////////////////////////////////////Self
+
+// Deprecated
 export const Personalized = () => {
   // const selfName = 'personalized'
   /// ////////////////onMount hooks
-  useEnableHeader()
+  useEnableHeader();
   /// ////////////////Page
 
-  return <>Personalized Component</>
-}
+  return <>Personalized Component</>;
+};
