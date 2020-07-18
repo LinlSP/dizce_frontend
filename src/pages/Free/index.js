@@ -24,6 +24,7 @@ export const Free = () => {
   const [dbResults, setDbResults] = useState({
     loading: true,
     results: "",
+    maxItemIndex: 1,
   });
   const selfName = "free";
 

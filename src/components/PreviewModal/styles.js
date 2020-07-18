@@ -34,7 +34,7 @@ export const Modal = styled.div`
   ${(props) => props.extra}
 `;
 export const CloseX = styled.div`
-  font-size: ${5 * vh}px;
+  font-size: ${3 * vh}px;
   margin-right: ${2 * vh}px;
   font-weight: bold;
   background: transparent;
@@ -45,4 +45,28 @@ export const CloseX = styled.div`
   &:hover {
     cursor: pointer;
   }
+`;
+
+export const Arrow = styled.img`
+  height: ${6 * vh}px;
+  filter: invert(1);
+  position: relative;
+  z-index: 10;
+  &:hover {
+    cursor: pointer;
+  }
+  ${({ left, right, index, maxIndex }) => {
+    if (left) {
+      if (index === parseInt("0")) {
+        return "display: none";
+      }
+      return;
+    }
+    if (right) {
+      if (index === maxIndex) {
+        return "display: none";
+      }
+      return "transform: rotate(180deg)";
+    }
+  }}
 `;

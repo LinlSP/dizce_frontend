@@ -48,6 +48,7 @@ export const Preferences = ({
     setResults({
       loading: true,
       results: "",
+      maxItemIndex: 1,
     });
     const language = document.querySelector("#selectLangForSearch").value;
     axios
@@ -63,12 +64,14 @@ export const Preferences = ({
         return setResults({
           loading: false,
           results: response,
+          maxItemIndex: response.length - 1,
         });
       })
       .catch((error) => {
         return setResults({
           loading: false,
           results: "Something went wrong",
+          maxItemIndex: 1,
         });
       });
   };
@@ -112,26 +115,23 @@ export const Preferences = ({
         </LanguageContainer>
       </ConfigDiv>
       <Filters>
-        {filters.map((filter, index) => (
-          <div
-            name={filtersForPetition[index]}
-            key={index}
-            onClick={(e) => onClickFilter(e.target.getAttribute("name"), index)}
-          >
-            <Filter
-              name={filtersForPetition[index]}
-              disabled={loading}
-              on={filterOn === index ? 1 : 0}
-              color={filterColors[index]}
-            >
-              <FilterImg
-                src={filterIcons[index]}
-                name={filtersForPetition[index]}
-              />
-              {filter}
-            </Filter>
-          </div>
-        ))}
+        {filters.map((filter, index) => {
+          const name = filtersForPetition[index];
+          const color = filterColors[index];
+          const src = filterIcons[index];
+          return (
+            <div key={index} onClick={() => onClickFilter(name, index)}>
+              <Filter
+                disabled={loading}
+                on={filterOn === index ? 1 : 0}
+                color={color}
+              >
+                <FilterImg src={src} />
+                {filter}
+              </Filter>
+            </div>
+          );
+        })}
       </Filters>
     </Container>
   );

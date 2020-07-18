@@ -7,7 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "standard --fix",
     "server": "webpack-dev-server --port 3000 --host 192.168.0.11 --history-api-fallback",
-    "dist": "rm -r dist",
     "dev": "webpack --mode 'development' && webpack-dev-server --port 3000 --host 192.168.137.1 --history-api-fallback",
     "builddev": "webpack --mode 'development'",
     "build": "webpack && cp -a ./dist/. ../api/public/"
@@ -35,10 +34,8 @@
   "dependencies": {
     "@reach/router": "^1.3.3",
     "axios": "^0.19.2",
-    "cypress": "^4.9.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-helmet": "^6.1.0",
     "styled-components": "^5.1.1"
   },
   "standard": {

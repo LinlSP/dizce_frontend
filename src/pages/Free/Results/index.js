@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import axios from "axios";
 /// /////////////////////////////////////////////////////////////////////////////////Styles
 import {
@@ -13,42 +13,74 @@ import {
   PreviewItemText,
   PreviewButton,
 } from "./styles";
-import { vh } from "../index";
 /// /////////////////////////////////////////////////////////////////////////////////Resources and Components
 import { MiniLoader } from "../../../components/MiniLoader";
 import { PreviewModal } from "../../../components/PreviewModal";
 import { screenHeight } from "../../../styles/global/Height";
 /// /////////////////////////////////////////////////////////////////////////////////Self
-export const Results = ({ loading, results }) => {
-  const [containerHeight, setContainerHeight] = useState("");
 
+const detailReducer = (state, action) => {
+  const { type, parameters } = action;
+  switch (type) {
+    case "setLoadingTrue":
+      return {
+        ...state,
+        loading: true,
+        error: false,
+        Ilogo: "",
+        Idescription: "",
+        Iurl: "",
+      };
+    case "setItemIndex":
+      return {
+        ...state,
+        itemIndex: parameters.index,
+      };
+    case "detailSuccess":
+      return {
+        ...state,
+        error: false,
+        loading: false,
+        Ilogo: parameters.logoUrl,
+        Iurl: parameters.url,
+        Idescription: parameters.description,
+      };
+    case "detailError":
+      return {
+        ...state,
+        error: true,
+        loading: false,
+        Ilogo: "",
+        Iurl: "",
+        Idescription: "",
+      };
+
+    default:
+      return state;
+  }
+};
+
+export const Results = ({ loading, results, maxItemIndex }) => {
+  const [containerHeight, setContainerHeight] = useState("");
   const [modalOn, setModalOn] = useState(false);
-  const [detail, setDetail] = useState({
-    loadingDetail: true,
+  const [detail, detailDispatch] = useReducer(detailReducer, {
+    loading: true,
     error: false,
     Ilogo: "",
     Idescription: "",
     Iurl: "",
+    itemIndex: parseInt("0"),
   });
-  const { loadingDetail, error, Ilogo, Idescription, Iurl } = detail;
-  const setLoadingTrue = () => {
-    setDetail({
-      loadingDetail: true,
-      error: false,
-      Ilogo: "",
-      Idescription: "",
-      Iurl: "",
-    });
-  };
+
+  const { Ilogo, Idescription, Iurl } = detail;
 
   const setNewContainerHeight = () => {
     const elementHeight = document.getElementById("results").clientHeight;
     setContainerHeight(elementHeight + "px");
   };
 
-  const onItemClick = (e) => {
-    const name = e.target.getAttribute("name");
-    setModalOn(true);
+  const getDetailCall = (name) => {
+    detailDispatch({ type: "setLoadingTrue" });
     axios
       .get("/api/free/detail", {
         params: {
@@ -58,25 +90,28 @@ export const Results = ({ loading, results }) => {
       .then(({ data }) => {
         const { response } = data;
         const { logoUrl, url, description } = response;
-        return setDetail({
-          error: false,
-          loadingDetail: false,
-          Ilogo: logoUrl,
-          Iurl: url,
-          Idescription: description,
+        return detailDispatch({
+          type: "detailSuccess",
+          parameters: {
+            logoUrl: logoUrl,
+            url: url,
+            description: description,
+          },
         });
       })
       .catch(({ response }) => {
         const { error } = response.data;
-        console.log(error);
-        return setDetail({
-          error: true,
-          loadingDetail: false,
-          Ilogo: "",
-          Iurl: "",
-          Idescription: "",
-        });
+        return detailDispatch({ type: "detailError" });
       });
+  };
+
+  const onItemClick = (name, index) => {
+    setModalOn(true);
+    detailDispatch({
+      type: "setItemIndex",
+      parameters: { index: index },
+    });
+    return getDetailCall(name);
   };
 
   useEffect(() => {
@@ -99,25 +134,41 @@ export const Results = ({ loading, results }) => {
             results.map(({ name, phrase, logoUrl }, index) => (
               <Item
                 key={index}
-                name={name}
-                onClick={(e) => {
-                  onItemClick(e);
+                onClick={() => {
+                  onItemClick(name, index);
                 }}
               >
-                <ItemLogo name={name} src={logoUrl} />
-                <ItemName name={name}>{name}</ItemName>
-                <ItemPhrase name={name}>{phrase}</ItemPhrase>
+                <ItemLogo src={logoUrl} />
+                <ItemName>{name}</ItemName>
+                <ItemPhrase>{phrase}</ItemPhrase>
               </Item>
             ))
           )}
         </SubContainer>
       </Container>
       <PreviewModal
-        error={error}
-        loading={loadingDetail}
+        error={detail.error}
+        loading={detail.loading}
+        itemIndex={detail.itemIndex}
+        maxItemIndex={maxItemIndex}
         isOpen={modalOn}
         setModal={setModalOn}
-        setLoadingTrue={setLoadingTrue}
+        setLoadingTrue={() => detailDispatch({ type: "setLoadingTrue" })}
+        setNewDetail={() => {
+          const name = results[detail.itemIndex].name;
+          if (name) {
+            return getDetailCall(name);
+          }
+          return;
+        }}
+        setItemIndex={(newIndex) =>
+          detailDispatch({
+            type: "setItemIndex",
+            parameters: {
+              index: newIndex,
+            },
+          })
+        }
         extra={`flex-direction:column;
         background: rgb(18, 255, 255);
 
