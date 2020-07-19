@@ -7,60 +7,57 @@
   },
   "questions": [
     {
-      "question": "Pero en internet ya se ofrecen los servicios de traductores profesionales, no?",
-      "answer": "Nosotros también somos profesionales. La diferencia radica en que nosotros somos económicos y no nos especializamos en procesos burocráticos."
+      "question": "But the Internet already offers the services of professional translators, right?",
+      "answer": "We're professionals too. The difference is that we are affordable and do not specialize in bureaucratic processes."
     },
     {
-      "question": "Por qué tendría que confiar en dizce, si ya existen traductores y diccionarios en línea? ",
-      "answer": "Porque dizce no es un traductor, sino un equipo de personas que te guiarán y posteriormente prepararán un producto personalizado. Además tales herramientas están llenas de imprecisiones."
+      "question": "Why should I trust Dizce, when there are already online translators and dictionaries?",
+      "answer": "Because Dizce is not a translator, but a team of people which will guide you and later prepare a personalized product. Besides, such tools are full of inaccuracies."
     }
   ],
   "titles": {
-    "first": "ENFOCADOS EN",
-    "second": "ADEMÁS"
+    "first": "FOCUSED IN",
+    "second": "FURTHERMORE"
   },
   "focus": [
     {
-      "name": "Familias",
-      "text": "Ofrecemos y recomendamos materiales académicos para el aprendizaje en familia; tanto gratuitas, como de pago:",
+      "name": "Families",
+      "text": "We offer and recommend academic materials for family learning; both free and paid:",
       "points": [
-        "Páginas web educativas gratuitas.",
-        "Contenidos exclusivos de otros idiomas, traducidos al Español.",
-        "Traducción de contenidos audiovisuales, didácticos (juegos, programas) o textuales, a pedido."
+        "Free educational websites.",
+        "Exclusive content from other languages, translated into English.",
+        "Translation of audiovisual, didactic (games, programs) or textual content, upon request."
       ]
     },
     {
-      "name": "Empresas",
-      "text": "Ofrecemos y recomendamos materiales académicos para el aprendizaje en familia; tanto gratuitas, como de pago:",
+      "name": "Businesses",
+      "text": "We help you expand your business beyond your borders, without having to worry about the language:",
       "points": [
-        "Páginas web educativas gratuitas.",
-        "Contenidos exclusivos de otros idiomas, traducidos al Español.",
-        "Traducción de contenidos audiovisuales, didácticos (juegos, programas) o textuales, a pedido."
+        "Consulting in the introduction of products to different markets in other continents.",
+        "100% accurate data collection and translation with respect to foreign markets",
+        "Complete translation of corporate websites or online stores."
       ]
     },
     {
-      "name": "Individuos",
-      "text": "Ofrecemos y recomendamos materiales académicos para el aprendizaje en familia; tanto gratuitas, como de pago:",
+      "name": "Individuals",
+      "text": "If you are curious and in search of knowledge, then we have options for you too:",
       "points": [
-        "Páginas web educativas gratuitas.",
-        "Contenidos exclusivos de otros idiomas, traducidos al Español.",
-        "Traducción de contenidos audiovisuales, didácticos (juegos, programas) o textuales, a pedido."
+        "Index with free course portals from the world's leading universities.",
+        "Free education offers in our search system."
       ]
     },
     {
-      "name": "Personalización",
-      "text": "Ofrecemos y recomendamos materiales académicos para el aprendizaje en familia; tanto gratuitas, como de pago:",
+      "name": "Personalization",
+      "text": "If you do not identify with any of the other options, or on the contrary you identify with several, then we offer you:",
       "points": [
-        "Páginas web educativas gratuitas.",
-        "Contenidos exclusivos de otros idiomas, traducidos al Español.",
-        "Traducción de contenidos audiovisuales, didácticos (juegos, programas) o textuales, a pedido."
+        "Write to us and we will gladly assist you with any requirements you may have. We are sure that we will find a way to help you, and if in spite of that we do not find it, then we will put you in contact with the ideal people or companies"
       ]
     }
   ],
   "furthermore": [
-    "Nuestro objetivo es eliminar las barreras idiomáticas que te impiden la obtención de información, formación y educación de mejor calidad; así como tu expansión personal o empresarial.",
-    "Pero la educación 'académica' no es la única y por ello estamos convencidos de que la comprensión de otras culturas es igualmente sino, más importante para expandirte.",
-    "A nosotros no nos importa  tu edad ni  tu condición, solo tus ganas de ser mejor que ayer."
+    "Our objective is to eliminate the language barriers that prevent you from obtaining better quality information, training and education; as well as your personal or business expansion.",
+    "But 'academic' education is not the only one and therefore we are convinced that the understanding of other cultures is equally, if not more important to develop.",
+    "We don't care about your age or your condition, just your desire to be better than yesterday."
   ],
-  "sidepanel": ["Qué es?", "Servicios", "Contacto", "Legal"]
+  "sidepanel": ["What are we?", "Services", "Contact", "Legal"]
 }

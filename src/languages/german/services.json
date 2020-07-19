@@ -2,15 +2,15 @@
   "services": [
     {
       "type": "Kostenlos",
-      "sub": "Contenidos de otros autores recomendados por nosotros."
+      "sub": "Inhalte anderer von uns empfohlener Autoren"
     },
     {
-      "type": "Laden",
-      "sub": "Los contenidos más pedidos por nuestros clientes"
+      "type": "Store",
+      "sub": "Die von unseren Kunden am häufigsten nachgefragten Inhalte"
     },
     {
       "type": "Personalisiert",
-      "sub": "Tienes algo en mente? Estés seguro o no, esta es tu opción"
+      "sub": "Haben Sie etwas im Sinn? Ob Sie sich sicher sind oder nicht, dies ist für Sie"
     }
   ]
 }

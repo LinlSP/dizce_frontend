@@ -2,15 +2,15 @@
   "services": [
     {
       "type": "Free",
-      "sub": "Contenidos de otros autores recomendados por nosotros."
+      "sub": "Contents of other authors recommended by us"
     },
     {
       "type": "Store",
-      "sub": "Los contenidos más pedidos por nuestros clientes"
+      "sub": "The most requested contents by our customers"
     },
     {
       "type": "Personalized",
-      "sub": "Tienes algo en mente? Estés seguro o no, esta es tu opción"
+      "sub": "Do you have something in mind? Whether you're sure or not, this is your choice"
     }
   ]
 }

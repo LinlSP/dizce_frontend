@@ -1,66 +1,63 @@
 {
   "maintitle": {
     "big1": "Entedecke",
-    "big2": "Inhalte in anderen Sprachen, ohne sie lernen zu müssen",
     "mini": "oder vorstelle deine",
+    "big2": "Inhalte in anderen Sprachen, ohne sie lernen zu müssen",
     "button": "Leg los, kostenlos"
   },
   "questions": [
     {
-      "question": "Pero en internet ya se ofrecen los servicios de traductores profesionales, no?",
-      "answer": "Nosotros también somos profesionales. La diferencia radica en que nosotros somos económicos y no nos especializamos en procesos burocráticos."
+      "question": "Aber die Dienste von professionellen Übersetzern und Dolmetschern sind doch bereits im Internet verfügbar, oder?",
+      "answer": "Wir sind auch Profis. Der Unterschied besteht darin, dass wir günstiger sind und uns nicht auf bürokratische Prozesse spezialisieren."
     },
     {
-      "question": "Por qué tendría que confiar en dizce, si ya existen traductores y diccionarios en línea? ",
-      "answer": "Porque dizce no es un traductor, sino un equipo de personas que te guiarán y posteriormente prepararán un producto personalizado. Además tales herramientas están llenas de imprecisiones."
+      "question": "Warum sollte ich Dizce vertrauen, wenn es bereits Online-Übersetzer und -Wörterbücher gibt?",
+      "answer": "Denn dizce ist kein Übersetzer, sondern ein Team von Menschen, die Sie anleiten und dann ein kundenspezifisches Produkt vorbereiten. Außerdem sind solche Instrumente voller Ungenauigkeiten."
     }
   ],
   "titles": {
-    "first": "ENFOCADOS EN",
-    "second": "ADEMÁS"
+    "first": "SCHWERPUNKTE",
+    "second": "UND"
   },
   "focus": [
     {
-      "name": "Familias",
-      "text": "Ofrecemos y recomendamos materiales académicos para el aprendizaje en familia; tanto gratuitas, como de pago:",
+      "name": "Familien",
+      "text": "Wir bieten und empfehlen akademisches Material für das Lernen in der Familie; sowohl kostenlos als auch bezahlt.",
       "points": [
-        "Páginas web educativas gratuitas.",
-        "Contenidos exclusivos de otros idiomas, traducidos al Español.",
-        "Traducción de contenidos audiovisuales, didácticos (juegos, programas) o textuales, a pedido."
+        "Kostenlose Bildungswebsites.",
+        "Exklusive Inhalte aus anderen Sprachen, ins Deutsche übersetzt.",
+        "Übersetzung von audiovisuellen, didaktischen (Spiele, Programme) oder textlichen Inhalten, auf Wunsch."
       ]
     },
     {
-      "name": "Empresas",
-      "text": "Ofrecemos y recomendamos materiales académicos para el aprendizaje en familia; tanto gratuitas, como de pago:",
+      "name": "Unternehmen",
+      "text": "Wir helfen Ihnen, Ihr Geschäft über Ihre Grenzen hinaus auszuweiten, ohne dass Sie sich um die Sprache kümmern müssen.",
       "points": [
-        "Páginas web educativas gratuitas.",
-        "Contenidos exclusivos de otros idiomas, traducidos al Español.",
-        "Traducción de contenidos audiovisuales, didácticos (juegos, programas) o textuales, a pedido."
+        "Beratung bei der Einführung von Produkten auf verschiedenen Märkten in anderen Kontinenten.",
+        "100% genaue Datenerfassung und Übersetzung von ausländischen Märkten.",
+        "Vollständige Übersetzung von Business-Websites oder Online-Shops."
       ]
     },
     {
-      "name": "Individuos",
-      "text": "Ofrecemos y recomendamos materiales académicos para el aprendizaje en familia; tanto gratuitas, como de pago:",
+      "name": "Einzelpersonen",
+      "text": "Wenn Sie neugierig und wissensdurstig sind, dann haben wir auch etwas für Sie:",
       "points": [
-        "Páginas web educativas gratuitas.",
-        "Contenidos exclusivos de otros idiomas, traducidos al Español.",
-        "Traducción de contenidos audiovisuales, didácticos (juegos, programas) o textuales, a pedido."
+        "Index mit kostenlosen Kursportalen der wichtigsten Universitäten und Hochschulen der Welt.",
+        "Kostenlose Bildungsangebote in unserem Suchsystem."
       ]
     },
     {
-      "name": "Personalización",
-      "text": "Ofrecemos y recomendamos materiales académicos para el aprendizaje en familia; tanto gratuitas, como de pago:",
+      "name": "Personalisierung",
+      "text": "Wenn Sie sich mit keiner der anderen Optionen identifizieren, oder im Gegenteil, wenn Sie sich mit mehreren identifizieren, dann bieten wir Ihnen an:",
       "points": [
-        "Páginas web educativas gratuitas.",
-        "Contenidos exclusivos de otros idiomas, traducidos al Español.",
-        "Traducción de contenidos audiovisuales, didácticos (juegos, programas) o textuales, a pedido."
+        "Schreiben Sie uns, wir helfen Ihnen gerne bei Ihren Anforderungen. Wir sind sicher, dass wir einen Weg finden werden, Ihnen zu helfen, und wenn wir ihn trotzdem nicht finden, dann werden wir Sie mit den idealen Personen oder Unternehmen in Kontakt bringen."
       ]
     }
   ],
   "furthermore": [
-    "Nuestro objetivo es eliminar las barreras idiomáticas que te impiden la obtención de información, formación y educación de mejor calidad; así como tu expansión personal o empresarial.",
-    "Pero la educación 'académica' no es la única y por ello estamos convencidos de que la comprensión de otras culturas es igualmente sino, más importante para expandirte.",
-    "A nosotros no nos importa  tu edad ni  tu condición, solo tus ganas de ser mejor que ayer."
+    "Unser Ziel ist es, die Sprachbarrieren zu beseitigen, die Sie daran hindern, qualitativ hochwertigere Informationen, Aus- und Weiterbildung sowie Ihre persönliche oder geschäftliche Weiterentwicklung zu erhalten.",
+    "Aber 'akademische' Bildung ist nicht die einzige, und wir sind überzeugt, dass das Verständnis anderer Kulturen für die Entwicklung ebenso wichtig, wenn nicht sogar wichtiger ist.",
+    "Uns interessiert Ihr Alter oder Ihren Zustand nicht, sondern nur Ihren Wunsch, besser als gestern zu sein."
   ],
-  "sidepanel": ["Qué es?", "Servicios", "Contacto", "Condiciones"]
+  "sidepanel": ["Was sind wir?", "Angebot", "Kontakt", "Bedingungen"]
 }

@@ -1,6 +1,6 @@
 .fadeInContainer {
   opacity: 0;
-  transition: opacity 2s ease;
+  transition: opacity 1s ease;
 }
 .fadeInContainer.isVisible {
   opacity: 1;
