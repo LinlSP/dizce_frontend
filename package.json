@@ -9,7 +9,7 @@
     "server": "webpack-dev-server --port 3000 --host 192.168.0.11 --history-api-fallback",
     "dev": "webpack --mode 'development' && webpack-dev-server --port 3000 --host 192.168.137.1 --history-api-fallback",
     "builddev": "webpack --mode 'development'",
-    "build": "webpack && cp -a ./dist/. ../api/public/"
+    "build": "webpack --mode 'production' && cp -a ./dist/. ../api/public/"
   },
   "author": "Lincol Saenz",
   "license": "ISC",
